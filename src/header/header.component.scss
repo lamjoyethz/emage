@@ -1,0 +1,77 @@
+.header-container {
+  display: flex;
+  max-height: 200px;
+  border-bottom: 1px solid #ccc;
+  padding-right: 8px;
+  padding-left: 8px;
+  background-color: #3a996c;
+}
+.mat-form-field {
+  height: 0px;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+  font-size: 2.2rem;
+}
+
+.mat-form-field-appearance-fill .mat-form-field-flex {
+  padding: 0 0 0 0;
+}
+::ng-deep .mat-form-field-wrapper {
+  padding-bottom: 0em;
+}
+
+input[type="text"]:focus:not([readonly]) {
+  box-shadow: none;
+  border-bottom: none;
+}
+
+.header-container-elm {
+  text-align: left;
+}
+
+img {
+  max-height: 50px;
+  padding-right: 5px;
+}
+input {
+  width: 100%;
+}
+.fontas {
+  font-size: 2rem;
+  white-space: nowrap;
+  text-align: right;
+  padding-top: 5px;
+  padding-right: 3px;
+  width: 100%;
+}
+.fas {
+  padding: 0px 3px 1px 5px;
+}
+.textfield {
+  width: 100%;
+  text-align: left;
+  min-width: 150px;
+}
+mat-form-field {
+  height: 70px;
+}
+.textlogo {
+  font-size: 2.5rem;
+  font-weight: bold;
+  min-width: 40px;
+}
+
+/* unvisited link */
+a:link {
+  color: white;
+}
+
+/* visited link */
+a:visited {
+  color: white;
+}
+a:link {
+  text-decoration: none;
+}
