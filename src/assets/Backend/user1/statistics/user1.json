@@ -1,0 +1,50 @@
+[
+  {
+    "date": "12.12.2023",
+    "data": {
+      "feeling": { "stressed": "1", "hungry": "10" },
+      "activities": { "sport": "2", "romance": "5", "work": "4" },
+      "state": { "happy": "3", "angry": "4" }
+    }
+  },
+  {
+    "date": "11.12.2023",
+    "data": {
+      "feeling": { "stressed": "1", "hungry": "10" },
+      "activities": { "sport": "2", "romance": "5", "work": "4" },
+      "state": { "happy": "3", "angry": "4" }
+    }
+  },
+  {
+    "date": "9.12.2023",
+    "data": {
+      "feeling": { "stressed": "1", "hungry": "10" },
+      "activities": { "sport": "2", "romance": "5", "work": "4" },
+      "state": { "happy": "3", "angry": "4" }
+    }
+  },
+  {
+    "date": "08.12.2023",
+    "data": {
+      "feeling": { "stressed": "1", "hungry": "10" },
+      "activities": { "sport": "2", "romance": "5", "work": "4" },
+      "state": { "happy": "3", "angry": "4" }
+    }
+  },
+  {
+    "date": "07.12.2023",
+    "data": {
+      "feeling": { "stressed": "1", "hungry": "10" },
+      "activities": { "sport": "2", "romance": "5", "work": "4" },
+      "state": { "happy": "3", "angry": "4" }
+    }
+  },
+  {
+    "date": "06.12.2023",
+    "data": {
+      "feeling": { "stressed": "1", "hungry": "10" },
+      "activities": { "sport": "2", "romance": "5", "work": "4" },
+      "state": { "happy": "3", "angry": "4" }
+    }
+  }
+]
