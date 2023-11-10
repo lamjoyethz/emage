@@ -1,0 +1,32 @@
+<div class="main-post">
+  <div class="card-wrapper">
+    <div class="card-wrapper-inner">
+      <div class="firstlayout">
+        <div class="spruch">
+          <div class="community-post-title">Days in a Row</div>
+          <div class="community-post-shortdescription">Longest Streak: 112</div>
+          <div *ngIf="layout" class="process-container">
+            <button class="round-button">111</button>
+            <div class="process-line"></div>
+            <button class="round-button">112</button>
+            <div class="process-line"></div>
+            <button class="round-button-last">113</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="chart-wrapper">
+    <div class="chart-container">
+      <div class="chart-description">Weekly Overview</div>
+
+      <canvas id="EmotionWeekly">{{ chartWeekly }}</canvas>
+
+      <div class="therapy-description">
+        <b>Congratulation! </b>You're currently at Week 52. You're doing 27%
+        better than last week. Go to Statistics to read more.
+      </div>
+    </div>
+  </div>
+</div>

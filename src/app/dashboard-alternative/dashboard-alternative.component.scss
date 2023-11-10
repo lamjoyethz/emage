@@ -4,6 +4,29 @@
   align-items: center; /* Center content vertically */
   padding-bottom: 8px;
 }
+.chart-container {
+  background-color: whitesmoke;
+}
+
+.chart-wrapper {
+  padding: 8px;
+}
+
+.chart-description {
+  text-align: left;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 10px;
+}
+
+.therapy-description {
+  padding: 10px;
+}
+
+a {
+  color: green;
+  text-decoration: none;
+}
 
 .column {
   flex: 1; /* Allow columns to grow equally */
