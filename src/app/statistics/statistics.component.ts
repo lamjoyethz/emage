@@ -43,8 +43,12 @@ export class StatisticsComponent implements OnInit {
   createChart() {
     // Create data
 
-    const last7Days = this.statistics.slice(0, 2);
+    const last7Days = this.statistics.slice(0, 7);
     console.log('create chart ', last7Days);
+
+    const dateset = this.statistics.map((x) => x.date);
+
+    console.log(dateset);
     this.chartWeekly = new Chart('EmotionWeekly', {
       type: 'line', //this denotes tha type of chart
 
