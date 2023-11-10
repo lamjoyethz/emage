@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-profile',
@@ -16,6 +17,8 @@ export class UserProfileComponent {
   ngOnInit() {
     this.userName = localStorage.getItem('userName');
   }
+  constructor(private router: Router) {}
+
   onSubmit() {
     // To store the username in localStorage
     localStorage.setItem('userName', this.loginForm.value.email);
@@ -33,8 +36,7 @@ export class UserProfileComponent {
       this.loginForm.value.email.startsWith('user')
     ) {
       // Perform actions when storedUsername is not equal to a string starting with "user%"
-      const nextURL = '/dashboard'; // Replace with the desired URL
-      window.location.href = nextURL;
+      this.router.navigate(['/settings']);
     } else {
       // Perform actions when storedUsername is equal to a string starting with "user%" or null
       this.error = true;
