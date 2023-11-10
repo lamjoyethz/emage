@@ -1,4 +1,4 @@
-<div class="main-post">
+<div *ngIf="userName" class="main-post">
   <div class="card-wrapper">
     <div class="card-wrapper-inner">
       <div class="spruch">
@@ -31,6 +31,37 @@
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!userName" class="main-post">
+  <div class="parent">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="parent-input">
+        <div class="description">USERNAME</div>
+        <input id="email" type="text" matInput formControlName="email" />
+      </div>
+
+      <div class="parent-input">
+        <div class="description">PASSWORD</div>
+
+        <input
+          id="password"
+          type="password"
+          matInput
+          formControlName="password"
+        />
+      </div>
+
+      <div class="submit-button">
+        <button type="submit" mat-button>LOGIN</button>
+      </div>
+    </form>
+
+    Test
+    <div class="alert alert-danger" *ngIf="error">
+      Error: You can only enter user1-user12 as username
     </div>
   </div>
 </div>
