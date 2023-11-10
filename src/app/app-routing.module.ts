@@ -10,6 +10,7 @@ import { NewPostComponent } from './new-post/new-post.component';
 import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
+  { path: '', component: LoginComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'dashboardalternative', component: DashboardAlternativeComponent },
   { path: 'user-profile', component: UserProfileComponent },
