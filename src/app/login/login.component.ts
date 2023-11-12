@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
     }
     if (
       this.loginForm.value.email !== null &&
-      this.loginForm.value.email.startsWith('user')
+      this.loginForm.value.email.toLowerCase().startsWith('user')
     ) {
       // Perform actions when storedUsername is not equal to a string starting with "user%"
       this.router.navigate(['/dashboard']);
