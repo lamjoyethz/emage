@@ -1,2 +1,23 @@
-<p>new-post works!</p>
-<button (click)="onClick()">TEST</button>
+<button (click)="onClick()">back</button>
+<div class="community-post-title">What did you feel?</div>
+
+<div routerLink="/responses/received" class="settings-button">
+    <button>
+      <span class="material-symbols-outlined"> lunch_dining </span>
+      hungery
+    </button>
+  </div>
+
+<div routerLink="/responses/received" class="settings-button">
+    <button>
+      <span class="material-symbols-outlined"> lunch_dining </span>
+      stress
+    </button>
+</div>
+
+  <mat-slider min="1" max="5" step="1" value="1">
+    <input matSliderThumb>
+  </mat-slider>
+
+<button (click)="onClick()">skip</button>
+<button (click)="onClick()">continue</button>
