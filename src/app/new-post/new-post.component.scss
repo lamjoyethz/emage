@@ -3,3 +3,23 @@
     text-align: center;
     font-weight: bold;
 }
+
+.button-container {
+    display: flex;
+    justify-content: space-between; /* 使四个按钮等距分布 */
+    width: 100%; /* 使容器占据整个页面宽度 */
+}
+
+.settings-button {
+    flex: 1; /* 让每个按钮在容器中平均占据可用空间 */
+    margin-right: 20px; /* 可选：添加按钮之间的间距 */
+}
+
+.wide-button {
+    width: 100%; /* 使按钮占据父容器的宽度 */
+  }
+
+.center-slider {
+    align-items: center;
+  }
+
