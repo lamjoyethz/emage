@@ -18,7 +18,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms'; // Import ReactiveFormsModule
 import { HttpClientModule } from '@angular/common/http';
-import {MatSliderModule} from '@angular/material/slider';
+import { MatSliderModule } from '@angular/material/slider';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -44,8 +45,10 @@ import {MatSliderModule} from '@angular/material/slider';
     HttpClientModule,
     ReactiveFormsModule,
     MatSliderModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
+
