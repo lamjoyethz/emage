@@ -1,20 +1,16 @@
 import { Component } from '@angular/core';
 import { ChangeDetectorRef } from '@angular/core';
 
-
-
 @Component({
   selector: 'app-new-post',
   templateUrl: './new-post.component.html',
   styleUrls: ['./new-post.component.scss'],
 })
 export class NewPostComponent {
-
   constructor(private cdRef: ChangeDetectorRef) {}
-  
 
   sliderValue: number = 1;
-  
+
   showSlider: boolean = false;
 
   /* I guess value is also not stored */
@@ -35,7 +31,9 @@ export class NewPostComponent {
     this.showSlider = true;
     this.cdRef.detectChanges();
   }
-
+  onSliderChange() {
+    console.log('Slider value:', this.sliderValue);
+  }
   /* backgroundcolor not done */
   getButtonBackgroundColor(): string {
     let value = this.sliderValue;
@@ -78,4 +76,3 @@ export class NewPostComponent {
       });
   }
 }
-

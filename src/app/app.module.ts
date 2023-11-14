@@ -39,6 +39,7 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     MatToolbarModule,
+    FormsModule,
     MatInputModule,
     SlickCarouselModule,
     MatFormFieldModule,
@@ -51,4 +52,3 @@ import { FormsModule } from '@angular/forms';
   bootstrap: [AppComponent],
 })
 export class AppModule {}
-

@@ -3,25 +3,40 @@
 <div class="community-post-title">What did you feel?</div>
 
 <div class="button-container">
-  <div routerLink="/responses/received" class="settings-button wide-button">
-    <button mat-raised-button color="primary" (click)="setSelectedValue(1, 'stress')" [ngStyle]="{ 'background-color': getButtonBackgroundColor() }">
+  <div class="settings-button wide-button">
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="setSelectedValue(1, 'stress')"
+      [ngStyle]="{ 'background-color': getButtonBackgroundColor() }"
+    >
       <span class="material-symbols-outlined"> sentiment_stressed </span>
       stress
     </button>
   </div>
-  <div routerLink="/responses/received" class="settings-button">
-    <button mat-raised-button color="primary" (click)="setSelectedValue(1, 'hungry')" [ngStyle]="{ 'background-color': getButtonBackgroundColor() }">
+  <div class="settings-button">
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="setSelectedValue(1, 'hungry')"
+      [ngStyle]="{ 'background-color': getButtonBackgroundColor() }"
+    >
       <span class="material-symbols-outlined"> lunch_dining </span>
       hungry
     </button>
   </div>
-  <div routerLink="/responses/received" class="settings-button">
-    <button mat-raised-button color="primary" (click)="setSelectedValue(1, 'tiredness')" [ngStyle]="{ 'background-color': getButtonBackgroundColor() }">
+  <div class="settings-button">
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="setSelectedValue(1, 'tiredness')"
+      [ngStyle]="{ 'background-color': getButtonBackgroundColor() }"
+    >
       <span class="material-symbols-outlined"> airline_seat_flat </span>
       tiredness
     </button>
   </div>
-  <div routerLink="/responses/received" class="settings-button">
+  <div class="settings-button">
     <button mat-raised-button color="primary" (click)="onClick()">
       <span class="material-symbols-outlined"> add </span>
       <div>more options</div>
@@ -29,34 +44,58 @@
   </div>
 </div>
 
-<div class="center-slider">
-  <mat-slider *ngIf="showSlider" min="1" max="5" step="1" [(ngModel)]="sliderValue">
-    <input matSliderThumb>
+<div *ngIf="showSlider" class="center-slider">
+  <mat-slider
+    min="1"
+    max="5"
+    name="mySlider"
+    ngDefaultControl
+    step="1"
+    [(ngModel)]="sliderValue"
+    (ngModelChange)="onSliderChange()"
+  >
+    <input matSliderThumb />
   </mat-slider>
 </div>
+{{ sliderValue }}
 
 <div class="community-post-title">What did you do?</div>
 
 <div class="button-container">
   <div class="settings-button wide-button">
-    <button mat-raised-button color="primary" (click)="setSelectedValue(1, 'stress')" [ngStyle]="{ 'background-color': getButtonBackgroundColor() }">
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="setSelectedValue(1, 'stress')"
+      [ngStyle]="{ 'background-color': getButtonBackgroundColor() }"
+    >
       <span class="material-symbols-outlined"> fitness_center </span>
       sports
     </button>
   </div>
   <div class="settings-button">
-    <button mat-raised-button color="primary" (click)="setSelectedValue(1, 'hungry')" [ngStyle]="{ 'background-color': getButtonBackgroundColor() }">
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="setSelectedValue(1, 'hungry')"
+      [ngStyle]="{ 'background-color': getButtonBackgroundColor() }"
+    >
       <span class="material-symbols-outlined"> favorite </span>
       romance
     </button>
   </div>
   <div class="settings-button">
-    <button mat-raised-button color="primary" (click)="setSelectedValue(1, 'tiredness')" [ngStyle]="{ 'background-color': getButtonBackgroundColor() }">
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="setSelectedValue(1, 'tiredness')"
+      [ngStyle]="{ 'background-color': getButtonBackgroundColor() }"
+    >
       <span class="material-symbols-outlined"> computer </span>
       working
     </button>
   </div>
-  <div routerLink="/responses/received" class="settings-button">
+  <div class="settings-button">
     <button mat-raised-button color="primary" (click)="onClick()">
       <span class="material-symbols-outlined"> add </span>
       <div>more options</div>
@@ -66,7 +105,9 @@
 
 <div class="community-post-title">How are you today?</div>
 
-<span class="material-symbols-outlined"> sentiment_extremely_dissatisfied </span>
+<span class="material-symbols-outlined">
+  sentiment_extremely_dissatisfied
+</span>
 
 <span class="material-symbols-outlined"> sentiment_very_satisfied </span>
 
