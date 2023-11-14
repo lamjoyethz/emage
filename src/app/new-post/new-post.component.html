@@ -35,5 +35,42 @@
   </mat-slider>
 </div>
 
+<div class="community-post-title">What did you do?</div>
+
+<div class="button-container">
+  <div class="settings-button wide-button">
+    <button mat-raised-button color="primary" (click)="setSelectedValue(1, 'stress')" [ngStyle]="{ 'background-color': getButtonBackgroundColor() }">
+      <span class="material-symbols-outlined"> fitness_center </span>
+      sports
+    </button>
+  </div>
+  <div class="settings-button">
+    <button mat-raised-button color="primary" (click)="setSelectedValue(1, 'hungry')" [ngStyle]="{ 'background-color': getButtonBackgroundColor() }">
+      <span class="material-symbols-outlined"> favorite </span>
+      romance
+    </button>
+  </div>
+  <div class="settings-button">
+    <button mat-raised-button color="primary" (click)="setSelectedValue(1, 'tiredness')" [ngStyle]="{ 'background-color': getButtonBackgroundColor() }">
+      <span class="material-symbols-outlined"> computer </span>
+      working
+    </button>
+  </div>
+  <div routerLink="/responses/received" class="settings-button">
+    <button mat-raised-button color="primary" (click)="onClick()">
+      <span class="material-symbols-outlined"> add </span>
+      <div>more options</div>
+    </button>
+  </div>
+</div>
+
+<div class="community-post-title">How are you today?</div>
+
+<span class="material-symbols-outlined"> sentiment_extremely_dissatisfied </span>
+
+<span class="material-symbols-outlined"> sentiment_very_satisfied </span>
+
+<span class="material-symbols-outlined"> sentiment_sad </span>
+
 <button (click)="onClick()">skip</button>
 <button (click)="onClick()">continue</button>
