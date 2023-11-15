@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-new-post',
@@ -7,11 +6,14 @@ import { ChangeDetectorRef } from '@angular/core';
   styleUrls: ['./new-post.component.scss'],
 })
 export class NewPostComponent {
-  constructor(private cdRef: ChangeDetectorRef) {}
 
   sliderValue: number = 1;
 
   showSlider: boolean = false;
+
+  buttonBgColor: string = 'transparent';
+
+  previousSliderValue: number = 1; // 用于保存上一个滑块值
 
   /* I guess value is also not stored */
   setSelectedValue(value: number, option: string): void {
@@ -29,26 +31,30 @@ export class NewPostComponent {
         break;
     }
     this.showSlider = true;
-    this.cdRef.detectChanges();
   }
   onSliderChange() {
     console.log('Slider value:', this.sliderValue);
+    this.buttonBgColor = this.getButtonBackgroundColor();
+    this.previousSliderValue = this.sliderValue; // 保存当前滑块值为上一个值
   }
+
   /* backgroundcolor not done */
   getButtonBackgroundColor(): string {
-    let value = this.sliderValue;
-    if (value === 1) {
-      return 'transparent';
-    } else if (value === 2) {
-      return 'cyan';
-    } else if (value === 3) {
-      return 'green';
-    } else if (value === 4) {
-      return 'yellow';
-    } else if (value === 5) {
-      return 'pink';
-    } else {
-      return 'transparent';
+    // 根据滑块的值返回相应的颜色
+    switch (this.previousSliderValue) {
+      case 1:
+        return 'cyan';
+      case 2:
+        return 'cyan';
+      case 3:
+        return 'green';
+      case 4:
+        return 'yellow';
+      case 5:
+        return 'pink';
+      // 添加更多滑块值和对应颜色
+      default:
+        return 'transparent';
     }
   }
 
