@@ -2,6 +2,8 @@
     font-size: 25px;
     text-align: center;
     font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .button-container {
@@ -16,10 +18,40 @@
 }
 
 .wide-button {
-    width: 100%; /* 使按钮占据父容器的宽度 */
+    width: 150px; /* 调整按钮宽度 */
+    height: 100px; /* 调整按钮高度 */
   }
 
 .center-slider {
+    display: flex;
+    justify-content: center;
     align-items: center;
+    height: 50px; /* 可根据需要调整高度，这里使用视口高度 */
   }
 
+.custom-button {
+    width: 75px; /* 调整按钮宽度 */
+    height: 75px; /* 调整按钮高度 */
+  }
+
+.back {
+    position: absolute;
+    top: 60px; /* 距离顶部的距离 */
+    left: 10px; /* 距离左侧的距离 */
+  }
+
+.skip {
+    width: 75px; /* 调整按钮宽度 */
+    height: 36px; /* 调整按钮高度 */
+    position: absolute;
+    bottom: 86px; /* 距离底部的距离 */
+    left: 36px; /* 距离左侧的距离 */
+  }
+
+.continue {
+    width: 75px; /* 调整按钮宽度 */
+    height: 36px; /* 调整按钮高度 */
+    position: absolute;
+    bottom: 86px; /* 距离底部的距离 */
+    right: 36px; /* 距离左侧的距离 */
+  }
