@@ -1,86 +1,142 @@
 <button class="back" (click)="onClick()">back</button>
 
-<div class="community-post-title">What did you feel?</div>
+<div class="community-post-title1">What did you feel?</div>
 
 <div class="button-container">
-  <div class="settings-button wide-button">
+  <div class="settings-button">
     <button
       mat-raised-button
       class="custom-button"
       color="primary"
-      (click)="setSelectedValue(1, 'stress')"
-      [ngStyle]="{ 'background-color': buttonBgColor }"
-      [(ngModel)]="sliderValue"
-      (ngModelChange)="getButtonBackgroundColor()"
+      (click)="setSelectedValue(sliderValues['stress'], 'stress')"
+      [ngStyle]="{ 'background-color': getButtonBackgroundColor('stress') }"
+      [(ngModel)]="sliderValues['stress']"
+      (ngModelChange)="onSliderChange('stress')"
     >
       <span class="material-symbols-outlined"> sentiment_stressed </span>
       stress
     </button>
+
+    <div 
+    *ngIf="isSliderVisible('stress')" 
+    class="center-slider">
+    <mat-slider
+      min="1"
+      max="5"
+      name="mySliderstress"
+      ngDefaultControl
+      step="1"
+      [(ngModel)]="sliderValues['stress']"
+      (ngModelChange)="onSliderChange('stress')"
+    >
+      <input matSliderThumb />
+    </mat-slider>
   </div>
+  </div>
+
+
   <div class="settings-button">
     <button
       mat-raised-button
       class="custom-button"
       color="primary"
-      (click)="setSelectedValue(1, 'hungry')"
-      [ngStyle]="{ 'background-color': getButtonBackgroundColor() }"
-      [(ngModel)]="sliderValue"
-      (ngModelChange)="onSliderChange()"
+      (click)="setSelectedValue(sliderValues['hungry'], 'hungry')"
+      [ngStyle]="{ 'background-color': getButtonBackgroundColor('hungry') }"
+      [(ngModel)]="sliderValues['hungry']"
+      (ngModelChange)="onSliderChange('hungry')"
     >
       <span class="material-symbols-outlined"> lunch_dining </span>
       hungry
     </button>
+
+    <div 
+    *ngIf="isSliderVisible('hungry')" 
+    class="center-slider">
+    <mat-slider
+      min="1"
+      max="5"
+      name="mySlider"
+      ngDefaultControl
+      step="1"
+      [(ngModel)]="sliderValues['hungry']"
+      (ngModelChange)="onSliderChange('hungry')"
+    >
+      <input matSliderThumb />
+    </mat-slider>
+  </div>
+
   </div>
   <div class="settings-button">
     <button
       mat-raised-button
       class="custom-button"
       color="primary"
-      (click)="setSelectedValue(1, 'tiredness')"
-      [ngStyle]="{ 'background-color': onSliderChange() }"
+      (click)="setSelectedValue(sliderValues['tiredness'], 'tiredness')"
+      [ngStyle]="{ 'background-color': onSliderChange('tiredness') }"
     >
       <span class="material-symbols-outlined"> airline_seat_flat </span>
       tiredness
     </button>
+
+    <div 
+    *ngIf="isSliderVisible('tiredness')" 
+    class="center-slider">
+    <mat-slider
+      min="1"
+      max="5"
+      name="mySlider"
+      ngDefaultControl
+      step="1"
+      [(ngModel)]="sliderValues['tiredness']"
+      (ngModelChange)="onSliderChange('tiredness')"
+    >
+      <input matSliderThumb />
+    </mat-slider>
+  </div>
+
   </div>
   <div class="settings-button">
     <button mat-raised-button class="custom-button" color="primary" (click)="onClick()">
       <span class="material-symbols-outlined"> add </span>
       <div>more options</div>
     </button>
+
+    
+
   </div>
 </div>
-
-<div *ngIf="showSlider" class="center-slider">
-  <mat-slider
-    min="1"
-    max="5"
-    name="mySlider"
-    ngDefaultControl
-    step="1"
-    [(ngModel)]="sliderValue"
-    (ngModelChange)="onSliderChange()"
-  >
-    <input matSliderThumb />
-  </mat-slider>
-</div>
-
-{{ sliderValue }}
 
 <div class="community-post-title">What did you do?</div>
 
 <div class="button-container">
-  <div class="settings-button wide-button">
+  <div class="settings-button">
     <button
       mat-raised-button
       class="custom-button"
       color="primary"
-      (click)="setSelectedValue(1, 'stress')"
-      [ngStyle]="{ 'background-color': onSliderChange() }"
+      (click)="setSelectedValue(sliderValues['sports'], 'sports')"
+      [ngStyle]="{ 'background-color': onSliderChange('sports') }"
     >
       <span class="material-symbols-outlined"> fitness_center </span>
       sports
     </button>
+
+    <div 
+    *ngIf="isSliderVisible('sports')" 
+    class="center-slider2">
+    <mat-slider
+      min="1"
+      max="5"
+      name="mySlider"
+      ngDefaultControl
+      step="1"
+      [(ngModel)]="sliderValues['sports']"
+      (ngModelChange)="onSliderChange('sports')"
+    >
+      <input matSliderThumb />
+    </mat-slider>
+  </div>
+
   </div>
   <div class="settings-button">
     <button
@@ -88,7 +144,7 @@
       class="custom-button"
       color="primary"
       (click)="setSelectedValue(1, 'hungry')"
-      [ngStyle]="{ 'background-color': onSliderChange() }"
+      [ngStyle]="{ 'background-color': onSliderChange('romance') }"
     >
       <span class="material-symbols-outlined"> favorite </span>
       romance
@@ -100,7 +156,7 @@
       class="custom-button"
       color="primary"
       (click)="setSelectedValue(1, 'tiredness')"
-      [ngStyle]="{ 'background-color': onSliderChange() }"
+      [ngStyle]="{ 'background-color': onSliderChange('work') }"
     >
       <span class="material-symbols-outlined"> computer </span>
       <div>work</div>
@@ -122,14 +178,31 @@
       mat-raised-button
       class="custom-button"
       color="primary"
-      (click)="setSelectedValue(1, 'stress')"
-      [ngStyle]="{ 'background-color': onSliderChange() }"
+      (click)="setSelectedValue(sliderValues['angry'], 'angry')"
+      [ngStyle]="{ 'background-color': onSliderChange('angry') }"
     >
     <div style="display: flex; flex-direction: column; align-items: center;">
       <span class="material-symbols-outlined"> sentiment_extremely_dissatisfied </span>
     <span>angry</span>
     </div>
     </button>
+
+    <div 
+    *ngIf="isSliderVisible('angry')" 
+    class="center-slider3">
+    <mat-slider
+      min="1"
+      max="5"
+      name="mySlider"
+      ngDefaultControl
+      step="1"
+      [(ngModel)]="sliderValues['angry']"
+      (ngModelChange)="onSliderChange('angry')"
+    >
+      <input matSliderThumb />
+    </mat-slider>
+  </div>
+
   </div>
   <div class="settings-button">
     <button
@@ -137,7 +210,7 @@
       class="custom-button"
       color="primary"
       (click)="setSelectedValue(1, 'hungry')"
-      [ngStyle]="{ 'background-color': onSliderChange() }"
+      [ngStyle]="{ 'background-color': onSliderChange('happy') }"
     >
       <span class="material-symbols-outlined"> sentiment_very_satisfied </span>
       <span>happy</span>
@@ -149,7 +222,7 @@
       class="custom-button"
       color="primary"
       (click)="setSelectedValue(1, 'tiredness')"
-      [ngStyle]="{ 'background-color': onSliderChange() }"
+      [ngStyle]="{ 'background-color': onSliderChange('sad') }"
     >
       <span class="material-symbols-outlined"> sentiment_sad </span>
       <div>sad</div>
