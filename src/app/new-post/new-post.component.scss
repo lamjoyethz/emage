@@ -2,8 +2,16 @@
     font-size: 25px;
     text-align: center;
     font-weight: bold;
-    margin-top: 20px;
+    margin-top: 60px;
     margin-bottom: 20px;
+}
+
+.community-post-title1 {
+  font-size: 25px;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .button-container {
@@ -23,10 +31,21 @@
   }
 
 .center-slider {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50px; /* 可根据需要调整高度，这里使用视口高度 */
+  position: absolute;
+  bottom: 580px; /* 距离底部的距离 */
+  left: 120px; /* 距离左侧的距离 */
+  }
+
+.center-slider2 {
+    position: absolute;
+    bottom: 395px; /* 距离底部的距离 */
+    left: 120px; /* 距离左侧的距离 */
+  }
+
+.center-slider3 {
+    position: absolute;
+    bottom: 210px; /* 距离底部的距离 */
+    left: 120px; /* 距离左侧的距离 */
   }
 
 .custom-button {
