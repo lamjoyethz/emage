@@ -7,6 +7,37 @@ import { Component } from '@angular/core';
 })
 export class NewPostComponent {
 
+  sliderValues: { [key: string]: number } = {
+    stress: 1,
+    hungry: 1,
+    tiredness: 1,
+    sports: 1,
+    romance: 1,
+    work: 1,
+    angry: 1,
+    happy: 1,
+    sad: 1,
+    // Add other emotions and their default values here
+  };
+
+  activeButton: string | null = null;
+
+  setSelectedValue(value: number, emotion: string): void {
+    this.activeButton = emotion;
+    // Set the value of the selected slider
+    this.sliderValues[emotion] = value;
+  }
+
+  isSliderVisible(emotion: string): boolean {
+    return this.activeButton === emotion;
+  }
+
+  onSliderChange(emotion: string) {
+    console.log(`Slider value for ${emotion}: ${this.sliderValues[emotion]}`);
+    console.log('Slider value:', this.sliderValues[emotion]);
+    this.buttonBgColor = this.getButtonBackgroundColor(emotion);
+  }
+
   sliderValue: number = 1;
 
   showSlider: boolean = false;
@@ -15,7 +46,7 @@ export class NewPostComponent {
 
   previousSliderValue: number = 1; // 用于保存上一个滑块值
 
-  /* I guess value is also not stored */
+  /* I guess value is also not stored 
   setSelectedValue(value: number, option: string): void {
     switch (option) {
       case 'stress':
@@ -32,16 +63,14 @@ export class NewPostComponent {
     }
     this.showSlider = true;
   }
-  onSliderChange() {
-    console.log('Slider value:', this.sliderValue);
-    this.buttonBgColor = this.getButtonBackgroundColor();
-    this.previousSliderValue = this.sliderValue; // 保存当前滑块值为上一个值
-  }
+  */
+
+  
 
   /* backgroundcolor not done */
-  getButtonBackgroundColor(): string {
+  getButtonBackgroundColor(emotion: string): string {
     // 根据滑块的值返回相应的颜色
-    switch (this.previousSliderValue) {
+    switch (this.sliderValues[emotion]) {
       case 1:
         return 'cyan';
       case 2:
