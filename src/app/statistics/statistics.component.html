@@ -1,4 +1,4 @@
-<div class="statistic-wrapper">
+<div class="statistic-wrapper" *ngIf="!layout">
   <div class="chart-wrapper">
     <div class="chart-container">
       <div class="chart-description">Weekly</div>
@@ -33,7 +33,7 @@
   </div>
   <div class="statistic-footer"></div>
 </div>
-<div class="statistic-wrapper">
+<div class="statistic-wrapper" *ngIf="layout">
   <div class="chart-wrapper">
     <div class="chart-container">
       <section class="carousel" aria-label="Gallery">
@@ -42,27 +42,11 @@
             <div class="carousel__snapper">
               <div class="chart-wrapper">
                 <div class="chart-container">
-                  <canvas id="EmotionWeekly">{{ chartWeekly }}</canvas>
+                  <canvas id="EmotionWeekly1">{{ chartWeekly1 }}</canvas>
                   <div class="chart-description">Weekly</div>
                   <div class="therapy-description">
                     Congratulation! You're currently at Week 52. You're doing
                     27% better than last week.
-                    <div class="icon-container">
-                      <div class="column">
-                        <p>
-                          <span class="material-symbols-outlined">
-                            family_star </span
-                          ><br />Confidence
-                        </p>
-                      </div>
-                      <div class="column">
-                        <p>
-                          <span class="material-symbols-outlined">
-                            sentiment_extremely_dissatisfied </span
-                          ><br />Anger
-                        </p>
-                      </div>
-                    </div>
                   </div>
                 </div>
               </div>

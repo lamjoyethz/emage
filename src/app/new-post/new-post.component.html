@@ -16,8 +16,9 @@
     </button>
   </div>
 
-  <div *ngIf="showSlider1" class="center-slider">
+  <div class="center-slider">
     <mat-slider
+      [class.hidden]="!showSlider1"
       [(ngModel)]="sliderValue1"
       (input)="updateButtonColor()"
       min="1"
@@ -30,6 +31,7 @@
     </mat-slider>
     {{ sliderValue1 }}
   </div>
+
   <!-- 
   <div class="settings-button">
     <button

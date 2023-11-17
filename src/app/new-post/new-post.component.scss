@@ -1,9 +1,9 @@
 .community-post-title {
-    font-size: 25px;
-    text-align: center;
-    font-weight: bold;
-    margin-top: 60px;
-    margin-bottom: 20px;
+  font-size: 25px;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 60px;
+  margin-bottom: 20px;
 }
 
 .community-post-title1 {
@@ -13,64 +13,67 @@
   margin-top: 20px;
   margin-bottom: 20px;
 }
+.hidden {
+  display: none;
+}
 
 .button-container {
-    display: flex;
-    justify-content: space-between; /* 使四个按钮等距分布 */
-    width: 100%; /* 使容器占据整个页面宽度 */
+  display: flex;
+  justify-content: space-between; /* 使四个按钮等距分布 */
+  width: 100%; /* 使容器占据整个页面宽度 */
 }
 
 .settings-button {
-    flex: 1; /* 让每个按钮在容器中平均占据可用空间 */
-    margin-right: 20px; /* 可选：添加按钮之间的间距 */
+  flex: 1; /* 让每个按钮在容器中平均占据可用空间 */
+  margin-right: 20px; /* 可选：添加按钮之间的间距 */
 }
 
 .wide-button {
-    width: 150px; /* 调整按钮宽度 */
-    height: 100px; /* 调整按钮高度 */
-  }
+  width: 150px; /* 调整按钮宽度 */
+  height: 100px; /* 调整按钮高度 */
+}
 
 .center-slider {
   position: absolute;
   bottom: 580px; /* 距离底部的距离 */
   left: 120px; /* 距离左侧的距离 */
-  }
+}
 
 .center-slider2 {
-    position: absolute;
-    bottom: 395px; /* 距离底部的距离 */
-    left: 120px; /* 距离左侧的距离 */
-  }
+  position: absolute;
+  bottom: 395px; /* 距离底部的距离 */
+  left: 120px; /* 距离左侧的距离 */
+}
 
 .center-slider3 {
-    position: absolute;
-    bottom: 210px; /* 距离底部的距离 */
-    left: 120px; /* 距离左侧的距离 */
-  }
+  position: absolute;
+  bottom: 210px; /* 距离底部的距离 */
+  left: 120px; /* 距离左侧的距离 */
+}
 
 .custom-button {
-    width: 75px; /* 调整按钮宽度 */
-    height: 75px; /* 调整按钮高度 */
-  }
+  width: 75px; /* 调整按钮宽度 */
+  height: 75px; /* 调整按钮高度 */
+}
 
 .resetButton {
-    position: absolute;
-    top: 60px; /* 距离顶部的距离 */
-    left: 10px; /* 距离左侧的距离 */
-  }
+  position: absolute;
+  top: 60px; /* 距离顶部的距离 */
+  left: 10px; /* 距离左侧的距离 */
+}
 
 .skip {
-    width: 75px; /* 调整按钮宽度 */
-    height: 36px; /* 调整按钮高度 */
-    position: absolute;
-    bottom: 86px; /* 距离底部的距离 */
-    left: 36px; /* 距离左侧的距离 */
-  }
+  width: 75px; /* 调整按钮宽度 */
+  height: 36px; /* 调整按钮高度 */
+  position: absolute;
+  bottom: 86px; /* 距离底部的距离 */
+  left: 36px; /* 距离左侧的距离 */
+}
 
 .logButton {
-    width: 75px; /* 调整按钮宽度 */
-    height: 36px; /* 调整按钮高度 */
-    position: absolute;
-    bottom: 86px; /* 距离底部的距离 */
-    right: 36px; /* 距离左侧的距离 */
-  }
+  width: 75px; /* 调整按钮宽度 */
+  height: 36px; /* 调整按钮高度 */
+  position: absolute;
+  bottom: 86px; /* 距离底部的距离 */
+  right: 36px; /* 距离左侧的距离 */
+}
