@@ -1,4 +1,4 @@
-<button class="back" (click)="onClick()">back</button>
+<button class="resetButton" (click)="onClick()">Reset</button>
 
 <div class="community-post-title1">What did you feel?</div>
 
@@ -9,7 +9,7 @@
       class="custom-button"
       color="primary"
       (click)="setSelectedValue(sliderValues['stress'], 'stress')"
-      [ngStyle]="{ 'background-color': getButtonBackgroundColor('stress') }"
+      [ngStyle]="{ 'background-color': onSliderChange('stress') }"
       [(ngModel)]="sliderValues['stress']"
       (ngModelChange)="onSliderChange('stress')"
     >
@@ -20,18 +20,18 @@
     <div 
     *ngIf="isSliderVisible('stress')" 
     class="center-slider">
-    <mat-slider
-      min="1"
-      max="5"
-      name="mySliderstress"
-      ngDefaultControl
-      step="1"
-      [(ngModel)]="sliderValues['stress']"
-      (ngModelChange)="onSliderChange('stress')"
-    >
-      <input matSliderThumb />
-    </mat-slider>
-  </div>
+      <mat-slider
+        min="1"
+        max="5"
+        name="mySliderstress"
+        ngDefaultControl
+        step="1"
+        [(ngModel)]="sliderValues['stress']"
+        (ngModelChange)="onSliderChange('stress')"
+      >
+        <input matSliderThumb />
+      </mat-slider>
+    </div>
   </div>
 
 
@@ -41,7 +41,7 @@
       class="custom-button"
       color="primary"
       (click)="setSelectedValue(sliderValues['hungry'], 'hungry')"
-      [ngStyle]="{ 'background-color': getButtonBackgroundColor('hungry') }"
+      [ngStyle]="{ 'background-color': onSliderChange('hungry') }"
       [(ngModel)]="sliderValues['hungry']"
       (ngModelChange)="onSliderChange('hungry')"
     >
@@ -52,7 +52,7 @@
     <div 
     *ngIf="isSliderVisible('hungry')" 
     class="center-slider">
-    <mat-slider
+      <mat-slider
       min="1"
       max="5"
       name="mySlider"
@@ -60,12 +60,12 @@
       step="1"
       [(ngModel)]="sliderValues['hungry']"
       (ngModelChange)="onSliderChange('hungry')"
-    >
-      <input matSliderThumb />
-    </mat-slider>
+      >
+        <input matSliderThumb />
+      </mat-slider>
+    </div>
   </div>
 
-  </div>
   <div class="settings-button">
     <button
       mat-raised-button
@@ -81,28 +81,25 @@
     <div 
     *ngIf="isSliderVisible('tiredness')" 
     class="center-slider">
-    <mat-slider
-      min="1"
-      max="5"
-      name="mySlider"
-      ngDefaultControl
-      step="1"
-      [(ngModel)]="sliderValues['tiredness']"
-      (ngModelChange)="onSliderChange('tiredness')"
-    >
-      <input matSliderThumb />
-    </mat-slider>
+      <mat-slider
+        min="1"
+        max="5"
+        name="mySlider"
+        ngDefaultControl
+        step="1"
+        [(ngModel)]="sliderValues['tiredness']"
+        (ngModelChange)="onSliderChange('tiredness')"
+      >
+        <input matSliderThumb />
+      </mat-slider>
+    </div>
   </div>
 
-  </div>
   <div class="settings-button">
     <button mat-raised-button class="custom-button" color="primary" (click)="onClick()">
       <span class="material-symbols-outlined"> add </span>
       <div>more options</div>
     </button>
-
-    
-
   </div>
 </div>
 
@@ -124,20 +121,20 @@
     <div 
     *ngIf="isSliderVisible('sports')" 
     class="center-slider2">
-    <mat-slider
-      min="1"
-      max="5"
-      name="mySlider"
-      ngDefaultControl
-      step="1"
-      [(ngModel)]="sliderValues['sports']"
-      (ngModelChange)="onSliderChange('sports')"
-    >
-      <input matSliderThumb />
-    </mat-slider>
+      <mat-slider
+        min="1"
+        max="5"
+        name="mySlider"
+        ngDefaultControl
+        step="1"
+        [(ngModel)]="sliderValues['sports']"
+        (ngModelChange)="onSliderChange('sports')"
+      >
+        <input matSliderThumb />
+      </mat-slider>
+    </div>
   </div>
 
-  </div>
   <div class="settings-button">
     <button
       mat-raised-button
@@ -150,6 +147,7 @@
       romance
     </button>
   </div>
+
   <div class="settings-button">
     <button
       mat-raised-button
@@ -162,6 +160,7 @@
       <div>work</div>
     </button>
   </div>
+
   <div class="settings-button">
     <button mat-raised-button class="custom-button" color="primary" (click)="onClick()">
       <span class="material-symbols-outlined"> add </span>
@@ -181,29 +180,29 @@
       (click)="setSelectedValue(sliderValues['angry'], 'angry')"
       [ngStyle]="{ 'background-color': onSliderChange('angry') }"
     >
-    <div style="display: flex; flex-direction: column; align-items: center;">
-      <span class="material-symbols-outlined"> sentiment_extremely_dissatisfied </span>
-    <span>angry</span>
-    </div>
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <span class="material-symbols-outlined"> sentiment_extremely_dissatisfied </span>
+        <span>angry</span>
+      </div>
     </button>
 
     <div 
     *ngIf="isSliderVisible('angry')" 
     class="center-slider3">
-    <mat-slider
-      min="1"
-      max="5"
-      name="mySlider"
-      ngDefaultControl
-      step="1"
-      [(ngModel)]="sliderValues['angry']"
-      (ngModelChange)="onSliderChange('angry')"
-    >
-      <input matSliderThumb />
-    </mat-slider>
+      <mat-slider
+        min="1"
+        max="5"
+        name="mySlider"
+        ngDefaultControl
+        step="1"
+        [(ngModel)]="sliderValues['angry']"
+        (ngModelChange)="onSliderChange('angry')"
+      >
+        <input matSliderThumb />
+      </mat-slider>
+    </div>
   </div>
 
-  </div>
   <div class="settings-button">
     <button
       mat-raised-button
@@ -216,6 +215,7 @@
       <span>happy</span>
     </button>
   </div>
+
   <div class="settings-button">
     <button
       mat-raised-button
@@ -228,6 +228,7 @@
       <div>sad</div>
     </button>
   </div>
+  
   <div class="settings-button">
     <button mat-raised-button class="custom-button" color="primary" (click)="onClick()">
       <span class="material-symbols-outlined"> add </span>
@@ -236,5 +237,4 @@
   </div>
 </div>
 
-<button class="skip" (click)="onClick()">skip</button>
-<button class="continue" (click)="onClick()">continue</button>
+<button class="logButton" (click)="onClick()">Log</button>
