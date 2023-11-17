@@ -3,38 +3,34 @@
 <div class="community-post-title1">What did you feel?</div>
 
 <div class="button-container">
-  <div class="settings-button">
+  <div class="settings-button wide-button">
     <button
       mat-raised-button
       class="custom-button"
       color="primary"
-      (click)="setSelectedValue(sliderValues['stress'], 'stress')"
-      [(ngModel)]="sliderValues['stress']"
-      (ngModelChange)="onSliderChange('stress')"
+      (click)="triggerButton(1)"
+      [ngStyle]="{ 'background-color': buttonColor1 }"
     >
       <span class="material-symbols-outlined"> sentiment_stressed </span>
-      <span>stress</span>
-      level:{{ sliderValues['stress'] }}
+      stress
     </button>
-
-    <div 
-    *ngIf="isSliderVisible('stress')" 
-    class="center-slider">
-      <mat-slider
-        min="1"
-        max="5"
-        name="mySliderstress"
-        ngDefaultControl
-        step="1"
-        [(ngModel)]="sliderValues['stress']"
-        (ngModelChange)="onSliderChange('stress')"
-      >
-        <input matSliderThumb />
-      </mat-slider>
-    </div>
   </div>
 
-
+  <div *ngIf="showSlider1" class="center-slider">
+    <mat-slider
+      [(ngModel)]="sliderValue1"
+      (input)="updateButtonColor()"
+      min="1"
+      max="5"
+      step="1"
+      name="sliderValue1"
+      ngDefaultControl
+    >
+      <input matSliderThumb />
+    </mat-slider>
+    {{ sliderValue1 }}
+  </div>
+  <!-- 
   <div class="settings-button">
     <button
       mat-raised-button
@@ -45,21 +41,18 @@
       (ngModelChange)="onSliderChange('hungry')"
     >
       <span class="material-symbols-outlined"> lunch_dining </span>
-      hungry
-      level:{{ sliderValues['hungry'] }}
+      hungry level:{{ sliderValues["hungry"] }}
     </button>
 
-    <div 
-    *ngIf="isSliderVisible('hungry')" 
-    class="center-slider">
+    <div *ngIf="isSliderVisible('hungry')" class="center-slider">
       <mat-slider
-      min="1"
-      max="5"
-      name="mySlider"
-      ngDefaultControl
-      step="1"
-      [(ngModel)]="sliderValues['hungry']"
-      (ngModelChange)="onSliderChange('hungry')"
+        min="1"
+        max="5"
+        name="mySlider"
+        ngDefaultControl
+        step="1"
+        [(ngModel)]="sliderValues['hungry']"
+        (ngModelChange)="onSliderChange('hungry')"
       >
         <input matSliderThumb />
       </mat-slider>
@@ -75,13 +68,10 @@
       [(ngModel)]="sliderValues['hungry']"
     >
       <span class="material-symbols-outlined"> airline_seat_flat </span>
-      tiredness
-      level:{{ sliderValues['tiredness'] }}
+      tiredness level:{{ sliderValues["tiredness"] }}
     </button>
 
-    <div 
-    *ngIf="isSliderVisible('tiredness')" 
-    class="center-slider">
+    <div *ngIf="isSliderVisible('tiredness')" class="center-slider">
       <mat-slider
         min="1"
         max="5"
@@ -97,7 +87,12 @@
   </div>
 
   <div class="settings-button">
-    <button mat-raised-button class="custom-button" color="primary" (click)="onClick()">
+    <button
+      mat-raised-button
+      class="custom-button"
+      color="primary"
+      (click)="onClick()"
+    >
       <span class="material-symbols-outlined"> add </span>
       <div>more options</div>
     </button>
@@ -116,13 +111,10 @@
       [(ngModel)]="sliderValues['sports']"
     >
       <span class="material-symbols-outlined"> fitness_center </span>
-      sports
-      level:{{ sliderValues['sports'] }}
+      sports level:{{ sliderValues["sports"] }}
     </button>
 
-    <div 
-    *ngIf="isSliderVisible('sports')" 
-    class="center-slider2">
+    <div *ngIf="isSliderVisible('sports')" class="center-slider2">
       <mat-slider
         min="1"
         max="5"
@@ -146,13 +138,10 @@
       [(ngModel)]="sliderValues['romance']"
     >
       <span class="material-symbols-outlined"> favorite </span>
-      romance
-      level:{{ sliderValues['romance'] }}
+      romance level:{{ sliderValues["romance"] }}
     </button>
 
-    <div 
-    *ngIf="isSliderVisible('romance')" 
-    class="center-slider2">
+    <div *ngIf="isSliderVisible('romance')" class="center-slider2">
       <mat-slider
         min="1"
         max="5"
@@ -177,11 +166,9 @@
     >
       <span class="material-symbols-outlined"> computer </span>
       <div>work</div>
-      level:{{ sliderValues['work'] }}
+      level:{{ sliderValues["work"] }}
     </button>
-    <div 
-    *ngIf="isSliderVisible('work')" 
-    class="center-slider2">
+    <div *ngIf="isSliderVisible('work')" class="center-slider2">
       <mat-slider
         min="1"
         max="5"
@@ -197,7 +184,12 @@
   </div>
 
   <div class="settings-button">
-    <button mat-raised-button class="custom-button" color="primary" (click)="onClick()">
+    <button
+      mat-raised-button
+      class="custom-button"
+      color="primary"
+      (click)="onClick()"
+    >
       <span class="material-symbols-outlined"> add </span>
       <div>more options</div>
     </button>
@@ -215,16 +207,16 @@
       (click)="setSelectedValue(sliderValues['angry'], 'angry')"
       [(ngModel)]="sliderValues['angry']"
     >
-      <div style="display: flex; flex-direction: column; align-items: center;">
-        <span class="material-symbols-outlined"> sentiment_extremely_dissatisfied </span>
+      <div style="display: flex; flex-direction: column; align-items: center">
+        <span class="material-symbols-outlined">
+          sentiment_extremely_dissatisfied
+        </span>
         <span>angry</span>
-        level:{{ sliderValues['angry'] }}
+        level:{{ sliderValues["angry"] }}
       </div>
     </button>
 
-    <div 
-    *ngIf="isSliderVisible('angry')" 
-    class="center-slider3">
+    <div *ngIf="isSliderVisible('angry')" class="center-slider3">
       <mat-slider
         min="1"
         max="5"
@@ -249,11 +241,9 @@
     >
       <span class="material-symbols-outlined"> sentiment_very_satisfied </span>
       <span>happy</span>
-      level:{{ sliderValues['happy'] }}
+      level:{{ sliderValues["happy"] }}
     </button>
-    <div 
-    *ngIf="isSliderVisible('happy')" 
-    class="center-slider3">
+    <div *ngIf="isSliderVisible('happy')" class="center-slider3">
       <mat-slider
         min="1"
         max="5"
@@ -278,11 +268,9 @@
     >
       <span class="material-symbols-outlined"> sentiment_sad </span>
       <div>sad</div>
-      level:{{ sliderValues['sad'] }}
+      level:{{ sliderValues["sad"] }}
     </button>
-    <div 
-    *ngIf="isSliderVisible('sad')" 
-    class="center-slider3">
+    <div *ngIf="isSliderVisible('sad')" class="center-slider3">
       <mat-slider
         min="1"
         max="5"
@@ -296,14 +284,18 @@
       </mat-slider>
     </div>
   </div>
-  
+
   <div class="settings-button">
-    <button mat-raised-button class="custom-button" color="primary" (click)="onClick()">
+    <button
+      mat-raised-button
+      class="custom-button"
+      color="primary"
+      (click)="onClick()"
+    >
       <span class="material-symbols-outlined"> add </span>
       <div>more options</div>
     </button>
-  </div>
+  </div> -->
 </div>
 
 <button class="logButton" (click)="onClick()">Log</button>
-
