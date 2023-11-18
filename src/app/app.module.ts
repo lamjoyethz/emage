@@ -20,6 +20,7 @@ import { ReactiveFormsModule } from '@angular/forms'; // Import ReactiveFormsMod
 import { HttpClientModule } from '@angular/common/http';
 import { MatSliderModule } from '@angular/material/slider';
 import { FormsModule } from '@angular/forms';
+import { NewAlternativeComponent } from './new-alternative/new-alternative.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { FormsModule } from '@angular/forms';
     StatisticsAlternativeComponent,
     NewPostComponent,
     LoginComponent,
+    NewAlternativeComponent,
   ],
   imports: [
     BrowserModule,
