@@ -53,7 +53,18 @@
             </div>
           </li>
           <li id="carousel__slide2" tabindex="0" class="carousel__slide">
-            <div class="carousel__snapper"></div>
+            <div class="carousel__snapper">
+              <div class="chart-wrapper">
+                <div class="chart-container">
+                  <canvas id="EmotionMonthly1">{{ chartMonthly1 }}</canvas>
+                  <div class="chart-description">Monthly</div>
+                  <div class="therapy-description">
+                    Congratulation! You're currently at Week 52. You're doing
+                    27% better than last week.
+                  </div>
+                </div>
+              </div>
+            </div>
             <a href="#carousel__slide1" class="carousel__prev"
               >Go to previous slide</a
             >
@@ -62,21 +73,20 @@
             >
           </li>
           <li id="carousel__slide3" tabindex="0" class="carousel__slide">
-            <div class="carousel__snapper"></div>
+            <div class="carousel__snapper">
+              <div class="chart-wrapper">
+                <div class="chart-container">
+                  <canvas id="EmotionYearly1">{{ chartYearly1 }}</canvas>
+                  <div class="chart-description">Yearly</div>
+                  <div class="therapy-description">
+                    Congratulation! You're currently at Week 52. You're doing
+                    27% better than last week.
+                  </div>
+                </div>
+              </div>
+            </div>
             <a href="#carousel__slide2" class="carousel__prev"
               >Go to previous slide</a
-            >
-            <a href="#carousel__slide4" class="carousel__next"
-              >Go to next slide</a
-            >
-          </li>
-          <li id="carousel__slide4" tabindex="0" class="carousel__slide">
-            <div class="carousel__snapper"></div>
-            <a href="#carousel__slide3" class="carousel__prev"
-              >Go to previous slide</a
-            >
-            <a href="#carousel__slide1" class="carousel__next"
-              >Go to first slide</a
             >
           </li>
         </ol>
@@ -95,11 +105,6 @@
             <li class="carousel__navigation-item">
               <a href="#carousel__slide3" class="carousel__navigation-button"
                 >Go to slide 3</a
-              >
-            </li>
-            <li class="carousel__navigation-item">
-              <a href="#carousel__slide4" class="carousel__navigation-button"
-                >Go to slide 4</a
               >
             </li>
           </ol>

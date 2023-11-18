@@ -11,55 +11,113 @@ export class DashboardComponent implements OnInit {
   public chartWeekly: any;
   public chartYearly: any;
   public chartMonthly: any;
-  layout: Boolean = false;
+  public chartWeekly1: any;
+  public chartMonthly1: any;
+  public chartYearly1: any;
+  statistics: Statistic[] = [];
+
+  relationshipPoint: number[] = [];
+  workPoint: number[] = [];
+  sportPoint: number[] = [];
+  dates: string[] = [];
+
+  layout: boolean = false;
+
   ngOnInit(): void {
-    const storedLayout = localStorage.getItem('layout');
-    console.log("You're at " + storedLayout);
-    this.layout = storedLayout == '1' ? false : true;
-    this.createChart();
+    const storedUsername = localStorage.getItem('userName');
+    console.log(
+      'this localStorage.getIte  is: ',
+      localStorage.getItem('layout')
+    );
+
+    this.layout = localStorage.getItem('layout') === '0' ? false : true;
+    console.log('this layout is: ', this.layout);
+
+    // acc username work on json
+    const pathStatistic =
+      'assets/Backend/' +
+      storedUsername +
+      '/statistics/' +
+      storedUsername +
+      '.json';
+
+    console.log(pathStatistic);
+
+    fetch(pathStatistic)
+      .then((response) => response.json())
+      .then((jsonData) => {
+        this.statistics = jsonData;
+        console.log('HEO ', jsonData.data);
+      })
+      .then(() => {
+        this.createChart();
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   }
   switchLayout() {}
   createChart() {
+    // Create data
+    const last7Days = this.statistics.slice(0, 7);
+    last7Days.forEach((x) => {
+      this.dates.push(x.date);
+      let cworkPoint = Number(x.data?.activities?.work);
+      let csportPoint = Number(x.data?.activities?.sport);
+      let crelationshipPoint = Number(x.data?.activities?.romance);
+
+      let feeling =
+        (Number(x.data?.feeling?.stress || 0) +
+          Number(x.data?.feeling?.hungry || 0)) /
+        2;
+      let states =
+        (Number(x.data?.state.angry || 0) +
+          Number((x.data?.feeling.happy || 0) + (x.data?.feeling?.sad || 0))) /
+        3;
+      this.workPoint.push((cworkPoint + feeling + states) / 3);
+      this.relationshipPoint.push((crelationshipPoint + feeling + states) / 3);
+      this.sportPoint.push((csportPoint + feeling + states) / 3);
+    });
+
+    console.log('this workPoint ', this.workPoint);
+    console.log('this relationshipPoint ', this.relationshipPoint);
+    console.log('this sportPoint ', this.sportPoint);
+
+    const dateset = this.statistics.map((x) => x.date);
+
+    console.log(this.layout);
     this.chartWeekly = new Chart('EmotionWeekly', {
       type: 'line', //this denotes tha type of chart
 
       data: {
         // values on X-Axis
-        labels: [
-          '2022-05-10',
-          '2022-05-11',
-          '2022-05-12',
-          '2022-05-13',
-          '2022-05-14',
-          '2022-05-15',
-          '2022-05-16',
-        ],
+        labels: this.dates,
         datasets: [
           {
             label: 'Work',
-            data: ['99', '12', '35', '56', '92', '12', '13'],
+            data: this.workPoint,
             backgroundColor: '#FA7070',
           },
           {
             label: 'Relationship',
-            data: ['34', '35', '1', '90', '17', '0.00', '78'],
+            data: this.relationshipPoint,
             backgroundColor: '#F3B664',
           },
           {
-            label: 'Finance',
-            data: ['35', '89', '77', '44', '17', '0.00', '23'],
+            label: 'Sport',
+            data: this.sportPoint,
             backgroundColor: '#F1EB90',
-          },
-          {
-            label: 'Family',
-            data: ['08', '34', '12', '22', '33', '0.00', '45'],
-            backgroundColor: '#9FBB73',
           },
         ],
       },
       options: {
-        maintainAspectRatio: false,
+        aspectRatio: 1,
       },
     });
   }
+}
+
+export interface Statistic {
+  date: string;
+  data: any;
 }

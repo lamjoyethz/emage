@@ -12,7 +12,15 @@ export class StatisticsComponent implements OnInit {
   public chartYearly: any;
   public chartMonthly: any;
   public chartWeekly1: any;
+  public chartMonthly1: any;
+  public chartYearly1: any;
+
+  relationshipPoint: number[] = [];
+  workPoint: number[] = [];
+  sportPoint: number[] = [];
+  dates: string[] = [];
   statistics: Statistic[] = [];
+
   layout: boolean = false;
 
   ngOnInit(): void {
@@ -39,7 +47,7 @@ export class StatisticsComponent implements OnInit {
       .then((response) => response.json())
       .then((jsonData) => {
         this.statistics = jsonData;
-        console.log(jsonData);
+        console.log('HEO ', jsonData.data);
       })
       .then(() => {
         this.createChart();
@@ -51,9 +59,29 @@ export class StatisticsComponent implements OnInit {
 
   createChart() {
     // Create data
-
     const last7Days = this.statistics.slice(0, 7);
-    console.log('create chart ', last7Days);
+    last7Days.forEach((x) => {
+      this.dates.push(x.date);
+      let cworkPoint = Number(x.data?.activities?.work);
+      let csportPoint = Number(x.data?.activities?.sport);
+      let crelationshipPoint = Number(x.data?.activities?.romance);
+
+      let feeling =
+        (Number(x.data?.feeling?.stress || 0) +
+          Number(x.data?.feeling?.hungry || 0)) /
+        2;
+      let states =
+        (Number(x.data?.state.angry || 0) +
+          Number((x.data?.feeling.happy || 0) + (x.data?.feeling?.sad || 0))) /
+        3;
+      this.workPoint.push((cworkPoint + feeling + states) / 3);
+      this.relationshipPoint.push((crelationshipPoint + feeling + states) / 3);
+      this.sportPoint.push((csportPoint + feeling + states) / 3);
+    });
+
+    console.log('this workPoint ', this.workPoint);
+    console.log('this relationshipPoint ', this.relationshipPoint);
+    console.log('this sportPoint ', this.sportPoint);
 
     const dateset = this.statistics.map((x) => x.date);
 
@@ -64,40 +92,85 @@ export class StatisticsComponent implements OnInit {
 
         data: {
           // values on X-Axis
-          labels: [
-            '2022-05-10',
-            '2022-05-11',
-            '2022-05-12',
-            '2022-05-13',
-            '2022-05-14',
-            '2022-05-15',
-            '2022-05-16',
-          ],
+          labels: this.dates,
           datasets: [
             {
               label: 'Work',
-              data: ['99', '12', '35', '56', '92', '12', '13'],
+              data: this.workPoint,
               backgroundColor: '#FA7070',
             },
             {
               label: 'Relationship',
-              data: ['34', '35', '1', '90', '17', '0.00', '78'],
+              data: this.relationshipPoint,
               backgroundColor: '#F3B664',
             },
             {
-              label: 'Finance',
-              data: ['35', '89', '77', '44', '17', '0.00', '23'],
+              label: 'Sport',
+              data: this.sportPoint,
               backgroundColor: '#F1EB90',
-            },
-            {
-              label: 'Family',
-              data: ['08', '34', '12', '22', '33', '0.00', '45'],
-              backgroundColor: '#9FBB73',
             },
           ],
         },
         options: {
-          aspectRatio: 1.2,
+          aspectRatio: 1,
+        },
+      });
+      this.chartMonthly1 = new Chart('EmotionMonthly1', {
+        type: 'line', //this denotes tha type of chart
+
+        data: {
+          // values on X-Axis
+          labels: ['Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb'],
+
+          datasets: [
+            {
+              label: 'Work',
+              data: this.workPoint,
+              backgroundColor: '#FA7070',
+            },
+            {
+              label: 'Relationship',
+              data: this.relationshipPoint,
+              backgroundColor: '#F3B664',
+            },
+            {
+              label: 'Sport',
+              data: this.sportPoint,
+              backgroundColor: '#F1EB90',
+            },
+          ],
+        },
+        options: {
+          aspectRatio: 1,
+        },
+      });
+      this.chartYearly1 = new Chart('EmotionYearly1', {
+        type: 'line', //this denotes tha type of chart
+
+        data: {
+          labels: ['2017', '2018', '2019', '2020', '2021', '2022', '2023'],
+
+          // values on X-Axis
+          datasets: [
+            {
+              label: 'Work',
+              data: this.workPoint,
+              backgroundColor: '#FA7070',
+            },
+            {
+              label: 'Relationship',
+              data: this.relationshipPoint,
+              backgroundColor: '#F3B664',
+            },
+            {
+              label: 'Sport',
+              data: this.sportPoint,
+              backgroundColor: '#F1EB90',
+            },
+          ],
+        },
+        options: {
+          aspectRatio: 1,
         },
       });
     } else {
@@ -106,35 +179,22 @@ export class StatisticsComponent implements OnInit {
 
         data: {
           // values on X-Axis
-          labels: [
-            '2022-05-10',
-            '2022-05-11',
-            '2022-05-12',
-            '2022-05-13',
-            '2022-05-14',
-            '2022-05-15',
-            '2022-05-16',
-          ],
+          labels: this.dates,
           datasets: [
             {
               label: 'Work',
-              data: ['99', '12', '35', '56', '92', '12', '13'],
+              data: this.workPoint,
               backgroundColor: '#FA7070',
             },
             {
               label: 'Relationship',
-              data: ['34', '35', '1', '90', '17', '0.00', '78'],
+              data: this.relationshipPoint,
               backgroundColor: '#F3B664',
             },
             {
-              label: 'Finance',
-              data: ['35', '89', '77', '44', '17', '0.00', '23'],
+              label: 'Sport',
+              data: this.sportPoint,
               backgroundColor: '#F1EB90',
-            },
-            {
-              label: 'Family',
-              data: ['08', '34', '12', '22', '33', '0.00', '45'],
-              backgroundColor: '#9FBB73',
             },
           ],
         },
@@ -147,27 +207,23 @@ export class StatisticsComponent implements OnInit {
 
         data: {
           // values on X-Axis
-          labels: ['2017', '2018', '2019', '2020', '2021', '2022', '2023'],
+          labels: ['Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb'],
+
           datasets: [
             {
               label: 'Work',
-              data: ['99', '12', '35', '56', '92', '12', '13'],
+              data: this.workPoint,
               backgroundColor: '#FA7070',
             },
             {
               label: 'Relationship',
-              data: ['56', '76', '34', '35', '17', '0.00', '78'],
+              data: this.relationshipPoint,
               backgroundColor: '#F3B664',
             },
             {
-              label: 'Finance',
-              data: ['23', '65', '89', '78', '17', '56', '45'],
+              label: 'Sport',
+              data: this.sportPoint,
               backgroundColor: '#F1EB90',
-            },
-            {
-              label: 'Family',
-              data: ['13', '34', '12', '22', '33', '0.00', '56'],
-              backgroundColor: '#9FBB73',
             },
           ],
         },
@@ -180,27 +236,23 @@ export class StatisticsComponent implements OnInit {
 
         data: {
           // values on X-Axis
-          labels: ['Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb'],
+          labels: ['2017', '2018', '2019', '2020', '2021', '2022', '2023'],
+
           datasets: [
             {
               label: 'Work',
-              data: ['99', '12', '35', '56', '92', '12', '13'],
+              data: this.workPoint,
               backgroundColor: '#FA7070',
             },
             {
               label: 'Relationship',
-              data: ['56', '76', '34', '35', '17', '0.00', '78'],
+              data: this.relationshipPoint,
               backgroundColor: '#F3B664',
             },
             {
-              label: 'Finance',
-              data: ['23', '65', '89', '78', '17', '56', '45'],
+              label: 'Sport',
+              data: this.sportPoint,
               backgroundColor: '#F1EB90',
-            },
-            {
-              label: 'Family',
-              data: ['13', '34', '12', '22', '33', '0.00', '56'],
-              backgroundColor: '#9FBB73',
             },
           ],
         },

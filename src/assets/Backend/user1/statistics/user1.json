@@ -2,47 +2,55 @@
   {
     "date": "12.12.2023",
     "data": {
-      "feeling": { "stressed": "1", "hungry": "10" },
-      "activities": { "sport": "2", "romance": "5", "work": "4" },
+      "feeling": { "stressed": "1", "hungry": "5" },
+      "activities": { "sport": "1", "romance": "3", "work": "4" },
       "state": { "happy": "3", "angry": "4" }
     }
   },
   {
     "date": "11.12.2023",
     "data": {
-      "feeling": { "stressed": "1", "hungry": "10" },
-      "activities": { "sport": "2", "romance": "5", "work": "4" },
+      "feeling": { "stressed": "2", "hungry": "0" },
+      "activities": { "sport": "2", "romance": "1", "work": "4" },
       "state": { "happy": "3", "angry": "4" }
     }
   },
   {
-    "date": "9.12.2023",
+    "date": "09.12.2023",
     "data": {
-      "feeling": { "stressed": "1", "hungry": "10" },
-      "activities": { "sport": "2", "romance": "5", "work": "4" },
+      "feeling": { "stressed": "4", "hungry": "2" },
+      "activities": { "sport": "4", "romance": "2", "work": "1" },
       "state": { "happy": "3", "angry": "4" }
     }
   },
   {
     "date": "08.12.2023",
     "data": {
-      "feeling": { "stressed": "1", "hungry": "10" },
-      "activities": { "sport": "2", "romance": "5", "work": "4" },
+      "feeling": { "stressed": "0", "hungry": "3" },
+      "activities": { "sport": "2", "romance": "5", "work": "2" },
       "state": { "happy": "3", "angry": "4" }
     }
   },
   {
     "date": "07.12.2023",
     "data": {
-      "feeling": { "stressed": "1", "hungry": "10" },
-      "activities": { "sport": "2", "romance": "5", "work": "4" },
+      "feeling": { "stressed": "2", "hungry": "4" },
+      "activities": { "sport": "1", "romance": "3", "work": "5" },
       "state": { "happy": "3", "angry": "4" }
     }
   },
   {
     "date": "06.12.2023",
     "data": {
-      "feeling": { "stressed": "1", "hungry": "10" },
+      "feeling": { "stressed": "3", "hungry": "5" },
+      "activities": { "sport": "2", "romance": "5", "work": "4" },
+      "state": { "happy": "3", "angry": "4" }
+    }
+  },
+  {
+    "date": "05.12.2023",
+    "data": {
+      "feeling": { "stressed": "3", "hungry": "5" },
       "activities": { "sport": "2", "romance": "5", "work": "4" },
       "state": { "happy": "3", "angry": "4" }
     }

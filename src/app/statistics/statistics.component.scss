@@ -30,6 +30,7 @@ a {
 
 .statistic-footer {
   padding: 30px;
+  background-color: white;
 }
 
 @keyframes tonext {
@@ -116,9 +117,7 @@ li {
 
 .carousel {
   position: relative;
-  padding-top: 150%;
-  filter: drop-shadow(0 0 10px #0003);
-  perspective: 100px;
+  height: 85vh;
 }
 
 .carousel__viewport {
@@ -138,12 +137,12 @@ li {
   position: relative;
   flex: 0 0 100%;
   width: 100%;
-  background-color: whitesmoke;
+  background-color: white;
   counter-increment: item;
 }
 
 .carousel__slide:nth-child(even) {
-  background-color: #99f;
+  background-color: white;
 }
 
 .carousel__slide:before {
