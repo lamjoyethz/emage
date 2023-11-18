@@ -35,7 +35,7 @@ export class DashboardComponent implements OnInit {
 
     // acc username work on json
     const pathStatistic =
-      '/assets/Backend/' +
+      'assets/Backend/' +
       storedUsername +
       '/statistics/' +
       storedUsername +
