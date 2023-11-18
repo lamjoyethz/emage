@@ -48,6 +48,37 @@ export class DashboardComponent implements OnInit {
       .then((jsonData) => {
         this.statistics = jsonData;
         console.log('HEO ', jsonData.data);
+
+        // Create data
+        const last7Days = jsonData.slice(0, 7);
+        last7Days.forEach((x: any) => {
+          this.dates.push(x.date);
+          let cworkPoint = Number(x.data?.activities?.work);
+          let csportPoint = Number(x.data?.activities?.sport);
+          let crelationshipPoint = Number(x.data?.activities?.romance);
+
+          let feeling =
+            (Number(x.data?.feeling?.stress || 0) +
+              Number(x.data?.feeling?.hungry || 0)) /
+            2;
+          let states =
+            (Number(x.data?.state.angry || 0) +
+              Number(
+                (x.data?.feeling.happy || 0) + (x.data?.feeling?.sad || 0)
+              )) /
+            3;
+          this.workPoint.push((cworkPoint + feeling + states) / 3);
+          this.relationshipPoint.push(
+            (crelationshipPoint + feeling + states) / 3
+          );
+          this.sportPoint.push((csportPoint + feeling + states) / 3);
+        });
+
+        console.log('this workPoint ', this.workPoint);
+        console.log('this relationshipPoint ', this.relationshipPoint);
+        console.log('this sportPoint ', this.sportPoint);
+
+        const dateset = this.statistics.map((x) => x.date);
       })
       .then(() => {
         this.createChart();
@@ -58,33 +89,6 @@ export class DashboardComponent implements OnInit {
   }
   switchLayout() {}
   createChart() {
-    // Create data
-    const last7Days = this.statistics.slice(0, 7);
-    last7Days.forEach((x) => {
-      this.dates.push(x.date);
-      let cworkPoint = Number(x.data?.activities?.work);
-      let csportPoint = Number(x.data?.activities?.sport);
-      let crelationshipPoint = Number(x.data?.activities?.romance);
-
-      let feeling =
-        (Number(x.data?.feeling?.stress || 0) +
-          Number(x.data?.feeling?.hungry || 0)) /
-        2;
-      let states =
-        (Number(x.data?.state.angry || 0) +
-          Number((x.data?.feeling.happy || 0) + (x.data?.feeling?.sad || 0))) /
-        3;
-      this.workPoint.push((cworkPoint + feeling + states) / 3);
-      this.relationshipPoint.push((crelationshipPoint + feeling + states) / 3);
-      this.sportPoint.push((csportPoint + feeling + states) / 3);
-    });
-
-    console.log('this workPoint ', this.workPoint);
-    console.log('this relationshipPoint ', this.relationshipPoint);
-    console.log('this sportPoint ', this.sportPoint);
-
-    const dateset = this.statistics.map((x) => x.date);
-
     console.log(this.layout);
     this.chartWeekly = new Chart('EmotionWeekly', {
       type: 'line', //this denotes tha type of chart
