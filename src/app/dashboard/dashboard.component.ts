@@ -35,7 +35,7 @@ export class DashboardComponent implements OnInit {
 
     // acc username work on json
     const pathStatistic =
-      'assets/Backend/' +
+      '/assets/Backend/' +
       storedUsername +
       '/statistics/' +
       storedUsername +
@@ -87,6 +87,7 @@ export class DashboardComponent implements OnInit {
         console.error(error);
       });
   }
+
   switchLayout() {}
   createChart() {
     console.log(this.layout);
@@ -115,7 +116,7 @@ export class DashboardComponent implements OnInit {
         ],
       },
       options: {
-        aspectRatio: 1,
+        aspectRatio: 1.2,
       },
     });
   }
