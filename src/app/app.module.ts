@@ -20,7 +20,6 @@ import { ReactiveFormsModule } from '@angular/forms'; // Import ReactiveFormsMod
 import { HttpClientModule } from '@angular/common/http';
 import { MatSliderModule } from '@angular/material/slider';
 import { FormsModule } from '@angular/forms';
-import { NewAlternativeComponent } from './new-alternative/new-alternative.component';
 import { NewPostAlternativeComponent } from './new-post-alternative/new-post-alternative.component';
 
 @NgModule({
@@ -36,8 +35,7 @@ import { NewPostAlternativeComponent } from './new-post-alternative/new-post-alt
     StatisticsAlternativeComponent,
     NewPostComponent,
     LoginComponent,
-    NewAlternativeComponent,
-    NewPostAlternativeComponent
+    NewPostAlternativeComponent,
   ],
   imports: [
     BrowserModule,
