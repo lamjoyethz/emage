@@ -1,0 +1,43 @@
+.newEntryAlternative {
+    display: grid;
+    grid-template-rows: 1fr auto;
+    height: 80vh;
+}
+
+.newEntryAlternative form {
+    justify-self: center;
+    align-self: center;
+}
+
+.navigationButtons {
+    display: flex;
+    justify-content: space-around;
+}
+
+.settings-button {
+    flex: 1;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.settings-button .custom-button {
+    margin: 10px;
+    height: 70px;
+    width: 70px;
+}
+
+.center-slider {
+    position: absolute;
+    bottom: 320px;
+    left: 120px;
+}
+
+div.community-post-title {
+    font-size: 25px;
+    text-align:center;
+    font-weight: bold;
+}

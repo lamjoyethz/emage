@@ -1,0 +1,269 @@
+<div class="newEntryAlternative">
+    <form>
+        <div *ngIf="currentStep === 1">
+            <div class="community-post-title">What did you feel?</div>
+            <br>
+            <div class="button-container">
+                <div class="settings-button">
+                    <button 
+                    mat-raised-button 
+                    class="custom-button" 
+                    color="primary" 
+                    (click)="setSelectedValue(sliderValues['stress'], 'stress')"
+                    [ngStyle]="{ 'background-color': buttonColor['stress'] }">
+                        <span class="material-symbols-outlined"> sentiment_stressed </span>
+                        stress level:{{ sliderValues["stress"] }}
+                    </button>
+                    <div *ngIf="isSliderVisible('stress')" class="center-slider">
+                        <mat-slider
+                        min="0"
+                        max="5"
+                        name="mySlider"
+                        ngDefaultControl
+                        step="1"
+                        [(ngModel)]="sliderValues['stress']"
+                        (input)="updateButtonColor('stress')"
+                        >
+                        <input matSliderThumb />
+                        </mat-slider>
+                    </div>
+                </div>
+                <div class="settings-button">
+                    <button 
+                    mat-raised-button 
+                    class="custom-button" 
+                    color="primary"
+                    (click)="setSelectedValue(sliderValues['hungry'], 'hungry')"
+                    [ngStyle]="{ 'background-color': buttonColor['hungry'] }">
+                        <span class="material-symbols-outlined"> lunch_dining </span>
+                        hungry level:{{ sliderValues["hungry"] }}
+                    </button>
+                    <div *ngIf="isSliderVisible('hungry')" class="center-slider">
+                        <mat-slider
+                        min="0"
+                        max="5"
+                        name="mySlider"
+                        ngDefaultControl
+                        step="1"
+                        [(ngModel)]="sliderValues['hungry']"
+                        (input)="updateButtonColor('hungry')"
+                        >
+                        <input matSliderThumb />
+                        </mat-slider>
+                    </div>
+                </div>
+                <div class="settings-button">
+                    <button 
+                    mat-raised-button 
+                    class="custom-button" 
+                    color="primary"
+                    (click)="setSelectedValue(sliderValues['tiredness'], 'tiredness')"
+                    [ngStyle]="{ 'background-color': buttonColor['tiredness'] }">
+                        <span class="material-symbols-outlined"> airline_seat_flat </span>
+                        tiredness level:{{ sliderValues["tiredness"] }}
+                    </button>
+                    <div *ngIf="isSliderVisible('tiredness')" class="center-slider">
+                        <mat-slider
+                        min="0"
+                        max="5"
+                        name="mySlider"
+                        ngDefaultControl
+                        step="1"
+                        [(ngModel)]="sliderValues['tiredness']"
+                        (input)="updateButtonColor('tiredness')"
+                        >
+                        <input matSliderThumb />
+                        </mat-slider>
+                    </div>
+                </div>
+                <div class="settings-button">
+                    <button mat-raised-button class="custom-button" color="primary"> <!-- No onClick logic defined for button yet-->
+                        <span class="material-symbols-outlined"> add </span>
+                        more options
+                    </button>
+                </div>
+            </div>
+        </div>
+    
+        <div *ngIf="currentStep === 2">
+            <div class="community-post-title">What did you do?</div>
+            <br>
+            <div class="button-container">
+                <div class="settings-button">
+                    <button 
+                    mat-raised-button 
+                    class="custom-button" 
+                    color="primary"
+                    (click)="setSelectedValue(sliderValues['sports'], 'sports')"
+                    [ngStyle]="{ 'background-color': buttonColor['sports'] }">
+                        <span class="material-symbols-outlined"> fitness_center </span>
+                        sports level:{{ sliderValues["sports"] }}
+                    </button>
+                    <div *ngIf="isSliderVisible('sports')" class="center-slider">
+                        <mat-slider
+                        min="0"
+                        max="5"
+                        name="mySlider"
+                        ngDefaultControl
+                        step="1"
+                        [(ngModel)]="sliderValues['sports']"
+                        (input)="updateButtonColor('sports')"
+                        >
+                        <input matSliderThumb />
+                        </mat-slider>
+                    </div>
+                </div>
+
+                <div class="settings-button">
+                    <button 
+                    mat-raised-button 
+                    class="custom-button" 
+                    color="primary"
+                    (click)="setSelectedValue(sliderValues['romance'], 'romance')"
+                    [ngStyle]="{ 'background-color': buttonColor['romance'] }">
+                        <span class="material-symbols-outlined"> favorite </span>
+                        romance level:{{ sliderValues["romance"] }}
+                    </button>
+                    <div *ngIf="isSliderVisible('romance')" class="center-slider">
+                        <mat-slider
+                        min="0"
+                        max="5"
+                        name="mySlider"
+                        ngDefaultControl
+                        step="1"
+                        [(ngModel)]="sliderValues['romance']"
+                        (input)="updateButtonColor('romance')"
+                        >
+                        <input matSliderThumb />
+                        </mat-slider>
+                    </div>
+                </div>
+
+                <div class="settings-button">
+                    <button 
+                    mat-raised-button 
+                    class="custom-button" 
+                    color="primary"
+                    (click)="setSelectedValue(sliderValues['work'], 'work')"
+                    [ngStyle]="{ 'background-color': buttonColor['work'] }">
+                        <span class="material-symbols-outlined"> computer </span>
+                        work level:{{ sliderValues["work"] }}
+                    </button>
+                    <div *ngIf="isSliderVisible('work')" class="center-slider">
+                        <mat-slider
+                        min="0"
+                        max="5"
+                        name="mySlider"
+                        ngDefaultControl
+                        step="1"
+                        [(ngModel)]="sliderValues['work']"
+                        (input)="updateButtonColor('work')"
+                        >
+                        <input matSliderThumb />
+                        </mat-slider>
+                    </div>
+                </div>
+
+                <div class="settings-button">
+                    <button mat-raised-button class="custom-button" color="primary"> <!-- No onClick logic defined for button yet-->
+                        <span class="material-symbols-outlined"> add </span>
+                        more options
+                    </button>
+                </div>
+            </div>
+        </div>
+    
+        <div *ngIf="currentStep === 3">
+            <div class="community-post-title">How are you today?</div>
+            <br>
+            <div class="button-container">
+                <div class="settings-button">
+                    <button 
+                    mat-raised-button 
+                    class="custom-button" 
+                    color="primary"
+                    (click)="setSelectedValue(sliderValues['angry'], 'angry')"
+                    [ngStyle]="{ 'background-color': buttonColor['angry'] }">
+                        <span class="material-symbols-outlined"> sentiment_extremely_dissatisfied </span>
+                        angry level:{{ sliderValues["angry"] }}
+                    </button>
+                    <div *ngIf="isSliderVisible('angry')" class="center-slider">
+                        <mat-slider
+                        min="0"
+                        max="5"
+                        name="mySlider"
+                        ngDefaultControl
+                        step="1"
+                        [(ngModel)]="sliderValues['angry']"
+                        (input)="updateButtonColor('angry')"
+                        >
+                        <input matSliderThumb />
+                        </mat-slider>
+                    </div>
+                </div>
+                <div class="settings-button">
+                    <button 
+                    mat-raised-button 
+                    class="custom-button" 
+                    color="primary"
+                    (click)="setSelectedValue(sliderValues['happy'], 'happy')"
+                    [ngStyle]="{ 'background-color': buttonColor['happy'] }">
+                        <span class="material-symbols-outlined"> sentiment_very_satisfied </span>
+                        happiness level:{{ sliderValues["happy"] }}
+                    </button>
+                    <div *ngIf="isSliderVisible('happy')" class="center-slider">
+                        <mat-slider
+                        min="0"
+                        max="5"
+                        name="mySlider"
+                        ngDefaultControl
+                        step="1"
+                        [(ngModel)]="sliderValues['happy']"
+                        (input)="updateButtonColor('happy')"
+                        >
+                        <input matSliderThumb />
+                        </mat-slider>
+                    </div>
+                </div>
+
+                <div class="settings-button">
+                    <button 
+                    mat-raised-button 
+                    class="custom-button" 
+                    color="primary"
+                    (click)="setSelectedValue(sliderValues['sad'], 'sad')"
+                    [ngStyle]="{ 'background-color': buttonColor['sad'] }">
+                        <span class="material-symbols-outlined"> sentiment_sad </span>
+                        sadness level:{{ sliderValues["sad"] }}
+                    </button>
+                    <div *ngIf="isSliderVisible('sad')" class="center-slider">
+                        <mat-slider
+                        min="0"
+                        max="5"
+                        name="mySlider"
+                        ngDefaultControl
+                        step="1"
+                        [(ngModel)]="sliderValues['sad']"
+                        (input)="updateButtonColor('sad')"
+                        >
+                        <input matSliderThumb />
+                        </mat-slider>
+                    </div>
+                </div>
+
+                <div class="settings-button">
+                    <button mat-raised-button class="custom-button" color="primary"> <!-- No onClick logic defined for button yet-->
+                        <span class="material-symbols-outlined"> add </span>
+                        more options
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <div class="navigationButtons">
+        <button class="backButton" *ngIf="currentStep != 1" type="button" (click)="previousStep()">Back</button>
+        <button class="skipButton" *ngIf="currentStep != 3" type="button" (click)="nextStep()">Next</button>
+        <button class="submitButton" *ngIf="currentStep == 3" type="submit" (click)="submitForm()">Log</button>
+    </div>
+</div>
