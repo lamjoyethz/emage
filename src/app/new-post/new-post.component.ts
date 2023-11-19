@@ -20,6 +20,32 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 })
 export class NewPostComponent{
 
+  showSlider: { [key: string]: boolean } = {
+    stress: false,
+    hungry: false,
+    tiredness: false,
+    sports: false,
+    romance: false,
+    work: false,
+    angry: false,
+    happy: false,
+    sad: false,
+    // Add other emotions and their default values here
+  };
+
+  triggerButton(emotion: string) {
+    this.showSlider['stress']=false;
+    this.showSlider['hungry']=false;
+    this.showSlider['tiredness']=false;
+    this.showSlider['sports']=false;
+    this.showSlider['romance']=false;
+    this.showSlider['work']=false;
+    this.showSlider['angry']=false;
+    this.showSlider['happy']=false;
+    this.showSlider['sad']=false;
+    this.showSlider[emotion]=!this.showSlider[emotion];
+  }
+
   sliderValues: { [key: string]: number } = {
     stress: 0,
     hungry: 0,
@@ -59,7 +85,7 @@ export class NewPostComponent{
     // Add other emotions and their default values here
   };
 
-  activeButton: string | null = null;
+  //activeButton: string | null = null;
 
   setSelectedValue(value: number, emotion: string): void {
 
@@ -69,14 +95,15 @@ export class NewPostComponent{
       this.buttonState[emotion] = 'inactive';
     }, 100);
 
-       this.activeButton = emotion;
+       //this.activeButton = emotion;
        // Set the value of the selected slider
        this.sliderValues[emotion] = value;
+       this.triggerButton(emotion);
     }
 
-  isSliderVisible(emotion: string): boolean {
-     return this.activeButton === emotion;
-  }
+  //isSliderVisible(emotion: string): boolean {
+     //return this.activeButton === emotion;
+  //}
 
   updateButtonColor(emotion: string) {
     if (this.sliderValues[emotion] == 0) {
@@ -121,3 +148,4 @@ export class NewPostComponent{
       });
   }
 }
+
