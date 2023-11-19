@@ -8,6 +8,7 @@
       mat-raised-button
       class="custom-button"
       color="primary"
+      [@buttonClick]="buttonState['stress']"
       (click)="setSelectedValue(sliderValues['stress'], 'stress')"
       [ngStyle]="{ 'background-color': buttonColor['stress'] }"
     >
@@ -35,6 +36,7 @@
       mat-raised-button
       class="custom-button"
       color="primary"
+      [@buttonClick]="buttonState['hungry']"
       (click)="setSelectedValue(sliderValues['hungry'], 'hungry')"
       [ngStyle]="{ 'background-color': buttonColor['hungry'] }"
     >
@@ -62,6 +64,7 @@
       mat-raised-button
       class="custom-button"
       color="primary"
+      [@buttonClick]="buttonState['tiredness']"
       (click)="setSelectedValue(sliderValues['tiredness'], 'tiredness')"
       [ngStyle]="{ 'background-color': buttonColor['tiredness'] }"
     >
@@ -105,6 +108,7 @@
       mat-raised-button
       class="custom-button"
       color="primary"
+      [@buttonClick]="buttonState['sports']"
       (click)="setSelectedValue(sliderValues['sports'], 'sports')"
       [ngStyle]="{ 'background-color': buttonColor['sports'] }"
     >
@@ -132,6 +136,7 @@
       mat-raised-button
       class="custom-button"
       color="primary"
+      [@buttonClick]="buttonState['romance']"
       (click)="setSelectedValue(sliderValues['romance'], 'romance')"
       [ngStyle]="{ 'background-color': buttonColor['romance'] }"
     >
@@ -159,6 +164,7 @@
       mat-raised-button
       class="custom-button"
       color="primary"
+      [@buttonClick]="buttonState['work']"
       (click)="setSelectedValue(sliderValues['work'], 'work')"
       [ngStyle]="{ 'background-color': buttonColor['work'] }"
     >
@@ -202,6 +208,7 @@
       mat-raised-button
       class="custom-button"
       color="primary"
+      [@buttonClick]="buttonState['angry']"
       (click)="setSelectedValue(sliderValues['angry'], 'angry')"
       [ngStyle]="{ 'background-color': buttonColor['angry'] }"
     >
@@ -234,6 +241,7 @@
       mat-raised-button
       class="custom-button"
       color="primary"
+      [@buttonClick]="buttonState['happy']"
       (click)="setSelectedValue(sliderValues['happy'], 'happy')"
       [ngStyle]="{ 'background-color': buttonColor['happy'] }"
     >
@@ -261,6 +269,7 @@
       mat-raised-button
       class="custom-button"
       color="primary"
+      [@buttonClick]="buttonState['sad']"
       (click)="setSelectedValue(sliderValues['sad'], 'sad')"
       [ngStyle]="{ 'background-color': buttonColor['sad'] }"
     >
