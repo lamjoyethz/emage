@@ -55,10 +55,19 @@ export class NewPostAlternativeComponent {
 
   activeButton: string | null = null;
 
-  setSelectedValue(value: number, emotion: string): void {
-       this.activeButton = emotion;
+  setSelectedValue(value: number, emotion: string, event:Event): void { // problem when adding the active class to the button is that I also need to remove the active class from previous buttons
+      this.activeButton = emotion;
        // Set the value of the selected slider
-       this.sliderValues[emotion] = value;
+      this.sliderValues[emotion] = value;
+      
+      const buttons = document.querySelectorAll('.custom-button');
+
+      buttons.forEach(button => {
+        button.classList.remove('active');
+      });
+
+      const clickedButton = event.target as HTMLButtonElement;
+      clickedButton.classList.add('active');
     }
 
   isSliderVisible(emotion: string): boolean {

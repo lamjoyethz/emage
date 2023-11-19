@@ -9,7 +9,7 @@
                     mat-raised-button 
                     class="custom-button" 
                     color="primary" 
-                    (click)="setSelectedValue(sliderValues['stress'], 'stress')"
+                    (click)="setSelectedValue(sliderValues['stress'], 'stress', $event)"
                     [ngStyle]="{ 'background-color': buttonColor['stress'] }">
                         <span class="material-symbols-outlined"> sentiment_stressed </span>
                         stress level:{{ sliderValues["stress"] }}
@@ -33,7 +33,7 @@
                     mat-raised-button 
                     class="custom-button" 
                     color="primary"
-                    (click)="setSelectedValue(sliderValues['hungry'], 'hungry')"
+                    (click)="setSelectedValue(sliderValues['hungry'], 'hungry', $event)"
                     [ngStyle]="{ 'background-color': buttonColor['hungry'] }">
                         <span class="material-symbols-outlined"> lunch_dining </span>
                         hungry level:{{ sliderValues["hungry"] }}
@@ -57,7 +57,7 @@
                     mat-raised-button 
                     class="custom-button" 
                     color="primary"
-                    (click)="setSelectedValue(sliderValues['tiredness'], 'tiredness')"
+                    (click)="setSelectedValue(sliderValues['tiredness'], 'tiredness', $event)"
                     [ngStyle]="{ 'background-color': buttonColor['tiredness'] }">
                         <span class="material-symbols-outlined"> airline_seat_flat </span>
                         tiredness level:{{ sliderValues["tiredness"] }}
@@ -94,7 +94,7 @@
                     mat-raised-button 
                     class="custom-button" 
                     color="primary"
-                    (click)="setSelectedValue(sliderValues['sports'], 'sports')"
+                    (click)="setSelectedValue(sliderValues['sports'], 'sports', $event)"
                     [ngStyle]="{ 'background-color': buttonColor['sports'] }">
                         <span class="material-symbols-outlined"> fitness_center </span>
                         sports level:{{ sliderValues["sports"] }}
@@ -119,7 +119,7 @@
                     mat-raised-button 
                     class="custom-button" 
                     color="primary"
-                    (click)="setSelectedValue(sliderValues['romance'], 'romance')"
+                    (click)="setSelectedValue(sliderValues['romance'], 'romance', $event)"
                     [ngStyle]="{ 'background-color': buttonColor['romance'] }">
                         <span class="material-symbols-outlined"> favorite </span>
                         romance level:{{ sliderValues["romance"] }}
@@ -144,7 +144,7 @@
                     mat-raised-button 
                     class="custom-button" 
                     color="primary"
-                    (click)="setSelectedValue(sliderValues['work'], 'work')"
+                    (click)="setSelectedValue(sliderValues['work'], 'work', $event)"
                     [ngStyle]="{ 'background-color': buttonColor['work'] }">
                         <span class="material-symbols-outlined"> computer </span>
                         work level:{{ sliderValues["work"] }}
@@ -182,7 +182,7 @@
                     mat-raised-button 
                     class="custom-button" 
                     color="primary"
-                    (click)="setSelectedValue(sliderValues['angry'], 'angry')"
+                    (click)="setSelectedValue(sliderValues['angry'], 'angry', $event)"
                     [ngStyle]="{ 'background-color': buttonColor['angry'] }">
                         <span class="material-symbols-outlined"> sentiment_extremely_dissatisfied </span>
                         angry level:{{ sliderValues["angry"] }}
@@ -206,10 +206,10 @@
                     mat-raised-button 
                     class="custom-button" 
                     color="primary"
-                    (click)="setSelectedValue(sliderValues['happy'], 'happy')"
+                    (click)="setSelectedValue(sliderValues['happy'], 'happy', $event)"
                     [ngStyle]="{ 'background-color': buttonColor['happy'] }">
                         <span class="material-symbols-outlined"> sentiment_very_satisfied </span>
-                        happiness level:{{ sliderValues["happy"] }}
+                        happy level:{{ sliderValues["happy"] }}
                     </button>
                     <div *ngIf="isSliderVisible('happy')" class="center-slider">
                         <mat-slider
@@ -231,7 +231,7 @@
                     mat-raised-button 
                     class="custom-button" 
                     color="primary"
-                    (click)="setSelectedValue(sliderValues['sad'], 'sad')"
+                    (click)="setSelectedValue(sliderValues['sad'], 'sad', $event)"
                     [ngStyle]="{ 'background-color': buttonColor['sad'] }">
                         <span class="material-symbols-outlined"> sentiment_sad </span>
                         sadness level:{{ sliderValues["sad"] }}
@@ -263,7 +263,7 @@
 
     <div class="navigationButtons">
         <button class="backButton" *ngIf="currentStep != 1" type="button" (click)="previousStep()">Back</button>
-        <button class="skipButton" *ngIf="currentStep != 3" type="button" (click)="nextStep()">Next</button>
+        <button class="nextButton" *ngIf="currentStep != 3" type="button" (click)="nextStep()">Next</button>
         <button class="submitButton" *ngIf="currentStep == 3" type="submit" (click)="submitForm()">Log</button>
     </div>
 </div>

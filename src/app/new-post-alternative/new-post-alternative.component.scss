@@ -41,3 +41,22 @@ div.community-post-title {
     text-align:center;
     font-weight: bold;
 }
+
+.custom-button {
+    text-align: center;
+}
+
+button.active {
+    border-width: 5px;
+}
+
+.navigationButtons button {
+    height: 40px;
+    width: 100px;
+    border-radius: 15px;
+    font-size: 5vw;
+}
+
+.nextButton, .submitButton {
+    background-color:#3a996c;
+}
