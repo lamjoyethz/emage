@@ -26,7 +26,7 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
     const storedUsername = localStorage.getItem('userName');
     console.log(
-      'this localStorage.getIte  is: ',
+      'this localStorage.getItem is: ',
       localStorage.getItem('layout')
     );
 
@@ -35,7 +35,7 @@ export class DashboardComponent implements OnInit {
 
     // acc username work on json
     const pathStatistic =
-      '/assets/Backend/' +
+      'assets/Backend/' +
       storedUsername +
       '/statistics/' +
       storedUsername +
@@ -47,7 +47,6 @@ export class DashboardComponent implements OnInit {
       .then((response) => response.json())
       .then((jsonData) => {
         this.statistics = jsonData;
-        console.log('HEO ', jsonData.data);
 
         // Create data
         const last7Days = jsonData.slice(0, 7);
