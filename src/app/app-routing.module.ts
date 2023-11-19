@@ -11,6 +11,7 @@ import { NewPostAlternativeComponent } from './new-post-alternative/new-post-alt
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: '404', component: LoginComponent }, // Custom 404 route
   { path: 'dashboard', component: DashboardComponent },
   { path: 'dashboardalternative', component: DashboardAlternativeComponent },
   { path: 'user-profile', component: UserProfileComponent },

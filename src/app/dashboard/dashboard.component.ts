@@ -24,15 +24,9 @@ export class DashboardComponent implements OnInit {
   layout: boolean = false;
 
   ngOnInit(): void {
-    const storedUsername = localStorage.getItem('userName');
-    console.log(
-      'this localStorage.getItem is: ',
-      localStorage.getItem('layout')
-    );
-
+    let storedUsername = localStorage.getItem('userName');
     this.layout = localStorage.getItem('layout') === '0' ? false : true;
-    console.log('this layout is: ', this.layout);
-
+    storedUsername = storedUsername ? storedUsername?.toLowerCase() : '';
     // acc username work on json
     const pathStatistic =
       'assets/Backend/' +

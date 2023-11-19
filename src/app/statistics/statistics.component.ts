@@ -24,24 +24,17 @@ export class StatisticsComponent implements OnInit {
   layout: boolean = false;
 
   ngOnInit(): void {
-    const storedUsername = localStorage.getItem('userName');
-    console.log(
-      'this localStorage.getIte  is: ',
-      localStorage.getItem('layout')
-    );
-
+    let storedUsername = localStorage.getItem('userName');
+    storedUsername = storedUsername ? storedUsername?.toLowerCase() : '';
     this.layout = localStorage.getItem('layout') === '0' ? false : true;
-    console.log('this layout is: ', this.layout);
 
     // acc username work on json
     const pathStatistic =
-      '/assets/Backend/' +
+      'assets/Backend/' +
       storedUsername +
       '/statistics/' +
       storedUsername +
       '.json';
-
-    console.log(pathStatistic);
 
     fetch(pathStatistic)
       .then((response) => response.json())
