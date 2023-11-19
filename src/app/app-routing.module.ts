@@ -5,7 +5,6 @@ import { DashboardComponent } from 'src/app/dashboard/dashboard.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { SettingsComponent } from './settings/settings.component';
 import { StatisticsComponent } from './statistics/statistics.component';
-import { StatisticsAlternativeComponent } from './statistics-alternative/statistics-alternative.component';
 import { NewPostComponent } from './new-post/new-post.component';
 import { LoginComponent } from './login/login.component';
 import { NewPostAlternativeComponent } from './new-post-alternative/new-post-alternative.component';
@@ -17,7 +16,6 @@ const routes: Routes = [
   { path: 'user-profile', component: UserProfileComponent },
   { path: 'settings', component: SettingsComponent },
   { path: 'statistics', component: StatisticsComponent },
-  { path: 'statistics-alternative', component: StatisticsAlternativeComponent },
   { path: 'new', component: NewPostComponent },
   { path: 'new-alternative', component: NewPostAlternativeComponent },
 

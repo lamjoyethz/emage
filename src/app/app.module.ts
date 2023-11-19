@@ -11,7 +11,6 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { SettingsComponent } from './settings/settings.component';
 import { StatisticsComponent } from './statistics/statistics.component';
-import { StatisticsAlternativeComponent } from './statistics-alternative/statistics-alternative.component';
 import { NewPostComponent } from './new-post/new-post.component';
 import { LoginComponent } from './login/login.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -32,7 +31,6 @@ import { NewPostAlternativeComponent } from './new-post-alternative/new-post-alt
     UserProfileComponent,
     SettingsComponent,
     StatisticsComponent,
-    StatisticsAlternativeComponent,
     NewPostComponent,
     LoginComponent,
     NewPostAlternativeComponent,
