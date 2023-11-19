@@ -35,7 +35,7 @@ export class StatisticsComponent implements OnInit {
 
     // acc username work on json
     const pathStatistic =
-      '/emage/assets/Backend/' +
+      '/assets/Backend/' +
       storedUsername +
       '/statistics/' +
       storedUsername +
