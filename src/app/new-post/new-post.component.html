@@ -17,13 +17,14 @@
     </button>
   </div>
 
-  <div *ngIf="isSliderVisible('stress')" class="center-slider">
+  <div class="center-slider">
     <mat-slider
       min="0"
       max="5"
       name="mySlider"
       ngDefaultControl
       step="1"
+      [class.hidden]="!showSlider['stress']"
       [(ngModel)]="sliderValues['stress']"
       (input)="updateButtonColor('stress')"
     >
@@ -44,13 +45,14 @@
       hungry level:{{ sliderValues["hungry"] }}
     </button>
 
-    <div *ngIf="isSliderVisible('hungry')" class="center-slider">
+    <div class="center-slider">
       <mat-slider
         min="0"
         max="5"
         name="mySlider"
         ngDefaultControl
         step="1"
+        [class.hidden]="!showSlider['hungry']"
         [(ngModel)]="sliderValues['hungry']"
         (input)="updateButtonColor('hungry')"
       >
@@ -72,13 +74,16 @@
       tiredness level:{{ sliderValues["tiredness"] }}
     </button>
 
-    <div *ngIf="isSliderVisible('tiredness')" class="center-slider">
+     <!--*ngIf="isSliderVisible('tiredness')"-->
+    
+    <div class="center-slider">
       <mat-slider
         min="0"
         max="5"
         name="mySlider"
         ngDefaultControl
         step="1"
+        [class.hidden]="!showSlider['tiredness']"
         [(ngModel)]="sliderValues['tiredness']"
         (input)="updateButtonColor('tiredness')"
       >
@@ -116,13 +121,14 @@
       sports level:{{ sliderValues["sports"] }}
     </button>
 
-    <div *ngIf="isSliderVisible('sports')" class="center-slider2">
+    <div class="center-slider2">
       <mat-slider
         min="0"
         max="5"
         name="mySlider"
         ngDefaultControl
         step="1"
+        [class.hidden]="!showSlider['sports']"
         [(ngModel)]="sliderValues['sports']"
         (input)="updateButtonColor('sports')"
       >
@@ -144,13 +150,14 @@
       romance level:{{ sliderValues["romance"] }}
     </button>
 
-    <div *ngIf="isSliderVisible('romance')" class="center-slider2">
+    <div class="center-slider2">
       <mat-slider
         min="0"
         max="5"
         name="mySlider"
         ngDefaultControl
         step="1"
+        [class.hidden]="!showSlider['romance']"
         [(ngModel)]="sliderValues['romance']"
         (input)="updateButtonColor('romance')"
       >
@@ -172,13 +179,14 @@
       <div>work</div>
       level:{{ sliderValues["work"] }}
     </button>
-    <div *ngIf="isSliderVisible('work')" class="center-slider2">
+    <div class="center-slider2">
       <mat-slider
         min="0"
         max="5"
         name="mySlider"
         ngDefaultControl
         step="1"
+        [class.hidden]="!showSlider['work']"
         [(ngModel)]="sliderValues['work']"
         (input)="updateButtonColor('work')"
       >
@@ -221,13 +229,14 @@
       </div>
     </button>
 
-    <div *ngIf="isSliderVisible('angry')" class="center-slider3">
+    <div class="center-slider3">
       <mat-slider
         min="0"
         max="5"
         name="mySlider"
         ngDefaultControl
         step="1"
+        [class.hidden]="!showSlider['angry']"
         [(ngModel)]="sliderValues['angry']"
         (input)="updateButtonColor('angry')"
       >
@@ -249,13 +258,14 @@
       <span>happy</span>
       level:{{ sliderValues["happy"] }}
     </button>
-    <div *ngIf="isSliderVisible('happy')" class="center-slider3">
+    <div class="center-slider3">
       <mat-slider
         min="0"
         max="5"
         name="mySlider"
         ngDefaultControl
         step="1"
+        [class.hidden]="!showSlider['happy']"
         [(ngModel)]="sliderValues['happy']"
         (input)="updateButtonColor('happy')"
       >
@@ -277,13 +287,14 @@
       <div>sad</div>
       level:{{ sliderValues["sad"] }}
     </button>
-    <div *ngIf="isSliderVisible('sad')" class="center-slider3">
+    <div class="center-slider3">
       <mat-slider
         min="0"
         max="5"
         name="mySlider"
         ngDefaultControl
         step="1"
+        [class.hidden]="!showSlider['sad']"
         [(ngModel)]="sliderValues['sad']"
         (input)="updateButtonColor('sad')"
       >
