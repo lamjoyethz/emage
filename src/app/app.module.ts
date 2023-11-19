@@ -20,6 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatSliderModule } from '@angular/material/slider';
 import { FormsModule } from '@angular/forms';
 import { NewPostAlternativeComponent } from './new-post-alternative/new-post-alternative.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -47,8 +48,10 @@ import { NewPostAlternativeComponent } from './new-post-alternative/new-post-alt
     ReactiveFormsModule,
     MatSliderModule,
     FormsModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
+
