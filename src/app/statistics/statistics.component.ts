@@ -35,7 +35,7 @@ export class StatisticsComponent implements OnInit {
 
     // acc username work on json
     const pathStatistic =
-      'assets/Backend/' +
+      '/emage/assets/Backend/' +
       storedUsername +
       '/statistics/' +
       storedUsername +
@@ -47,7 +47,37 @@ export class StatisticsComponent implements OnInit {
       .then((response) => response.json())
       .then((jsonData) => {
         this.statistics = jsonData;
-        console.log('HEO ', jsonData.data);
+
+        // Create data
+        const last7Days = jsonData.slice(0, 7);
+        last7Days.forEach((x: any) => {
+          this.dates.push(x.date);
+          let cworkPoint = Number(x.data?.activities?.work);
+          let csportPoint = Number(x.data?.activities?.sport);
+          let crelationshipPoint = Number(x.data?.activities?.romance);
+
+          let feeling =
+            (Number(x.data?.feeling?.stress || 0) +
+              Number(x.data?.feeling?.hungry || 0)) /
+            2;
+          let states =
+            (Number(x.data?.state.angry || 0) +
+              Number(
+                (x.data?.feeling.happy || 0) + (x.data?.feeling?.sad || 0)
+              )) /
+            3;
+          this.workPoint.push((cworkPoint + feeling + states) / 3);
+          this.relationshipPoint.push(
+            (crelationshipPoint + feeling + states) / 3
+          );
+          this.sportPoint.push((csportPoint + feeling + states) / 3);
+        });
+
+        console.log('this workPoint ', this.workPoint);
+        console.log('this relationshipPoint ', this.relationshipPoint);
+        console.log('this sportPoint ', this.sportPoint);
+
+        const dateset = this.statistics.map((x) => x.date);
       })
       .then(() => {
         this.createChart();
@@ -59,33 +89,7 @@ export class StatisticsComponent implements OnInit {
 
   createChart() {
     // Create data
-    const last7Days = this.statistics.slice(0, 7);
-    last7Days.forEach((x) => {
-      this.dates.push(x.date);
-      let cworkPoint = Number(x.data?.activities?.work);
-      let csportPoint = Number(x.data?.activities?.sport);
-      let crelationshipPoint = Number(x.data?.activities?.romance);
 
-      let feeling =
-        (Number(x.data?.feeling?.stress || 0) +
-          Number(x.data?.feeling?.hungry || 0)) /
-        2;
-      let states =
-        (Number(x.data?.state.angry || 0) +
-          Number((x.data?.feeling.happy || 0) + (x.data?.feeling?.sad || 0))) /
-        3;
-      this.workPoint.push((cworkPoint + feeling + states) / 3);
-      this.relationshipPoint.push((crelationshipPoint + feeling + states) / 3);
-      this.sportPoint.push((csportPoint + feeling + states) / 3);
-    });
-
-    console.log('this workPoint ', this.workPoint);
-    console.log('this relationshipPoint ', this.relationshipPoint);
-    console.log('this sportPoint ', this.sportPoint);
-
-    const dateset = this.statistics.map((x) => x.date);
-
-    console.log(this.layout);
     if (this.layout) {
       this.chartWeekly1 = new Chart('EmotionWeekly1', {
         type: 'line', //this denotes tha type of chart
@@ -199,7 +203,7 @@ export class StatisticsComponent implements OnInit {
           ],
         },
         options: {
-          aspectRatio: 1.2,
+          aspectRatio: 1,
         },
       });
       this.chartMonthly = new Chart('EmotionMonthly', {
@@ -228,7 +232,7 @@ export class StatisticsComponent implements OnInit {
           ],
         },
         options: {
-          aspectRatio: 1.2,
+          aspectRatio: 1,
         },
       });
       this.chartYearly = new Chart('EmotionYearly', {
@@ -257,7 +261,7 @@ export class StatisticsComponent implements OnInit {
           ],
         },
         options: {
-          aspectRatio: 1.2,
+          aspectRatio: 1,
         },
       });
     }
