@@ -21,11 +21,14 @@
   display: flex;
   justify-content: space-between; /* 使四个按钮等距分布 */
   width: 100%; /* 使容器占据整个页面宽度 */
+  
 }
 
 .settings-button {
   flex: 1; /* 让每个按钮在容器中平均占据可用空间 */
+  left: 10px; /* 相对于左侧的百分比位置 */
   margin-right: 20px; /* 可选：添加按钮之间的间距 */
+  position: relative;
 }
 
 .wide-button {
@@ -35,20 +38,20 @@
 
 .center-slider {
   position: absolute;
-  bottom: 580px; /* 距离底部的距离 */
-  left: 120px; /* 距离左侧的距离 */
+  bottom: -60%; /* 相对于底部的百分比位置 */
+  left: 0%; /* 相对于左侧的百分比位置 */
 }
 
 .center-slider2 {
   position: absolute;
-  bottom: 395px; /* 距离底部的距离 */
-  left: 120px; /* 距离左侧的距离 */
+  bottom: -60%; /* 相对于底部的百分比位置 */
+  left: 0%; /* 相对于左侧的百分比位置 */
 }
 
 .center-slider3 {
   position: absolute;
-  bottom: 210px; /* 距离底部的距离 */
-  left: 120px; /* 距离左侧的距离 */
+  bottom: -60%; /* 相对于底部的百分比位置 */
+  left: 0%; /* 相对于左侧的百分比位置 */
 }
 
 .custom-button {
@@ -85,4 +88,5 @@
 .hidden {
   display: none;
 }
+
 
