@@ -27,6 +27,32 @@ export class NewPostAlternativeComponent {
     // process data here
   }
 
+  showSlider: { [key: string]: boolean } = {
+    stress: false,
+    hungry: false,
+    tiredness: false,
+    sports: false,
+    romance: false,
+    work: false,
+    angry: false,
+    happy: false,
+    sad: false,
+    // Add other emotions and their default values here
+  };
+
+  triggerButton(emotion: string) {
+    this.showSlider['stress']=false;
+    this.showSlider['hungry']=false;
+    this.showSlider['tiredness']=false;
+    this.showSlider['sports']=false;
+    this.showSlider['romance']=false;
+    this.showSlider['work']=false;
+    this.showSlider['angry']=false;
+    this.showSlider['happy']=false;
+    this.showSlider['sad']=false;
+    this.showSlider[emotion]=!this.showSlider[emotion];
+  }
+
   sliderValues: { [key: string]: number } = {
     stress: 0,
     hungry: 0,
@@ -59,6 +85,7 @@ export class NewPostAlternativeComponent {
       this.activeButton = emotion;
        // Set the value of the selected slider
       this.sliderValues[emotion] = value;
+      this.triggerButton(emotion);
       
       const buttons = document.querySelectorAll('.custom-button');
 

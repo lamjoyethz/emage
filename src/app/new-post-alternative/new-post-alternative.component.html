@@ -1,6 +1,6 @@
 <div class="newEntryAlternative">
     <form>
-        <div *ngIf="currentStep === 1">
+        <div [class.hidden]="!(currentStep === 1)">
             <div class="community-post-title">What did you feel?</div>
             <br>
             <div class="button-container">
@@ -14,13 +14,14 @@
                         <span class="material-symbols-outlined"> sentiment_stressed </span>
                         stress level:{{ sliderValues["stress"] }}
                     </button>
-                    <div *ngIf="isSliderVisible('stress')" class="center-slider">
+                    <div class="center-slider">
                         <mat-slider
                         min="0"
                         max="5"
                         name="mySlider"
                         ngDefaultControl
                         step="1"
+                        [class.hidden]="!showSlider['stress']"
                         [(ngModel)]="sliderValues['stress']"
                         (input)="updateButtonColor('stress')"
                         >
@@ -38,13 +39,14 @@
                         <span class="material-symbols-outlined"> lunch_dining </span>
                         hungry level:{{ sliderValues["hungry"] }}
                     </button>
-                    <div *ngIf="isSliderVisible('hungry')" class="center-slider">
+                    <div class="center-slider">
                         <mat-slider
                         min="0"
                         max="5"
                         name="mySlider"
                         ngDefaultControl
                         step="1"
+                        [class.hidden]="!showSlider['hungry']"
                         [(ngModel)]="sliderValues['hungry']"
                         (input)="updateButtonColor('hungry')"
                         >
@@ -62,13 +64,14 @@
                         <span class="material-symbols-outlined"> airline_seat_flat </span>
                         tiredness level:{{ sliderValues["tiredness"] }}
                     </button>
-                    <div *ngIf="isSliderVisible('tiredness')" class="center-slider">
+                    <div class="center-slider">
                         <mat-slider
                         min="0"
                         max="5"
                         name="mySlider"
                         ngDefaultControl
                         step="1"
+                        [class.hidden]="!showSlider['tiredness']"
                         [(ngModel)]="sliderValues['tiredness']"
                         (input)="updateButtonColor('tiredness')"
                         >
@@ -85,7 +88,7 @@
             </div>
         </div>
     
-        <div *ngIf="currentStep === 2">
+        <div [class.hidden]="!(currentStep === 2)">
             <div class="community-post-title">What did you do?</div>
             <br>
             <div class="button-container">
@@ -99,13 +102,14 @@
                         <span class="material-symbols-outlined"> fitness_center </span>
                         sports level:{{ sliderValues["sports"] }}
                     </button>
-                    <div *ngIf="isSliderVisible('sports')" class="center-slider">
+                    <div class="center-slider">
                         <mat-slider
                         min="0"
                         max="5"
                         name="mySlider"
                         ngDefaultControl
                         step="1"
+                        [class.hidden]="!showSlider['sports']"
                         [(ngModel)]="sliderValues['sports']"
                         (input)="updateButtonColor('sports')"
                         >
@@ -124,13 +128,14 @@
                         <span class="material-symbols-outlined"> favorite </span>
                         romance level:{{ sliderValues["romance"] }}
                     </button>
-                    <div *ngIf="isSliderVisible('romance')" class="center-slider">
+                    <div class="center-slider">
                         <mat-slider
                         min="0"
                         max="5"
                         name="mySlider"
                         ngDefaultControl
                         step="1"
+                        [class.hidden]="!showSlider['romance']"
                         [(ngModel)]="sliderValues['romance']"
                         (input)="updateButtonColor('romance')"
                         >
@@ -149,13 +154,14 @@
                         <span class="material-symbols-outlined"> computer </span>
                         work level:{{ sliderValues["work"] }}
                     </button>
-                    <div *ngIf="isSliderVisible('work')" class="center-slider">
+                    <div class="center-slider">
                         <mat-slider
                         min="0"
                         max="5"
                         name="mySlider"
                         ngDefaultControl
                         step="1"
+                        [class.hidden]="!showSlider['work']"
                         [(ngModel)]="sliderValues['work']"
                         (input)="updateButtonColor('work')"
                         >
@@ -173,7 +179,7 @@
             </div>
         </div>
     
-        <div *ngIf="currentStep === 3">
+        <div [class.hidden]="!(currentStep === 3)">
             <div class="community-post-title">How are you today?</div>
             <br>
             <div class="button-container">
@@ -187,13 +193,14 @@
                         <span class="material-symbols-outlined"> sentiment_extremely_dissatisfied </span>
                         angry level:{{ sliderValues["angry"] }}
                     </button>
-                    <div *ngIf="isSliderVisible('angry')" class="center-slider">
+                    <div class="center-slider">
                         <mat-slider
                         min="0"
                         max="5"
                         name="mySlider"
                         ngDefaultControl
                         step="1"
+                        [class.hidden]="!showSlider['angry']"
                         [(ngModel)]="sliderValues['angry']"
                         (input)="updateButtonColor('angry')"
                         >
@@ -211,13 +218,14 @@
                         <span class="material-symbols-outlined"> sentiment_very_satisfied </span>
                         happy level:{{ sliderValues["happy"] }}
                     </button>
-                    <div *ngIf="isSliderVisible('happy')" class="center-slider">
+                    <div class="center-slider">
                         <mat-slider
                         min="0"
                         max="5"
                         name="mySlider"
                         ngDefaultControl
                         step="1"
+                        [class.hidden]="!showSlider['happy']"
                         [(ngModel)]="sliderValues['happy']"
                         (input)="updateButtonColor('happy')"
                         >
@@ -236,13 +244,14 @@
                         <span class="material-symbols-outlined"> sentiment_sad </span>
                         sadness level:{{ sliderValues["sad"] }}
                     </button>
-                    <div *ngIf="isSliderVisible('sad')" class="center-slider">
+                    <div class="center-slider">
                         <mat-slider
                         min="0"
                         max="5"
                         name="mySlider"
                         ngDefaultControl
                         step="1"
+                        [class.hidden]="!showSlider['sad']"
                         [(ngModel)]="sliderValues['sad']"
                         (input)="updateButtonColor('sad')"
                         >
