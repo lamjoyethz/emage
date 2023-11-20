@@ -105,6 +105,8 @@ export class NewPostComponent{
      //return this.activeButton === emotion;
   //}
 
+  resetvalue:boolean = true;
+
   updateButtonColor(emotion: string) {
     if (this.sliderValues[emotion] == 0) {
       this.buttonColor[emotion] = 'transparent';
@@ -147,5 +149,45 @@ export class NewPostComponent{
         console.error(error);
       });
   }
+
+
+  // not finished yet, idea with a confirmation
+  reSlider() {
+    this.resetvalue = true;
+
+  }
+
+  reSet() {
+    this.showSlider['stress']=false;
+    this.showSlider['hungry']=false;
+    this.showSlider['tiredness']=false;
+    this.showSlider['sports']=false;
+    this.showSlider['romance']=false;
+    this.showSlider['work']=false;
+    this.showSlider['angry']=false;
+    this.showSlider['happy']=false;
+    this.showSlider['sad']=false;
+    this.sliderValues['stress']=0;
+    this.sliderValues['hungry']=0;
+    this.sliderValues['tiredness']=0;
+    this.sliderValues['sports']=0;
+    this.sliderValues['romance']=0;
+    this.sliderValues['work']=0;
+    this.sliderValues['angry']=0;
+    this.sliderValues['happy']=0;
+    this.sliderValues['sad']=0;
+    this.buttonColor['stress'] = 'transparent';
+    this.buttonColor['hungry'] = 'transparent';
+    this.buttonColor['tiredness'] = 'transparent';
+    this.buttonColor['sports'] = 'transparent';
+    this.buttonColor['romance'] = 'transparent';
+    this.buttonColor['work'] = 'transparent';
+    this.buttonColor['angry'] = 'transparent';
+    this.buttonColor['happy'] = 'transparent';
+    this.buttonColor['sad'] = 'transparent';
+    this.resetvalue = false;
+    this.reSlider();
+  }
 }
+
 
