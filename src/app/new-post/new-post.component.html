@@ -1,4 +1,4 @@
-<button class="resetButton" (click)="onClick()">Reset</button>
+<button class="resetButton" (click)="reSet()">Reset</button>
 
 <div class="community-post-title1">What did you feel?</div>
 
@@ -15,7 +15,10 @@
       <span class="material-symbols-outlined"> sentiment_stressed </span>
       stress level:{{ sliderValues["stress"] }}
     </button>
-  </div>
+  
+
+  
+  <!--*ngIf="resetvalue"-->
 
   <div class="center-slider">
     <mat-slider
@@ -31,6 +34,7 @@
       <input matSliderThumb />
     </mat-slider>
   </div>
+</div>
 
   <div class="settings-button">
     <button
