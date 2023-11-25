@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component } from '@angular/core';
 import {
   trigger,
   state,
@@ -36,8 +36,13 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class NewPostComponent {
   layout: boolean = false;
   resetvalue: boolean = true;
+  trickMe: boolean = true;
+  confirmation: boolean = false;
 
-  constructor(private snackBar: MatSnackBar) {}
+  constructor(
+    private snackBar: MatSnackBar,
+    private changeDetector: ChangeDetectorRef
+  ) {}
 
   showSlider: { [key: string]: boolean } = {
     stress: false,
@@ -196,20 +201,15 @@ export class NewPostComponent {
   }
 
   // not finished yet, idea with a confirmation
-  reSlider() {
-    this.resetvalue = true;
+  reSetConfirmation() {
+    this.confirmation = true;
+  }
+
+  closeConfirmation() {
+    this.confirmation = false;
   }
 
   reSet() {
-    this.showSlider['stress'] = false;
-    this.showSlider['hungry'] = false;
-    this.showSlider['tiredness'] = false;
-    this.showSlider['sports'] = false;
-    this.showSlider['romance'] = false;
-    this.showSlider['work'] = false;
-    this.showSlider['angry'] = false;
-    this.showSlider['happy'] = false;
-    this.showSlider['sad'] = false;
     this.sliderValues['stress'] = 0;
     this.sliderValues['hungry'] = 0;
     this.sliderValues['tiredness'] = 0;
@@ -229,6 +229,18 @@ export class NewPostComponent {
     this.buttonColor['happy'] = 'transparent';
     this.buttonColor['sad'] = 'transparent';
     this.resetvalue = false;
-    this.reSlider();
+    this.trickMe = false;
+    this.changeDetector.detectChanges();
+    this.trickMe = true;
+    this.showSlider['stress'] = false;
+    this.showSlider['hungry'] = false;
+    this.showSlider['tiredness'] = false;
+    this.showSlider['sports'] = false;
+    this.showSlider['romance'] = false;
+    this.showSlider['work'] = false;
+    this.showSlider['angry'] = false;
+    this.showSlider['happy'] = false;
+    this.showSlider['sad'] = false;
+    this.confirmation = false;
   }
 }

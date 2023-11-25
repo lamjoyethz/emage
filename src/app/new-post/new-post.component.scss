@@ -1,3 +1,33 @@
+.reset-confirmation {
+  background-color: #ffd3c7;
+  padding: 15px;
+}
+
+.reset-confirm-yes-button {
+  right: 16px; /* 距离左侧的距离 */
+  width: 100px;
+  padding: 10px 20px; /* Add padding for spacing */
+  background-color: whitesmoke; /* Background color */
+  border: 1px solid gainsboro; /* Border */
+  color: #505050; /* Text color */
+  text-align: center; /* Center text horizontally */
+  user-select: none; /* Disable text selection */
+}
+
+.reset-confirm-no-button {
+  right: 16px; /* 距离左侧的距离 */
+  width: 100px;
+  padding: 10px 20px; /* Add padding for spacing */
+  border: 1px solid gainsboro; /* Border */
+  color: #e40404; /* Text color */
+  border-radius: 4px; /* Rounded corners */
+  cursor: pointer; /* Show a pointer cursor on hover */
+  text-align: center; /* Center text horizontally */
+  user-select: none; /* Disable text selection */
+  background-color: whitesmoke; /* Background color */
+  font-weight: bold;
+}
+
 .icons-wrapper {
   padding-top: 30px;
 }
@@ -41,6 +71,12 @@
   width: 100%; /* 使容器占据整个页面宽度 */
 }
 
+.reset-button-container {
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-between; /* 使四个按钮等距分布 */
+  width: 100%; /* 使容器占据整个页面宽度 */
+}
 .navi-button-container {
   padding-top: 20px;
   display: flex;
@@ -88,7 +124,7 @@ button {
   text-align: center;
 }
 
-.resetButton {
+.reset-button {
   right: 16px; /* 距离左侧的距离 */
   width: 100px;
   padding: 10px 20px; /* Add padding for spacing */
@@ -110,7 +146,7 @@ button {
   left: 36px; /* 距离左侧的距离 */
 }
 
-.logButton {
+.log-button {
   width: 100px;
   padding: 15px 20px; /* Add padding for spacing */
   background-color: #ffd740; /* Background color */

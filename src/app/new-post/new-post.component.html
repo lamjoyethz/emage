@@ -65,7 +65,7 @@
           </button>
         </div>
       </div>
-      <div class="slider-wrapper">
+      <div *ngIf="trickMe" class="slider-wrapper">
         <div class="center-slider">
           <mat-slider
             class="custom-slider"
@@ -167,7 +167,7 @@
           </button>
         </div>
       </div>
-      <div class="slider-wrapper">
+      <div *ngIf="trickMe" class="slider-wrapper">
         <div class="center-slider">
           <mat-slider
             class="custom-slider"
@@ -276,7 +276,7 @@
           </button>
         </div>
       </div>
-      <div class="slider-wrapper">
+      <div *ngIf="trickMe" class="slider-wrapper">
         <div class="center-slider">
           <mat-slider
             class="custom-slider"
@@ -324,9 +324,18 @@
         </div>
       </div>
     </div>
+    <div *ngIf="confirmation" class="reset-confirmation">
+      Do you really want to reset all values? <br />
+      <div class="reset-button-container">
+        <button class="reset-confirm-no-button" (click)="closeConfirmation()">
+          No
+        </button>
+        <button class="reset-confirm-yes-button" (click)="reSet()">Yes</button>
+      </div>
+    </div>
     <div class="navi-button-container">
-      <button class="resetButton" (click)="reSet()">Reset</button>
-      <button (click)="onClick()" class="logButton">Log</button>
+      <button class="reset-button" (click)="reSetConfirmation()">Reset</button>
+      <button class="log-button" (click)="onClick()">Log</button>
     </div>
   </form>
   <div class="footer-padding"></div>
