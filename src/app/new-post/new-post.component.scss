@@ -2,7 +2,7 @@
   padding-top: 30px;
 }
 .custom-slider {
-  width: 70%; /* Adjust the width to your desired value */
+  width: 67%; /* Adjust the width to your desired value */
 }
 .newEntryAlternative {
   display: grid;
@@ -60,17 +60,19 @@
   margin: 8px;
   height: 70px;
   width: 70px;
+  color: black;
   border-radius: 20%; /* This property makes the button round */
 }
 
 button.active {
   border-width: 2px;
   color: black;
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.5);
 }
 
 button {
   border: 0;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .custom-button {
