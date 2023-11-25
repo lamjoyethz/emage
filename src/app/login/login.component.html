@@ -20,8 +20,15 @@
       <button type="submit" mat-button>LOGIN</button>
     </div>
   </form>
-
-  Test
+  <div (click)="switchLayout()" class="toogle-button">
+    <span class="material-symbols-outlined"> toggle_on </span>
+  </div>
+  <div class="layout-description">
+    You are using Layout <b> {{ layoutName }}</b
+    >. Login with <br />username: user%
+    <br />
+    password: 12345
+  </div>
   <div class="alert alert-danger" *ngIf="error">
     Error: You can only enter user1-user12 as username
   </div>

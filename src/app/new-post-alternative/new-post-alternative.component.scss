@@ -1,66 +1,90 @@
+.custom-slider {
+  width: 70%; /* Adjust the width to your desired value */
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48 !important ;
+  font-size: 40px;
+}
+.slider-wrapper {
+  text-align: center;
+}
+
 .newEntryAlternative {
-    display: grid;
-    grid-template-rows: 1fr auto;
-    height: 80vh;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  height: 80vh;
 }
 
 .newEntryAlternative form {
-    justify-self: center;
-    align-self: center;
+  justify-self: center;
+  align-self: center;
 }
 
 .navigationButtons {
-    display: flex;
-    justify-content: space-around;
+  display: flex;
+  justify-content: space-around;
 }
 
 .settings-button {
-    flex: 1;
+  flex: 1;
 }
 
 .button-container {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .settings-button .custom-button {
-    margin: 10px;
-    height: 70px;
-    width: 70px;
-}
-
-.center-slider {
-    position: absolute;
-    bottom: 320px;
-    left: 120px;
+  margin: 5px;
+  height: 70px;
+  width: 70px;
+  border-radius: 20%; /* This property makes the button round */
 }
 
 div.community-post-title {
-    font-size: 25px;
-    text-align:center;
-    font-weight: bold;
+  font-size: 25px;
+  text-align: center;
+  font-weight: bold;
 }
 
 .custom-button {
-    text-align: center;
+  text-align: center;
 }
 
 button.active {
-    border-width: 5px;
+  border-width: 2px;
+  color: black;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+button {
+  border: 0;
 }
 
 .navigationButtons button {
-    height: 40px;
-    width: 100px;
-    border-radius: 15px;
-    font-size: 5vw;
+  width: 100px;
+  padding: 15px 20px; /* Add padding for spacing */
+  color: #000; /* Text color */
+  border-radius: 4px; /* Rounded corners */
+  cursor: pointer; /* Show a pointer cursor on hover */
+  text-align: center; /* Center text horizontally */
+  user-select: none; /* Disable text selection */
 }
 
-.nextButton, .submitButton {
-    background-color:#3a996c;
+.nextButton,
+.submitButton {
+  width: 100px;
+  padding: 15px 20px; /* Add padding for spacing */
+  background-color: #ffd740; /* Background color */
+  color: #000; /* Text color */
+  border-radius: 4px; /* Rounded corners */
+  cursor: pointer; /* Show a pointer cursor on hover */
+  text-align: center; /* Center text horizontally */
+  user-select: none; /* Disable text selection */
 }
 
 .hidden {
-    display: none;
+  display: none;
 }

@@ -8,6 +8,7 @@ import { StatisticsComponent } from './statistics/statistics.component';
 import { NewPostComponent } from './new-post/new-post.component';
 import { LoginComponent } from './login/login.component';
 import { NewPostAlternativeComponent } from './new-post-alternative/new-post-alternative.component';
+import { NewPostOverviewComponent } from './new-post-overview/new-post-overview.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -17,8 +18,7 @@ const routes: Routes = [
   { path: 'user-profile', component: UserProfileComponent },
   { path: 'settings', component: SettingsComponent },
   { path: 'statistics', component: StatisticsComponent },
-  { path: 'new', component: NewPostComponent },
-  { path: 'new-alternative', component: NewPostAlternativeComponent },
+  { path: 'new', component: NewPostOverviewComponent },
 
   { path: 'login', component: LoginComponent },
 ];

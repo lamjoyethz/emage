@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
-import {FormBuilder, FormGroup} from '@angular/forms'
 
 @Component({
   selector: 'app-new-post-alternative',
   templateUrl: './new-post-alternative.component.html',
-  styleUrls: ['./new-post-alternative.component.scss']
+  styleUrls: ['./new-post-alternative.component.scss'],
 })
 export class NewPostAlternativeComponent {
-  currentStep= 1;
+  currentStep = 1;
 
   nextStep() {
     if (this.currentStep < 3) {
@@ -22,8 +21,50 @@ export class NewPostAlternativeComponent {
   }
 
   submitForm() {
-    console.log("submit");
-    this.onClick();
+    let storedUsername = localStorage.getItem('userName');
+    storedUsername = storedUsername ? storedUsername?.toLowerCase() : '';
+
+    const jsonData = JSON.parse(
+      localStorage.getItem('jsonData' + storedUsername) || '[]'
+    );
+
+    const stressValue = this.sliderValues['stress'];
+    const hungry = this.sliderValues['hungry'];
+    const tirednessValue = this.sliderValues['tiredness'];
+    const sportValue = this.sliderValues['sports'];
+    const romanceValue = this.sliderValues['romance'];
+    const workValue = this.sliderValues['work'];
+    const angryValue = this.sliderValues['angry'];
+    const happyValue = this.sliderValues['happy'];
+    const sadValue = this.sliderValues['sad'];
+
+    const currentDate = new Date();
+    const formattedDate = `${currentDate.getDate()}.${
+      currentDate.getMonth() + 1
+    }.${currentDate.getFullYear()}`;
+
+    const currData = {
+      date: formattedDate,
+      data: {
+        feeling: {
+          stressed: stressValue,
+          hungry: hungry,
+          tiredness: tirednessValue,
+        },
+        activities: {
+          sport: sportValue,
+          romance: romanceValue,
+          work: workValue,
+        },
+        state: { happy: happyValue, angry: angryValue, sad: sadValue },
+      },
+    };
+
+    jsonData.push(currData);
+
+    localStorage.setItem('jsonData' + storedUsername, JSON.stringify(jsonData));
+
+    console.log(jsonData);
     // process data here
   }
 
@@ -41,16 +82,16 @@ export class NewPostAlternativeComponent {
   };
 
   triggerButton(emotion: string) {
-    this.showSlider['stress']=false;
-    this.showSlider['hungry']=false;
-    this.showSlider['tiredness']=false;
-    this.showSlider['sports']=false;
-    this.showSlider['romance']=false;
-    this.showSlider['work']=false;
-    this.showSlider['angry']=false;
-    this.showSlider['happy']=false;
-    this.showSlider['sad']=false;
-    this.showSlider[emotion]=!this.showSlider[emotion];
+    this.showSlider['stress'] = false;
+    this.showSlider['hungry'] = false;
+    this.showSlider['tiredness'] = false;
+    this.showSlider['sports'] = false;
+    this.showSlider['romance'] = false;
+    this.showSlider['work'] = false;
+    this.showSlider['angry'] = false;
+    this.showSlider['happy'] = false;
+    this.showSlider['sad'] = false;
+    this.showSlider[emotion] = !this.showSlider[emotion];
   }
 
   sliderValues: { [key: string]: number } = {
@@ -81,64 +122,42 @@ export class NewPostAlternativeComponent {
 
   activeButton: string | null = null;
 
-  setSelectedValue(value: number, emotion: string, event:Event): void { // problem when adding the active class to the button is that I also need to remove the active class from previous buttons
-      this.activeButton = emotion;
-       // Set the value of the selected slider
-      this.sliderValues[emotion] = value;
-      this.triggerButton(emotion);
-      
-      const buttons = document.querySelectorAll('.custom-button');
+  setSelectedValue(value: number, emotion: string, event: Event): void {
+    // problem when adding the active class to the button is that I also need to remove the active class from previous buttons
+    this.activeButton = emotion;
+    // Set the value of the selected slider
+    this.sliderValues[emotion] = value;
+    this.triggerButton(emotion);
 
-      buttons.forEach(button => {
-        button.classList.remove('active');
-      });
+    const buttons = document.querySelectorAll('.custom-button');
 
-      const clickedButton = event.target as HTMLButtonElement;
-      clickedButton.classList.add('active');
-    }
+    buttons.forEach((button) => {
+      button.classList.remove('active');
+    });
+
+    const clickedButton = event.target as HTMLButtonElement;
+    clickedButton.classList.add('active');
+  }
 
   isSliderVisible(emotion: string): boolean {
-     return this.activeButton === emotion;
+    return this.activeButton === emotion;
   }
 
   updateButtonColor(emotion: string) {
     if (this.sliderValues[emotion] == 0) {
       this.buttonColor[emotion] = 'transparent';
     } else if (this.sliderValues[emotion] == 1) {
-      this.buttonColor[emotion] = 'cyan';
-    } else if (this.sliderValues[emotion] == 2){
-      this.buttonColor[emotion] = 'lightgreen';
-    } else if (this.sliderValues[emotion] == 3){
-      this.buttonColor[emotion] = 'yellow';
-    } else if (this.sliderValues[emotion] == 4){
-      this.buttonColor[emotion] = 'orange';
+      this.buttonColor[emotion] = '#E55B3C';
+    } else if (this.sliderValues[emotion] == 2) {
+      this.buttonColor[emotion] = '#F3980F';
+    } else if (this.sliderValues[emotion] == 3) {
+      this.buttonColor[emotion] = '#F0DE2B';
+    } else if (this.sliderValues[emotion] == 4) {
+      this.buttonColor[emotion] = '#46c8c8';
     } else {
-      this.buttonColor[emotion] = 'pink';
+      this.buttonColor[emotion] = '#4ECF92';
     }
   }
 
-
-  onClick() {
-    // read username
-    const storedUsername = localStorage.getItem('userName');
-
-    // acc username work on json
-    const pathStatistic =
-      'assets/Backend/' +
-      storedUsername +
-      '/' +
-      storedUsername +
-      '-profile.json';
-
-    console.log(pathStatistic);
-
-    fetch(pathStatistic)
-      .then((response) => response.json())
-      .then((jsonData) => {
-        console.log(jsonData);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }
+  onClick() {}
 }

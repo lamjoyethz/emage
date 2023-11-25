@@ -8,6 +8,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./user-profile.component.scss'],
 })
 export class UserProfileComponent {
+  layout: boolean = false;
+
   userName: string | null = null;
   loginForm = new FormGroup({
     email: new FormControl(),
@@ -16,6 +18,14 @@ export class UserProfileComponent {
   error: Boolean = false;
   ngOnInit() {
     this.userName = localStorage.getItem('userName');
+    let storedUsername = localStorage.getItem('userName');
+    this.layout = localStorage.getItem('layout') === '0' ? false : true;
+    storedUsername = storedUsername ? storedUsername?.toLowerCase() : '';
+    console.log('storedName', storedUsername);
+    if (storedUsername == '') {
+      // If no username is found, navigate to the login page
+      this.router.navigate(['/login']); // Replace '/login' with the actual route to your login page
+    }
   }
   constructor(private router: Router) {}
 

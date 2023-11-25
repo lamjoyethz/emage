@@ -1,18 +1,36 @@
-.community-post-title {
-  font-size: 25px;
-  text-align: center;
-  font-weight: bold;
-  margin-top: 60px;
-  margin-bottom: 20px;
+.icons-wrapper {
+  padding-top: 30px;
+}
+.custom-slider {
+  width: 70%; /* Adjust the width to your desired value */
+}
+.newEntryAlternative {
+  display: grid;
+  grid-template-rows: 2fr auto;
 }
 
-.community-post-title1 {
-  font-size: 25px;
+.newEntryAlternative form {
+  justify-self: center;
+  align-self: center;
+}
+
+.navigationButtons {
+  display: flex;
+  justify-content: space-around;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48 !important ;
+  font-size: 40px;
+}
+
+.community-post-title {
+  font-size: 21px;
   text-align: center;
   font-weight: bold;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  padding-bottom: 3px;
 }
+
 .hidden {
   display: none;
 }
@@ -21,14 +39,42 @@
   display: flex;
   justify-content: space-between; /* 使四个按钮等距分布 */
   width: 100%; /* 使容器占据整个页面宽度 */
-  
+}
+
+.navi-button-container {
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between; /* 使四个按钮等距分布 */
+  width: 100%; /* 使容器占据整个页面宽度 */
+}
+.navigationButtons {
+  display: flex;
+  justify-content: space-around;
 }
 
 .settings-button {
-  flex: 1; /* 让每个按钮在容器中平均占据可用空间 */
-  left: 10px; /* 相对于左侧的百分比位置 */
-  margin-right: 20px; /* 可选：添加按钮之间的间距 */
-  position: relative;
+  flex: 1;
+}
+
+.settings-button .custom-button {
+  margin: 8px;
+  height: 70px;
+  width: 70px;
+  border-radius: 20%; /* This property makes the button round */
+}
+
+button.active {
+  border-width: 2px;
+  color: black;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+button {
+  border: 0;
+}
+
+.custom-button {
+  text-align: center;
 }
 
 .wide-button {
@@ -37,32 +83,21 @@
 }
 
 .center-slider {
-  position: absolute;
-  bottom: -60%; /* 相对于底部的百分比位置 */
-  left: 0%; /* 相对于左侧的百分比位置 */
-}
-
-.center-slider2 {
-  position: absolute;
-  bottom: -60%; /* 相对于底部的百分比位置 */
-  left: 0%; /* 相对于左侧的百分比位置 */
-}
-
-.center-slider3 {
-  position: absolute;
-  bottom: -60%; /* 相对于底部的百分比位置 */
-  left: 0%; /* 相对于左侧的百分比位置 */
-}
-
-.custom-button {
-  width: 75px; /* 调整按钮宽度 */
-  height: 75px; /* 调整按钮高度 */
+  text-align: center;
 }
 
 .resetButton {
-  position: absolute;
-  top: 60px; /* 距离顶部的距离 */
-  left: 10px; /* 距离左侧的距离 */
+  right: 16px; /* 距离左侧的距离 */
+  width: 100px;
+  padding: 10px 20px; /* Add padding for spacing */
+  background-color: whitesmoke; /* Background color */
+  border: 1px solid gainsboro; /* Border */
+
+  color: #000; /* Text color */
+  border-radius: 4px; /* Rounded corners */
+  cursor: pointer; /* Show a pointer cursor on hover */
+  text-align: center; /* Center text horizontally */
+  user-select: none; /* Disable text selection */
 }
 
 .skip {
@@ -74,11 +109,14 @@
 }
 
 .logButton {
-  width: 75px; /* 调整按钮宽度 */
-  height: 36px; /* 调整按钮高度 */
-  position: absolute;
-  bottom: 86px; /* 距离底部的距离 */
-  right: 36px; /* 距离左侧的距离 */
+  width: 100px;
+  padding: 15px 20px; /* Add padding for spacing */
+  background-color: #ffd740; /* Background color */
+  color: #000; /* Text color */
+  border-radius: 4px; /* Rounded corners */
+  cursor: pointer; /* Show a pointer cursor on hover */
+  text-align: center; /* Center text horizontally */
+  user-select: none; /* Disable text selection */
 }
 
 .material-symbols-outlined {
@@ -88,5 +126,8 @@
 .hidden {
   display: none;
 }
-
-
+.footer-padding {
+  padding-bottom: 200px;
+}
+.header-padding {
+}

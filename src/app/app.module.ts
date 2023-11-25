@@ -21,6 +21,7 @@ import { MatSliderModule } from '@angular/material/slider';
 import { FormsModule } from '@angular/forms';
 import { NewPostAlternativeComponent } from './new-post-alternative/new-post-alternative.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NewPostOverviewComponent } from './new-post-overview/new-post-overview.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     NewPostComponent,
     LoginComponent,
     NewPostAlternativeComponent,
+    NewPostOverviewComponent,
   ],
   imports: [
     BrowserModule,
