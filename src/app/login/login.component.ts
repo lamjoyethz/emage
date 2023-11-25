@@ -14,6 +14,7 @@ export class LoginComponent implements OnInit {
     password: new FormControl(),
   });
   error: Boolean = false;
+  buttonShow: boolean = false;
   constructor(private router: Router) {}
   onSubmit() {
     // To store the username in localStorage
@@ -106,6 +107,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.layoutName = localStorage.getItem('layout');
+    this.buttonShow = this.layoutName == '1' ? false : true;
   }
 
   switchLayout() {
@@ -114,6 +116,7 @@ export class LoginComponent implements OnInit {
     // To retrieve the username from localStorage
     let storedLayout = localStorage.getItem('layout');
     storedLayout = storedLayout == '0' ? '1' : '0';
+    this.buttonShow = this.buttonShow ? false : true;
 
     localStorage.setItem('layout', storedLayout);
     this.layoutName = storedLayout;

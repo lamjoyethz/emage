@@ -20,8 +20,11 @@
       <button type="submit" mat-button>LOGIN</button>
     </div>
   </form>
-  <div (click)="switchLayout()" class="toogle-button">
+  <div *ngIf="buttonShow" (click)="switchLayout()" class="toogle-button">
     <span class="material-symbols-outlined"> toggle_on </span>
+  </div>
+  <div *ngIf="!buttonShow" (click)="switchLayout()" class="toogle-button">
+    <span class="material-symbols-outlined"> toggle_off </span>
   </div>
   <div class="layout-description">
     You are using Layout <b> {{ layoutName }}</b
