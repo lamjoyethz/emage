@@ -304,32 +304,31 @@
         </div>
       </div>
     </div>
+    <div class="navigationButtons">
+      <button
+        class="backButton"
+        *ngIf="currentStep != 1"
+        type="button"
+        (click)="previousStep()"
+      >
+        Back
+      </button>
+      <button
+        class="nextButton"
+        *ngIf="currentStep != 3"
+        type="button"
+        (click)="nextStep()"
+      >
+        Next
+      </button>
+      <button
+        class="submitButton"
+        *ngIf="currentStep == 3"
+        type="submit"
+        (click)="submitForm()"
+      >
+        Log
+      </button>
+    </div>
   </form>
-
-  <div class="navigationButtons">
-    <button
-      class="backButton"
-      *ngIf="currentStep != 1"
-      type="button"
-      (click)="previousStep()"
-    >
-      Back
-    </button>
-    <button
-      class="nextButton"
-      *ngIf="currentStep != 3"
-      type="button"
-      (click)="nextStep()"
-    >
-      Next
-    </button>
-    <button
-      class="submitButton"
-      *ngIf="currentStep == 3"
-      type="submit"
-      (click)="submitForm()"
-    >
-      Log
-    </button>
-  </div>
 </div>
