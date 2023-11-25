@@ -6,12 +6,14 @@ import {
   animate,
   transition,
 } from '@angular/animations';
-
+import { MatSnackBar } from '@angular/material/snack-bar';
 // Adjust the path as needed
+
 @Component({
   selector: 'app-new-post',
   templateUrl: './new-post.component.html',
   styleUrls: ['./new-post.component.scss'],
+
   animations: [
     trigger('buttonClick', [
       state(
@@ -34,6 +36,8 @@ import {
 export class NewPostComponent {
   layout: boolean = false;
   resetvalue: boolean = true;
+
+  constructor(private snackBar: MatSnackBar) {}
 
   showSlider: { [key: string]: boolean } = {
     stress: false,
@@ -183,6 +187,12 @@ export class NewPostComponent {
     localStorage.setItem('jsonData' + storedUsername, JSON.stringify(jsonData));
 
     console.log(jsonData);
+
+    this.snackBar.open('Successful', 'Close', {
+      duration: 2000, // Auto close after 2000ms
+      horizontalPosition: 'right',
+      verticalPosition: 'bottom',
+    });
   }
 
   // not finished yet, idea with a confirmation

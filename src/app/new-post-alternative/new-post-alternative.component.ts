@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-new-post-alternative',
@@ -7,6 +8,48 @@ import { Component } from '@angular/core';
 })
 export class NewPostAlternativeComponent {
   currentStep = 1;
+  activeButton: string | null = null;
+
+  showSlider: { [key: string]: boolean } = {
+    stress: false,
+    hungry: false,
+    tiredness: false,
+    sports: false,
+    romance: false,
+    work: false,
+    angry: false,
+    happy: false,
+    sad: false,
+    // Add other emotions and their default values here
+  };
+
+  sliderValues: { [key: string]: number } = {
+    stress: 0,
+    hungry: 0,
+    tiredness: 0,
+    sports: 0,
+    romance: 0,
+    work: 0,
+    angry: 0,
+    happy: 0,
+    sad: 0,
+    // Add other emotions and their default values here
+  };
+
+  buttonColor: { [key: string]: string } = {
+    stress: 'transparent',
+    hungry: 'transparent',
+    tiredness: 'transparent',
+    sports: 'transparent',
+    romance: 'transparent',
+    work: 'transparent',
+    angry: 'transparent',
+    happy: 'transparent',
+    sad: 'transparent',
+    // Add other emotions and their default values here
+  };
+
+  constructor(private snackBar: MatSnackBar) {}
 
   nextStep() {
     if (this.currentStep < 3) {
@@ -65,21 +108,13 @@ export class NewPostAlternativeComponent {
     localStorage.setItem('jsonData' + storedUsername, JSON.stringify(jsonData));
 
     console.log(jsonData);
-    // process data here
-  }
 
-  showSlider: { [key: string]: boolean } = {
-    stress: false,
-    hungry: false,
-    tiredness: false,
-    sports: false,
-    romance: false,
-    work: false,
-    angry: false,
-    happy: false,
-    sad: false,
-    // Add other emotions and their default values here
-  };
+    this.snackBar.open('Successful', 'Close', {
+      duration: 2000, // Auto close after 2000ms
+      horizontalPosition: 'right',
+      verticalPosition: 'bottom',
+    });
+  }
 
   triggerButton(emotion: string) {
     this.showSlider['stress'] = false;
@@ -93,34 +128,6 @@ export class NewPostAlternativeComponent {
     this.showSlider['sad'] = false;
     this.showSlider[emotion] = !this.showSlider[emotion];
   }
-
-  sliderValues: { [key: string]: number } = {
-    stress: 0,
-    hungry: 0,
-    tiredness: 0,
-    sports: 0,
-    romance: 0,
-    work: 0,
-    angry: 0,
-    happy: 0,
-    sad: 0,
-    // Add other emotions and their default values here
-  };
-
-  buttonColor: { [key: string]: string } = {
-    stress: 'transparent',
-    hungry: 'transparent',
-    tiredness: 'transparent',
-    sports: 'transparent',
-    romance: 'transparent',
-    work: 'transparent',
-    angry: 'transparent',
-    happy: 'transparent',
-    sad: 'transparent',
-    // Add other emotions and their default values here
-  };
-
-  activeButton: string | null = null;
 
   setSelectedValue(value: number, emotion: string, event: Event): void {
     // problem when adding the active class to the button is that I also need to remove the active class from previous buttons
@@ -158,6 +165,4 @@ export class NewPostAlternativeComponent {
       this.buttonColor[emotion] = '#4ECF92';
     }
   }
-
-  onClick() {}
 }

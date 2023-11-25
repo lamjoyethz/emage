@@ -22,6 +22,7 @@ import { FormsModule } from '@angular/forms';
 import { NewPostAlternativeComponent } from './new-post-alternative/new-post-alternative.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NewPostOverviewComponent } from './new-post-overview/new-post-overview.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { NewPostOverviewComponent } from './new-post-overview/new-post-overview.
     FormsModule,
     MatInputModule,
     SlickCarouselModule,
+    MatSnackBarModule,
     MatFormFieldModule,
     HttpClientModule,
     ReactiveFormsModule,
@@ -56,4 +58,3 @@ import { NewPostOverviewComponent } from './new-post-overview/new-post-overview.
   bootstrap: [AppComponent],
 })
 export class AppModule {}
-
