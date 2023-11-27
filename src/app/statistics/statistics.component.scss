@@ -1,6 +1,97 @@
+.material-symbols-outlined {
+  padding: 2px;
+}
+
+.sad {
+  color: #ff6347; /* tomato color for sad */
+}
+
+.satisfied {
+  color: #8eb20e; /* yellow color for satisfied */
+  position: relative; /* needed to position the pseudo-element correctly */
+  display: inline-block;
+}
+
+.satisfied-dom {
+  color: #8eb20e; /* yellow color for satisfied */
+  position: relative; /* needed to position the pseudo-element correctly */
+  display: inline-block;
+}
+
+.satisfied::after {
+  content: "✓"; /* check mark character */
+  position: absolute;
+  top: -10px; /* adjust as needed */
+  right: -10px; /* adjust as needed */
+  font-size: 1.5em; /* adjust the size of the check mark */
+  color: green; /* color of the check mark */
+}
+
+.year-dissatisfied::after {
+  content: "✓"; /* check mark character */
+  position: absolute;
+  top: -10px; /* adjust as needed */
+  right: -10px; /* adjust as needed */
+  font-size: 1.5em; /* adjust the size of the check mark */
+  color: rgb(239, 31, 16); /* color of the check mark */
+}
+.year-dissatisfied {
+  color: #ffa500; /* orange color for dissatisfied */
+  position: relative; /* needed to position the pseudo-element correctly */
+  display: inline-block;
+}
+
+.dissatisfied {
+  color: #ffa500; /* orange color for dissatisfied */
+}
+
+.mood {
+  color: #1c921c; /* lime green color for very satisfied */
+}
+
+.very-satisfied {
+  color: #42a008; /* existing color for mood */
+}
+
+.process-container {
+  display: flex;
+  align-items: center;
+  padding-top: 10px;
+}
+
+.round-button.main {
+  width: 70px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #3a996c;
+  color: #fff;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.place-holder {
+  width: 70px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: gray;
+  color: #fff;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.process-line {
+  height: 4px;
+  width: 200px;
+  background-color: lightgray;
+  margin: 0 0px;
+}
 .chart-container {
   background-color: white;
-  padding: 3px;
+  padding: 12px;
 }
 
 .chart-wrapper {
@@ -9,7 +100,7 @@
 
 .statistic-wrapper {
   background-color: whitesmoke;
-  padding: 1px;
+  padding-right: 7px;
 }
 
 .chart-description {
@@ -20,7 +111,7 @@
 }
 
 .therapy-description {
-  padding: 10px;
+  padding-top: 10px;
 }
 
 a {

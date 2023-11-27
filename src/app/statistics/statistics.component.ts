@@ -94,22 +94,22 @@ export class StatisticsComponent implements OnInit {
             {
               label: 'Work',
               data: this.workPoint,
-              backgroundColor: '#FA7070',
+              backgroundColor: '#44CF75',
             },
             {
               label: 'Relationship',
               data: this.relationshipPoint,
-              backgroundColor: '#F3B664',
+              backgroundColor: '#FC4993',
             },
             {
               label: 'Sport',
               data: this.sportPoint,
-              backgroundColor: '#F1EB90',
+              backgroundColor: '#EAC910',
             },
           ],
         },
         options: {
-          aspectRatio: 1,
+          aspectRatio: 1.5,
         },
       });
       this.chartStatisticMonthly1 = new Chart('StaticticEmotionMonthly1', {
@@ -123,22 +123,22 @@ export class StatisticsComponent implements OnInit {
             {
               label: 'Work',
               data: this.workPoint,
-              backgroundColor: '#FA7070',
+              backgroundColor: '#44CF75',
             },
             {
               label: 'Relationship',
               data: this.relationshipPoint,
-              backgroundColor: '#F3B664',
+              backgroundColor: '#FC4993',
             },
             {
               label: 'Sport',
               data: this.sportPoint,
-              backgroundColor: '#F1EB90',
+              backgroundColor: '#EAC910',
             },
           ],
         },
         options: {
-          aspectRatio: 1,
+          aspectRatio: 1.5,
         },
       });
       this.chartStatisticYearly1 = new Chart('StaticticEmotionYearly1', {
@@ -152,22 +152,22 @@ export class StatisticsComponent implements OnInit {
             {
               label: 'Work',
               data: this.workPoint,
-              backgroundColor: '#FA7070',
+              backgroundColor: '#44CF75',
             },
             {
               label: 'Relationship',
               data: this.relationshipPoint,
-              backgroundColor: '#F3B664',
+              backgroundColor: '#FC4993',
             },
             {
               label: 'Sport',
               data: this.sportPoint,
-              backgroundColor: '#F1EB90',
+              backgroundColor: '#EAC910',
             },
           ],
         },
         options: {
-          aspectRatio: 1,
+          aspectRatio: 1.5,
         },
       });
     } else {
@@ -181,24 +181,29 @@ export class StatisticsComponent implements OnInit {
             {
               label: 'Work',
               data: this.workPoint,
-              backgroundColor: '#FA7070',
+              backgroundColor: '#44CF75',
             },
             {
               label: 'Relationship',
               data: this.relationshipPoint,
-              backgroundColor: '#F3B664',
+              backgroundColor: '#FC4993',
             },
             {
               label: 'Sport',
               data: this.sportPoint,
-              backgroundColor: '#F1EB90',
+              backgroundColor: '#EAC910',
             },
           ],
         },
         options: {
-          aspectRatio: 1,
+          aspectRatio: 1.5,
         },
       });
+
+      this.workPoint = this.workPoint.map((x) => x - 0.5);
+      this.sportPoint = this.sportPoint.map((x) => x + 1);
+      this.relationshipPoint = this.relationshipPoint.map((x) => x - 2);
+      console.log('wokr point ', this.workPoint);
       this.chartStatisticMonthly = new Chart('StaticticEmotionMonthly', {
         type: 'line', //this denotes tha type of chart
 
@@ -210,24 +215,31 @@ export class StatisticsComponent implements OnInit {
             {
               label: 'Work',
               data: this.workPoint,
-              backgroundColor: '#FA7070',
+              backgroundColor: '#44CF75',
             },
             {
               label: 'Relationship',
               data: this.relationshipPoint,
-              backgroundColor: '#F3B664',
+              backgroundColor: '#FC4993',
             },
             {
               label: 'Sport',
               data: this.sportPoint,
-              backgroundColor: '#F1EB90',
+              backgroundColor: '#EAC910',
             },
           ],
         },
         options: {
-          aspectRatio: 1,
+          aspectRatio: 1.5,
         },
       });
+
+      this.workPoint = this.workPoint.map((x) => (x <= 1 ? 0.2 : x - 1));
+      this.sportPoint = this.sportPoint.map((x) => x + 1);
+      this.relationshipPoint = this.relationshipPoint.map((x) =>
+        x <= 1 ? 0.2 : x - 1
+      );
+
       this.chartStatisticYearly = new Chart('StaticticEmotionYearly', {
         type: 'line', //this denotes tha type of chart
 
@@ -239,22 +251,22 @@ export class StatisticsComponent implements OnInit {
             {
               label: 'Work',
               data: this.workPoint,
-              backgroundColor: '#FA7070',
+              backgroundColor: '#44CF75',
             },
             {
               label: 'Relationship',
               data: this.relationshipPoint,
-              backgroundColor: '#F3B664',
+              backgroundColor: '#FC4993',
             },
             {
               label: 'Sport',
               data: this.sportPoint,
-              backgroundColor: '#F1EB90',
+              backgroundColor: '#EAC910',
             },
           ],
         },
         options: {
-          aspectRatio: 1,
+          aspectRatio: 1.5,
         },
       });
     }
