@@ -7,6 +7,7 @@ import {
   transition,
 } from '@angular/animations';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 // Adjust the path as needed
 
 @Component({
@@ -41,7 +42,8 @@ export class NewPostComponent {
 
   constructor(
     private snackBar: MatSnackBar,
-    private changeDetector: ChangeDetectorRef
+    private changeDetector: ChangeDetectorRef,
+    private router: Router
   ) {}
 
   showSlider: { [key: string]: boolean } = {
@@ -198,6 +200,7 @@ export class NewPostComponent {
       horizontalPosition: 'right',
       verticalPosition: 'bottom',
     });
+    this.router.navigate(['/statistics']); // Replace '/login' with the actual route to your login page
   }
 
   // not finished yet, idea with a confirmation

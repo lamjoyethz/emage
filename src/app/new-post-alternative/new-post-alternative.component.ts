@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-new-post-alternative',
@@ -49,7 +50,7 @@ export class NewPostAlternativeComponent {
     // Add other emotions and their default values here
   };
 
-  constructor(private snackBar: MatSnackBar) {}
+  constructor(private snackBar: MatSnackBar, private router: Router) {}
 
   nextStep() {
     if (this.currentStep < 3) {
@@ -114,6 +115,8 @@ export class NewPostAlternativeComponent {
       horizontalPosition: 'right',
       verticalPosition: 'bottom',
     });
+
+    this.router.navigate(['/statistics']); // Replace '/login' with the actual route to your login page
   }
 
   triggerButton(emotion: string) {
