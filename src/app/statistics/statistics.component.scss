@@ -1,5 +1,11 @@
-.material-symbols-outlined {
-  padding: 2px;
+.custom-button {
+  margin: 2px;
+  height: 40px;
+  width: 40px;
+  color: black;
+  border-radius: 20%; /* This property makes the button round */
+  text-align: center;
+  background-color: #4bbf89;
 }
 
 .sad {
@@ -208,7 +214,7 @@ li {
 
 .carousel {
   position: relative;
-  height: 67vh;
+  height: 68vh;
 }
 
 .carousel__viewport {
