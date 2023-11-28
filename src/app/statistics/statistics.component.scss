@@ -1,11 +1,17 @@
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48 !important ;
+  font-size: 25px;
+}
 .custom-button {
   margin: 2px;
-  height: 40px;
-  width: 40px;
+  height: 45px;
+  width: 45px;
   color: black;
   border-radius: 20%; /* This property makes the button round */
   text-align: center;
   background-color: #4bbf89;
+  border: 0;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .sad {
