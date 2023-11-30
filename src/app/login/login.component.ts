@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
       //Set data in localstorage
       const jsonData = [
         {
-          date: '06.12.2023',
+          date: '06.10.2023',
           data: {
             feeling: { stressed: '3', hungry: '5' },
             activities: { sport: '2', romance: '5', work: '4' },
@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit {
           },
         },
         {
-          date: '07.12.2023',
+          date: '07.10.2023',
           data: {
             feeling: { stressed: '2', hungry: '4' },
             activities: { sport: '1', romance: '3', work: '5' },
@@ -51,7 +51,7 @@ export class LoginComponent implements OnInit {
           },
         },
         {
-          date: '08.12.2023',
+          date: '08.10.2023',
           data: {
             feeling: { stressed: '0', hungry: '3' },
             activities: { sport: '2', romance: '5', work: '2' },
@@ -59,7 +59,7 @@ export class LoginComponent implements OnInit {
           },
         },
         {
-          date: '09.12.2023',
+          date: '09.10.2023',
           data: {
             feeling: { stressed: '4', hungry: '2' },
             activities: { sport: '4', romance: '2', work: '1' },
@@ -67,7 +67,7 @@ export class LoginComponent implements OnInit {
           },
         },
         {
-          date: '10.12.2023',
+          date: '10.10.2023',
           data: {
             feeling: { stressed: '2', hungry: '1' },
             activities: { sport: '1', romance: '3', work: '3' },
@@ -75,7 +75,7 @@ export class LoginComponent implements OnInit {
           },
         },
         {
-          date: '11.12.2023',
+          date: '11.10.2023',
           data: {
             feeling: { stressed: '2', hungry: '0' },
             activities: { sport: '2', romance: '1', work: '4' },
@@ -83,7 +83,7 @@ export class LoginComponent implements OnInit {
           },
         },
         {
-          date: '12.12.2023',
+          date: '12.10.2023',
           data: {
             feeling: { stressed: '1', hungry: '5' },
             activities: { sport: '1', romance: '3', work: '4' },
