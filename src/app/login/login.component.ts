@@ -37,57 +37,57 @@ export class LoginComponent implements OnInit {
         {
           date: '06.10.2023',
           data: {
-            feeling: { stressed: '3', hungry: '5' },
+            negative: { angry: '5', stress: '4', sad: '2' },
             activities: { sport: '2', romance: '5', work: '4' },
-            state: { happy: '3', angry: '4' },
+            positive: { happy: '3', love: '3', gratitude: '4' },
           },
         },
         {
           date: '07.10.2023',
           data: {
-            feeling: { stressed: '2', hungry: '4' },
-            activities: { sport: '1', romance: '3', work: '5' },
-            state: { happy: '3', angry: '4' },
+            negative: { angry: '2', stress: '3', sad: '1' },
+            activities: { sport: '4', romance: '2', work: '2' },
+            positive: { happy: '1', love: '2', gratitude: '2' },
           },
         },
         {
           date: '08.10.2023',
           data: {
-            feeling: { stressed: '0', hungry: '3' },
-            activities: { sport: '2', romance: '5', work: '2' },
-            state: { happy: '3', angry: '4' },
+            negative: { angry: '3', stress: '1', sad: '2' },
+            activities: { sport: '4', romance: '2', work: '1' },
+            positive: { happy: '3', love: '1', gratitude: '5' },
           },
         },
         {
           date: '09.10.2023',
           data: {
-            feeling: { stressed: '4', hungry: '2' },
-            activities: { sport: '4', romance: '2', work: '1' },
-            state: { happy: '3', angry: '4' },
+            negative: { angry: '4', stress: '1', sad: '5' },
+            activities: { sport: '5', romance: '2', work: '3' },
+            positive: { happy: '3', love: '3', gratitude: '3' },
           },
         },
         {
           date: '10.10.2023',
           data: {
-            feeling: { stressed: '2', hungry: '1' },
-            activities: { sport: '1', romance: '3', work: '3' },
-            state: { happy: '1', angry: '2' },
+            negative: { angry: '2', stress: '2', sad: '2' },
+            activities: { sport: '4', romance: '3', work: '2' },
+            positive: { happy: '2', love: '3', gratitude: '3' },
           },
         },
         {
           date: '11.10.2023',
           data: {
-            feeling: { stressed: '2', hungry: '0' },
-            activities: { sport: '2', romance: '1', work: '4' },
-            state: { happy: '3', angry: '4' },
+            negative: { angry: '4', stress: '3', sad: '1' },
+            activities: { sport: '4', romance: '1', work: '2' },
+            positive: { happy: '0', love: '0', gratitude: '0' },
           },
         },
         {
           date: '12.10.2023',
           data: {
-            feeling: { stressed: '1', hungry: '5' },
-            activities: { sport: '1', romance: '3', work: '4' },
-            state: { happy: '3', angry: '4' },
+            negative: { angry: '2', stress: '5', sad: '2' },
+            activities: { sport: '5', romance: '5', work: '2' },
+            positive: { happy: '2', love: '3', gratitude: '2' },
           },
         },
       ];

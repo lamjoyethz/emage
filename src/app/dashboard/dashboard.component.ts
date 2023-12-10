@@ -77,27 +77,35 @@ export class DashboardComponent implements OnInit {
         let csportPoint = Number(x.data?.activities?.sport || 0);
         let crelationshipPoint = Number(x.data?.activities?.romance || 0);
 
-        let feeling =
-          (Number(x.data?.feeling?.stress || 0) +
-            Number(x.data?.feeling?.hungry || 0)) /
-          2;
-        let states =
-          (Number(x.data?.state?.angry || 0) +
-            Number(
-              (x.data?.feeling?.happy || 0) + (x.data?.feeling?.sad || 0)
-            )) /
-          3;
-        this.workPoint.push((cworkPoint + feeling + states) / 3);
+        let positive =
+          Number(x.data?.positive?.happy || 0) +
+          Number(x.data?.positive?.love || 0) +
+          Number(x.data?.positive?.gratitude || 0);
+
+        let negative =
+          Number(x.data?.negative?.angry || 0) +
+          Number(x.data?.negative?.stress || 0) +
+          Number(x.data?.negative?.sad || 0);
+
+        console.log('Points negative', negative);
+        console.log('Points positive', positive);
+        console.log('sport points', this.sportPoint);
+        console.log('relationshipPoint points', this.relationshipPoint);
+        console.log('workPoint points', this.workPoint);
+        console.log('cworkPoint points', cworkPoint);
+
+        console.log('total points', cworkPoint * (positive - negative) + 75);
+        this.workPoint.push(cworkPoint * (positive - negative) + 75);
         this.relationshipPoint.push(
-          (crelationshipPoint + feeling + states) / 3
+          crelationshipPoint * (positive - negative) + 75
         );
-        this.sportPoint.push((csportPoint + feeling + states) / 3);
+        this.sportPoint.push(csportPoint * (positive - negative) + 75);
       })
     );
 
-    console.log('this workPoint Statistic ', this.workPoint);
-    console.log('this relationshipPoint ', this.relationshipPoint);
-    console.log('this sportPoint ', this.sportPoint);
+    console.log('FINAL workPoint Statistic ', this.workPoint);
+    console.log('FINAL relationshipPoint ', this.relationshipPoint);
+    console.log('FINAL sportPoint ', this.sportPoint);
 
     const dateset = this.statistics.map((x) => x.date);
 
@@ -108,9 +116,9 @@ export class DashboardComponent implements OnInit {
   switchLayout() {}
   createChart() {
     console.log(this.layout);
+
     this.chartWeekly = new Chart('EmotionWeekly', {
       type: 'line', //this denotes tha type of chart
-
       data: {
         // values on X-Axis
         labels: this.dates,
@@ -118,22 +126,38 @@ export class DashboardComponent implements OnInit {
           {
             label: 'Work',
             data: this.workPoint,
-            backgroundColor: '#FA7070',
+            backgroundColor: '#44CF75',
+            pointRadius: 5, // Increase the point radius
           },
           {
             label: 'Relationship',
             data: this.relationshipPoint,
-            backgroundColor: '#F3B664',
+            backgroundColor: '#FC4993',
+            pointRadius: 5, // Increase the point radius
           },
           {
             label: 'Sport',
             data: this.sportPoint,
-            backgroundColor: '#F1EB90',
+            backgroundColor: '#EAC910',
+            pointRadius: 5, // Increase the point radius
           },
         ],
       },
       options: {
         aspectRatio: 1.5,
+        scales: {
+          y: {
+            // Configuring the y-axis
+            title: {
+              display: true,
+              text: 'Point', // Description for the y-axis
+              font: {
+                size: 14, // Set the font size
+                weight: 'bold', // Make the title bold
+              },
+            },
+          },
+        },
       },
     });
   }

@@ -48,8 +48,8 @@ export class NewPostComponent {
 
   showSlider: { [key: string]: boolean } = {
     stress: false,
-    hungry: false,
-    tiredness: false,
+    love: false,
+    gratitude: false,
     sports: false,
     romance: false,
     work: false,
@@ -61,8 +61,8 @@ export class NewPostComponent {
 
   triggerButton(emotion: string) {
     this.showSlider['stress'] = false;
-    this.showSlider['hungry'] = false;
-    this.showSlider['tiredness'] = false;
+    this.showSlider['love'] = false;
+    this.showSlider['gratitude'] = false;
     this.showSlider['sports'] = false;
     this.showSlider['romance'] = false;
     this.showSlider['work'] = false;
@@ -74,8 +74,8 @@ export class NewPostComponent {
 
   sliderValues: { [key: string]: number } = {
     stress: 0,
-    hungry: 0,
-    tiredness: 0,
+    love: 0,
+    gratitude: 0,
     sports: 0,
     romance: 0,
     work: 0,
@@ -87,8 +87,8 @@ export class NewPostComponent {
 
   buttonColor: { [key: string]: string } = {
     stress: 'transparent',
-    hungry: 'transparent',
-    tiredness: 'transparent',
+    love: 'transparent',
+    gratitude: 'transparent',
     sports: 'transparent',
     romance: 'transparent',
     work: 'transparent',
@@ -100,8 +100,8 @@ export class NewPostComponent {
 
   buttonState: { [key: string]: string } = {
     stress: 'inactive',
-    hungry: 'inactive',
-    tiredness: 'inactive',
+    love: 'inactive',
+    gratitude: 'inactive',
     sports: 'inactive',
     romance: 'inactive',
     work: 'inactive',
@@ -133,19 +133,51 @@ export class NewPostComponent {
     clickedButton.classList.add('active');
   }
 
-  updateButtonColor(emotion: string) {
+  updateButtonColorPositive(emotion: string) {
     if (this.sliderValues[emotion] == 0) {
       this.buttonColor[emotion] = 'transparent';
     } else if (this.sliderValues[emotion] == 1) {
-      this.buttonColor[emotion] = '#E55B3C';
+      this.buttonColor[emotion] = '#F0E46E';
     } else if (this.sliderValues[emotion] == 2) {
-      this.buttonColor[emotion] = '#F3980F';
-    } else if (this.sliderValues[emotion] == 3) {
       this.buttonColor[emotion] = '#F0DE2B';
+    } else if (this.sliderValues[emotion] == 3) {
+      this.buttonColor[emotion] = '#F3980F';
     } else if (this.sliderValues[emotion] == 4) {
       this.buttonColor[emotion] = '#46c8c8';
     } else {
       this.buttonColor[emotion] = '#4ECF92';
+    }
+  }
+
+  updateButtonColor(emotion: string) {
+    if (this.sliderValues[emotion] == 0) {
+      this.buttonColor[emotion] = 'transparent';
+    } else if (this.sliderValues[emotion] == 1) {
+      this.buttonColor[emotion] = '#F0E46E';
+    } else if (this.sliderValues[emotion] == 2) {
+      this.buttonColor[emotion] = '#F0DE2B';
+    } else if (this.sliderValues[emotion] == 3) {
+      this.buttonColor[emotion] = '#F3980F';
+    } else if (this.sliderValues[emotion] == 4) {
+      this.buttonColor[emotion] = '#FB8166';
+    } else {
+      this.buttonColor[emotion] = '#E55B3C';
+    }
+  }
+
+  updateButtonColorActivity(emotion: string) {
+    if (this.sliderValues[emotion] == 0) {
+      this.buttonColor[emotion] = 'transparent';
+    } else if (this.sliderValues[emotion] == 1) {
+      this.buttonColor[emotion] = '#AEE2E2';
+    } else if (this.sliderValues[emotion] == 2) {
+      this.buttonColor[emotion] = '#7BE0E0';
+    } else if (this.sliderValues[emotion] == 3) {
+      this.buttonColor[emotion] = '#46C8C8';
+    } else if (this.sliderValues[emotion] == 4) {
+      this.buttonColor[emotion] = '#26CFCF';
+    } else {
+      this.buttonColor[emotion] = '#0FE1E1';
     }
   }
 
@@ -158,14 +190,16 @@ export class NewPostComponent {
     );
 
     const stressValue = this.sliderValues['stress'];
-    const hungry = this.sliderValues['hungry'];
-    const tirednessValue = this.sliderValues['tiredness'];
+    const loveValue = this.sliderValues['love'];
+    const gratitudeValue = this.sliderValues['gratitude'];
     const sportValue = this.sliderValues['sports'];
     const romanceValue = this.sliderValues['romance'];
     const workValue = this.sliderValues['work'];
     const angryValue = this.sliderValues['angry'];
     const happyValue = this.sliderValues['happy'];
     const sadValue = this.sliderValues['sad'];
+    console.log('workvalue ', workValue);
+    console.log('angryValue ', angryValue);
 
     const currentDate = new Date();
     const formattedDate = `${currentDate.getDate()}.${
@@ -175,17 +209,18 @@ export class NewPostComponent {
     const currData = {
       date: formattedDate,
       data: {
-        feeling: {
-          stressed: stressValue,
-          hungry: hungry,
-          tiredness: tirednessValue,
+        positive: {
+          happy: happyValue,
+          love: loveValue,
+          gratitude: gratitudeValue,
         },
+        negative: { stress: stressValue, angry: angryValue, sad: sadValue },
+
         activities: {
           sport: sportValue,
           romance: romanceValue,
           work: workValue,
         },
-        state: { happy: happyValue, angry: angryValue, sad: sadValue },
       },
     };
 
@@ -193,14 +228,14 @@ export class NewPostComponent {
 
     localStorage.setItem('jsonData' + storedUsername, JSON.stringify(jsonData));
 
-    console.log(jsonData);
+    console.log('AFTER PUSH DATA : ', jsonData);
 
     this.snackBar.open('Successful', 'Close', {
       duration: 2000, // Auto close after 2000ms
       horizontalPosition: 'right',
       verticalPosition: 'bottom',
     });
-    this.router.navigate(['/statistics']); // Replace '/login' with the actual route to your login page
+    this.router.navigate(['/dashboard']); // Replace '/login' with the actual route to your login page
   }
 
   // not finished yet, idea with a confirmation
@@ -214,8 +249,8 @@ export class NewPostComponent {
 
   reSet() {
     this.sliderValues['stress'] = 0;
-    this.sliderValues['hungry'] = 0;
-    this.sliderValues['tiredness'] = 0;
+    this.sliderValues['love'] = 0;
+    this.sliderValues['gratitude'] = 0;
     this.sliderValues['sports'] = 0;
     this.sliderValues['romance'] = 0;
     this.sliderValues['work'] = 0;
@@ -223,8 +258,8 @@ export class NewPostComponent {
     this.sliderValues['happy'] = 0;
     this.sliderValues['sad'] = 0;
     this.buttonColor['stress'] = 'transparent';
-    this.buttonColor['hungry'] = 'transparent';
-    this.buttonColor['tiredness'] = 'transparent';
+    this.buttonColor['love'] = 'transparent';
+    this.buttonColor['gratitude'] = 'transparent';
     this.buttonColor['sports'] = 'transparent';
     this.buttonColor['romance'] = 'transparent';
     this.buttonColor['work'] = 'transparent';
@@ -236,8 +271,8 @@ export class NewPostComponent {
     this.changeDetector.detectChanges();
     this.trickMe = true;
     this.showSlider['stress'] = false;
-    this.showSlider['hungry'] = false;
-    this.showSlider['tiredness'] = false;
+    this.showSlider['love'] = false;
+    this.showSlider['gratitude'] = false;
     this.showSlider['sports'] = false;
     this.showSlider['romance'] = false;
     this.showSlider['work'] = false;

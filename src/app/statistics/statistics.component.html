@@ -1,139 +1,133 @@
 <div class="statistic-wrapper" *ngIf="!layout">
-  <div class="chart-wrapper">
-    <div class="chart-container">
-      <div class="chart-description">Weekly</div>
-      <canvas id="StaticticEmotionWeekly">{{ chartStatisticWeekly }}</canvas>
+  <div class="chart-container">
+    <div class="chart-description">Weekly</div>
+    <canvas id="StaticticEmotionWeekly">{{ chartStatisticWeekly }}</canvas>
 
-      <div class="therapy-description">
-        Congratulation! You're currently at Week 52. You're doing 27% better
-        than last week.
-      </div>
+    <div class="therapy-description">
+      Congratulation! You're currently at Week 52. You're doing 27% better than
+      last week.
+    </div>
 
-      <div class="process-container">
-        <b>State:</b>
-        <span class="material-symbols-outlined sad"> sentiment_sad </span>
-        <div class="process-line"></div>
-        <span class="material-symbols-outlined dissatisfied">
-          sentiment_dissatisfied
-        </span>
-        <div class="process-line"></div>
-        <span class="material-symbols-outlined satisfied">
-          sentiment_satisfied
-        </span>
-        <div class="process-line"></div>
-        <span class="material-symbols-outlined mood"> mood </span>
-        <div class="process-line"></div>
-        <span class="material-symbols-outlined very-satisfied">
-          sentiment_very_satisfied
-        </span>
-      </div>
-      <div class="process-container">
-        <b>Dominant Moods:</b>
-        <button mat-raised-button class="custom-button" color="primary">
-          <span class="material-symbols-outlined"> airline_seat_flat </span>
-        </button>
-        <button mat-raised-button class="custom-button" color="primary">
-          <span class="material-symbols-outlined"> lunch_dining </span>
-        </button>
-      </div>
+    <div class="process-container">
+      <b>State:</b>
+      <span class="material-symbols-outlined sad"> sentiment_sad </span>
+      <div class="process-line"></div>
+      <span class="material-symbols-outlined dissatisfied">
+        sentiment_dissatisfied
+      </span>
+      <div class="process-line"></div>
+      <span class="material-symbols-outlined satisfied">
+        sentiment_satisfied
+      </span>
+      <div class="process-line"></div>
+      <span class="material-symbols-outlined mood"> mood </span>
+      <div class="process-line"></div>
+      <span class="material-symbols-outlined very-satisfied">
+        sentiment_very_satisfied
+      </span>
+    </div>
+    <div class="process-container">
+      <b>Dominant Moods:</b>
+      <button mat-raised-button class="custom-button" color="primary">
+        <span class="material-symbols-outlined"> airline_seat_flat </span>
+      </button>
+      <button mat-raised-button class="custom-button" color="primary">
+        <span class="material-symbols-outlined"> lunch_dining </span>
+      </button>
     </div>
   </div>
 
-  <div class="chart-wrapper">
-    <div class="chart-container">
-      <div class="chart-description">Monthly</div>
-      <canvas id="StaticticEmotionMonthly">{{ chartStatisticMonthly }}</canvas>
-      <div class="therapy-description">
-        This month you've done not really bad but pay more attention to your
-        love life.
-      </div>
-      <div class="process-container">
-        <b>State:</b>
-        <span class="material-symbols-outlined sad"> sentiment_sad </span>
-        <div class="process-line"></div>
-        <span class="material-symbols-outlined dissatisfied">
-          sentiment_dissatisfied
-        </span>
-        <div class="process-line"></div>
-        <span class="material-symbols-outlined satisfied">
-          sentiment_satisfied
-        </span>
-        <div class="process-line"></div>
-        <span class="material-symbols-outlined mood"> mood </span>
-        <div class="process-line"></div>
-        <span class="material-symbols-outlined very-satisfied">
+  <div class="chart-container">
+    <div class="chart-description">Monthly</div>
+    <canvas id="StaticticEmotionMonthly">{{ chartStatisticMonthly }}</canvas>
+    <div class="therapy-description">
+      This month you've done not really bad but pay more attention to your love
+      life.
+    </div>
+    <div class="process-container">
+      <b>State:</b>
+      <span class="material-symbols-outlined sad"> sentiment_sad </span>
+      <div class="process-line"></div>
+      <span class="material-symbols-outlined dissatisfied">
+        sentiment_dissatisfied
+      </span>
+      <div class="process-line"></div>
+      <span class="material-symbols-outlined satisfied">
+        sentiment_satisfied
+      </span>
+      <div class="process-line"></div>
+      <span class="material-symbols-outlined mood"> mood </span>
+      <div class="process-line"></div>
+      <span class="material-symbols-outlined very-satisfied">
+        sentiment_very_satisfied
+      </span>
+    </div>
+    <div class="process-container">
+      <b>Dominant Moods:</b>
+      <button mat-raised-button class="custom-button" color="primary">
+        <span class="material-symbols-outlined"> airline_seat_flat </span>
+      </button>
+      <button mat-raised-button class="custom-button" color="primary">
+        <span class="material-symbols-outlined">
           sentiment_very_satisfied
         </span>
-      </div>
-      <div class="process-container">
-        <b>Dominant Moods:</b>
-        <button mat-raised-button class="custom-button" color="primary">
-          <span class="material-symbols-outlined"> airline_seat_flat </span>
-        </button>
-        <button mat-raised-button class="custom-button" color="primary">
-          <span class="material-symbols-outlined">
-            sentiment_very_satisfied
-          </span>
-        </button>
-      </div>
+      </button>
     </div>
   </div>
-  <div class="chart-wrapper">
-    <div class="chart-container">
-      <div class="chart-description">Yearly</div>
-      <canvas id="StaticticEmotionYearly">{{ chartStatisticYearly }}</canvas>
-      <div class="therapy-description">
-        This year you've improved yourself in Sport but did really bad in
-        Relationship and Work.
-      </div>
-      <div class="process-container">
-        <b>State:</b>
-        <span class="material-symbols-outlined sad"> sentiment_sad </span>
-        <div class="process-line"></div>
-        <span class="material-symbols-outlined year-dissatisfied">
-          sentiment_dissatisfied
-        </span>
-        <div class="process-line"></div>
-        <span class="material-symbols-outlined satisfied-dom">
-          sentiment_satisfied
-        </span>
-        <div class="process-line"></div>
-        <span class="material-symbols-outlined mood"> mood </span>
-        <div class="process-line"></div>
-        <span class="material-symbols-outlined very-satisfied">
-          sentiment_very_satisfied
-        </span>
-      </div>
-      <div class="process-container">
-        <b>Dominant Moods:</b
-        ><button mat-raised-button class="custom-button" color="primary">
-          <span class="material-symbols-outlined"> sentiment_stressed </span>
-        </button>
-        <button mat-raised-button class="custom-button" color="primary">
-          <span class="material-symbols-outlined"> airline_seat_flat </span>
-        </button>
-      </div>
+  <div class="chart-container">
+    <div class="chart-description">Yearly</div>
+    <canvas id="StaticticEmotionYearly">{{ chartStatisticYearly }}</canvas>
+    <div class="therapy-description">
+      This year you've improved yourself in Sport but did really bad in
+      Relationship and Work.
+    </div>
+    <div class="process-container">
+      <b>State:</b>
+      <span class="material-symbols-outlined sad"> sentiment_sad </span>
+      <div class="process-line"></div>
+      <span class="material-symbols-outlined year-dissatisfied">
+        sentiment_dissatisfied
+      </span>
+      <div class="process-line"></div>
+      <span class="material-symbols-outlined satisfied-dom">
+        sentiment_satisfied
+      </span>
+      <div class="process-line"></div>
+      <span class="material-symbols-outlined mood"> mood </span>
+      <div class="process-line"></div>
+      <span class="material-symbols-outlined very-satisfied">
+        sentiment_very_satisfied
+      </span>
+    </div>
+    <div class="process-container">
+      <b>Dominant Moods:</b
+      ><button mat-raised-button class="custom-button" color="primary">
+        <span class="material-symbols-outlined"> sentiment_stressed </span>
+      </button>
+      <button mat-raised-button class="custom-button" color="primary">
+        <span class="material-symbols-outlined"> airline_seat_flat </span>
+      </button>
     </div>
   </div>
   <div class="statistic-footer"></div>
 </div>
 <div class="statistic-wrapper" *ngIf="layout">
-  <div class="chart-wrapper">
-    <div class="chart-container">
-      <section class="carousel" aria-label="Gallery">
-        <ol class="carousel__viewport">
-          <li id="carousel__slide1" tabindex="0" class="carousel__slide">
-            <div class="carousel__snapper">
-              <div class="chart-wrapper">
-                <div class="chart-container">
-                  <canvas id="StaticticEmotionWeekly1">{{
-                    chartStatisticWeekly1
-                  }}</canvas>
-                  <div class="chart-description">Weekly</div>
-                  <div class="therapy-description">
-                    Congratulation! You're currently at Week 52. You're doing
-                    27% better than last week.
-                  </div>
+  <div class="chart-container">
+    <section class="carousel" aria-label="Gallery">
+      <ol #carouselViewport class="carousel__viewport">
+        <li id="carousel__slide1" tabindex="0" class="carousel__slide">
+          <div class="carousel__snapper">
+            <div class="chart-wrapper">
+              <div class="chart-container">
+                <canvas id="StaticticEmotionWeekly1">{{
+                  chartStatisticWeekly1
+                }}</canvas>
+                <div class="chart-description">Weekly</div>
+                <div class="therapy-description">
+                  Congratulation! You're currently at Week 52. You're doing 27%
+                  better than last week.
+                </div>
+                <div class="emotion-container">
                   <div class="process-container">
                     <b>State:</b>
                     <span class="material-symbols-outlined sad">
@@ -178,82 +172,85 @@
                 </div>
               </div>
             </div>
-          </li>
-          <li id="carousel__slide2" tabindex="0" class="carousel__slide">
-            <div class="carousel__snapper">
-              <div class="chart-wrapper">
-                <div class="chart-container">
-                  <canvas id="StaticticEmotionMonthly1">{{
-                    chartStatisticMonthly1
-                  }}</canvas>
-                  <div class="chart-description">Monthly</div>
-                  <div class="therapy-description">
-                    Congratulation! You're currently at Month 7. You're doing 2%
-                    better than last month.
-                  </div>
-                  <div class="process-container">
-                    <b>State:</b>
-                    <span class="material-symbols-outlined sad">
-                      sentiment_sad
+          </div>
+        </li>
+        <li id="carousel__slide2" tabindex="0" class="carousel__slide">
+          <div class="carousel__snapper">
+            <div class="chart-container">
+              <canvas id="StaticticEmotionMonthly1">{{
+                chartStatisticMonthly1
+              }}</canvas>
+              <div class="chart-description">Monthly</div>
+              <div class="therapy-description">
+                Congratulation! You're currently at Month 7. You're doing 2%
+                better than last month.
+              </div>
+              <div class="emotion-container">
+                <div class="process-container">
+                  <b>State:</b>
+                  <span class="material-symbols-outlined sad">
+                    sentiment_sad
+                  </span>
+                  <div class="process-line"></div>
+                  <span class="material-symbols-outlined dissatisfied">
+                    sentiment_dissatisfied
+                  </span>
+                  <div class="process-line"></div>
+                  <span class="material-symbols-outlined satisfied">
+                    sentiment_satisfied
+                  </span>
+                  <div class="process-line"></div>
+                  <span class="material-symbols-outlined mood"> mood </span>
+                  <div class="process-line"></div>
+                  <span class="material-symbols-outlined very-satisfied">
+                    sentiment_very_satisfied
+                  </span>
+                </div>
+                <div class="process-container">
+                  <b>Dominant Moods:</b>
+                  <button
+                    mat-raised-button
+                    class="custom-button"
+                    color="primary"
+                  >
+                    <span class="material-symbols-outlined">
+                      airline_seat_flat
                     </span>
-                    <div class="process-line"></div>
-                    <span class="material-symbols-outlined dissatisfied">
-                      sentiment_dissatisfied
-                    </span>
-                    <div class="process-line"></div>
-                    <span class="material-symbols-outlined satisfied">
-                      sentiment_satisfied
-                    </span>
-                    <div class="process-line"></div>
-                    <span class="material-symbols-outlined mood"> mood </span>
-                    <div class="process-line"></div>
-                    <span class="material-symbols-outlined very-satisfied">
+                  </button>
+                  <button
+                    mat-raised-button
+                    class="custom-button"
+                    color="primary"
+                  >
+                    <span class="material-symbols-outlined">
                       sentiment_very_satisfied
                     </span>
-                  </div>
-                  <div class="process-container">
-                    <b>Dominant Moods:</b>
-                    <button
-                      mat-raised-button
-                      class="custom-button"
-                      color="primary"
-                    >
-                      <span class="material-symbols-outlined">
-                        airline_seat_flat
-                      </span>
-                    </button>
-                    <button
-                      mat-raised-button
-                      class="custom-button"
-                      color="primary"
-                    >
-                      <span class="material-symbols-outlined">
-                        sentiment_very_satisfied
-                      </span>
-                    </button>
-                  </div>
+                  </button>
                 </div>
               </div>
             </div>
-            <a href="#carousel__slide1" class="carousel__prev"
-              >Go to previous slide</a
-            >
-            <a href="#carousel__slide3" class="carousel__next"
-              >Go to next slide</a
-            >
-          </li>
-          <li id="carousel__slide3" tabindex="0" class="carousel__slide">
-            <div class="carousel__snapper">
-              <div class="chart-wrapper">
-                <div class="chart-container">
-                  <canvas id="StaticticEmotionYearly1">{{
-                    chartStatisticYearly1
-                  }}</canvas>
-                  <div class="chart-description">Yearly</div>
-                  <div class="therapy-description">
-                    This year you've improved yourself in Finance, Work but did
-                    really bad in Relationship.
-                  </div>
+          </div>
+          <a href="#carousel__slide1" class="carousel__prev"
+            >Go to previous slide</a
+          >
+          <a href="#carousel__slide3" class="carousel__next"
+            >Go to next slide</a
+          >
+        </li>
+        <li id="carousel__slide3" tabindex="0" class="carousel__slide">
+          <div class="carousel__snapper">
+            <div class="chart-wrapper">
+              <div class="chart-container">
+                <canvas id="StaticticEmotionYearly1">{{
+                  chartStatisticYearly1
+                }}</canvas>
+                <div class="chart-description">Yearly</div>
+                <div class="therapy-description">
+                  This year you've improved yourself in Finance, Work but did
+                  really bad in Relationship.
+                </div>
+
+                <div class="emotion-container">
                   <div class="process-container">
                     <b>State:</b>
                     <span class="material-symbols-outlined sad">
@@ -298,32 +295,39 @@
                 </div>
               </div>
             </div>
-            <a href="#carousel__slide2" class="carousel__prev"
-              >Go to previous slide</a
-            >
+          </div>
+          <a href="#carousel__slide2" class="carousel__prev"
+            >Go to previous slide</a
+          >
+        </li>
+      </ol>
+
+      <aside class="carousel__navigation">
+        <ol class="carousel__navigation-list">
+          <li
+            class="carousel__navigation-item"
+            (click)="goToSlide(0)"
+            [class.active]="currentSlideIndex === 0"
+          >
+            <div class="carousel__navigation-button">Go to slide 1</div>
+          </li>
+          <li
+            class="carousel__navigation-item"
+            (click)="goToSlide(1)"
+            [class.active]="currentSlideIndex === 1"
+          >
+            <a class="carousel__navigation-button">Go to slide 2</a>
+          </li>
+          <li
+            class="carousel__navigation-item"
+            (click)="goToSlide(2)"
+            [class.active]="currentSlideIndex === 2"
+          >
+            <a class="carousel__navigation-button">Go to slide 3</a>
           </li>
         </ol>
-        <aside class="carousel__navigation">
-          <ol class="carousel__navigation-list">
-            <li class="carousel__navigation-item">
-              <a href="#carousel__slide1" class="carousel__navigation-button"
-                >Go to slide 1</a
-              >
-            </li>
-            <li class="carousel__navigation-item">
-              <a href="#carousel__slide2" class="carousel__navigation-button"
-                >Go to slide 2</a
-              >
-            </li>
-            <li class="carousel__navigation-item">
-              <a href="#carousel__slide3" class="carousel__navigation-button"
-                >Go to slide 3</a
-              >
-            </li>
-          </ol>
-        </aside>
-      </section>
-    </div>
+      </aside>
+    </section>
     <div class="statistic-footer"></div>
   </div>
 </div>

@@ -2,6 +2,21 @@
   font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48 !important ;
   font-size: 25px;
 }
+
+.icon-container {
+  display: flex; /* Create a flex container */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  padding-bottom: 8px;
+}
+
+.column {
+  flex: 1; /* Allow columns to grow equally */
+  padding: 20px;
+  text-align: center; /* Center content horizontally within columns */
+  border: 1px solid #ccc;
+}
+
 .custom-button {
   margin: 2px;
   height: 45px;
@@ -65,10 +80,14 @@
   color: #42a008; /* existing color for mood */
 }
 
+.emotion-container {
+  padding-top: 10px;
+}
+
 .process-container {
   display: flex;
   align-items: center;
-  padding-top: 10px;
+  padding: 5px;
 }
 
 .round-button.main {
@@ -103,20 +122,15 @@
 }
 .chart-container {
   background-color: white;
-  padding: 12px;
-}
-
-.chart-wrapper {
-  padding: 1px;
+  padding: 5px;
 }
 
 .statistic-wrapper {
   background-color: whitesmoke;
-  padding-right: 7px;
 }
 
 .chart-description {
-  padding-top: 10px;
+  padding-top: 14px;
   text-align: center;
   font-weight: bold;
   font-size: 22px;
@@ -223,6 +237,11 @@ li {
   height: 68vh;
 }
 
+.carousel__navigation-item.active .carousel__navigation-button {
+  background-color: whitegrey; /* Active state color */
+  color: whitegrey; /* Adjust the text color if needed */
+}
+
 .carousel__viewport {
   position: absolute;
   top: 0;
@@ -313,9 +332,12 @@ li {
   border: 0.25rem solid transparent;
   border-radius: 50%;
   font-size: 0;
-  transition: transform 0.1s;
-}
 
+  transition: transform 0.1s, background-color 0.3s;
+}
+.carousel__navigation-button.active {
+  background-color: whitegrey; /* Active state color */
+}
 .carousel::before,
 .carousel::after,
 .carousel__prev,
@@ -361,17 +383,4 @@ li {
 
 .carousel::after {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='100,50 20,100 20,0' fill='%23fff'/%3E%3C/svg%3E");
-}
-.icon-container {
-  display: flex; /* Create a flex container */
-  justify-content: center; /* Center content horizontally */
-  align-items: center; /* Center content vertically */
-  padding-bottom: 8px;
-}
-
-.column {
-  flex: 1; /* Allow columns to grow equally */
-  padding: 20px;
-  text-align: center; /* Center content horizontally within columns */
-  border: 1px solid #ccc;
 }

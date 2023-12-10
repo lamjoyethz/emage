@@ -13,8 +13,8 @@ export class NewPostAlternativeComponent {
 
   showSlider: { [key: string]: boolean } = {
     stress: false,
-    hungry: false,
-    tiredness: false,
+    love: false,
+    gratitude: false,
     sports: false,
     romance: false,
     work: false,
@@ -26,8 +26,8 @@ export class NewPostAlternativeComponent {
 
   sliderValues: { [key: string]: number } = {
     stress: 0,
-    hungry: 0,
-    tiredness: 0,
+    love: 0,
+    gratitude: 0,
     sports: 0,
     romance: 0,
     work: 0,
@@ -39,8 +39,8 @@ export class NewPostAlternativeComponent {
 
   buttonColor: { [key: string]: string } = {
     stress: 'transparent',
-    hungry: 'transparent',
-    tiredness: 'transparent',
+    love: 'transparent',
+    gratitude: 'transparent',
     sports: 'transparent',
     romance: 'transparent',
     work: 'transparent',
@@ -73,8 +73,8 @@ export class NewPostAlternativeComponent {
     );
 
     const stressValue = this.sliderValues['stress'];
-    const hungry = this.sliderValues['hungry'];
-    const tirednessValue = this.sliderValues['tiredness'];
+    const loveValue = this.sliderValues['love'];
+    const gratitudeValue = this.sliderValues['gratitude'];
     const sportValue = this.sliderValues['sports'];
     const romanceValue = this.sliderValues['romance'];
     const workValue = this.sliderValues['work'];
@@ -90,17 +90,18 @@ export class NewPostAlternativeComponent {
     const currData = {
       date: formattedDate,
       data: {
-        feeling: {
-          stressed: stressValue,
-          hungry: hungry,
-          tiredness: tirednessValue,
+        positive: {
+          happy: happyValue,
+          love: loveValue,
+          gratitude: gratitudeValue,
         },
+        negative: { stress: stressValue, angry: angryValue, sad: sadValue },
+
         activities: {
           sport: sportValue,
           romance: romanceValue,
           work: workValue,
         },
-        state: { happy: happyValue, angry: angryValue, sad: sadValue },
       },
     };
 
@@ -108,7 +109,7 @@ export class NewPostAlternativeComponent {
 
     localStorage.setItem('jsonData' + storedUsername, JSON.stringify(jsonData));
 
-    console.log(jsonData);
+    console.log('AFTER PUSH DATA : ', jsonData);
 
     this.snackBar.open('Successful', 'Close', {
       duration: 2000, // Auto close after 2000ms
@@ -116,13 +117,13 @@ export class NewPostAlternativeComponent {
       verticalPosition: 'bottom',
     });
 
-    this.router.navigate(['/statistics']); // Replace '/login' with the actual route to your login page
+    this.router.navigate(['/dashboard']); // Replace '/login' with the actual route to your login page
   }
 
   triggerButton(emotion: string) {
     this.showSlider['stress'] = false;
-    this.showSlider['hungry'] = false;
-    this.showSlider['tiredness'] = false;
+    this.showSlider['love'] = false;
+    this.showSlider['gratitude'] = false;
     this.showSlider['sports'] = false;
     this.showSlider['romance'] = false;
     this.showSlider['work'] = false;
@@ -153,19 +154,51 @@ export class NewPostAlternativeComponent {
     return this.activeButton === emotion;
   }
 
-  updateButtonColor(emotion: string) {
+  updateButtonColorPositive(emotion: string) {
     if (this.sliderValues[emotion] == 0) {
       this.buttonColor[emotion] = 'transparent';
     } else if (this.sliderValues[emotion] == 1) {
-      this.buttonColor[emotion] = '#E55B3C';
+      this.buttonColor[emotion] = '#F0E46E';
     } else if (this.sliderValues[emotion] == 2) {
-      this.buttonColor[emotion] = '#F3980F';
-    } else if (this.sliderValues[emotion] == 3) {
       this.buttonColor[emotion] = '#F0DE2B';
+    } else if (this.sliderValues[emotion] == 3) {
+      this.buttonColor[emotion] = '#F3980F';
     } else if (this.sliderValues[emotion] == 4) {
       this.buttonColor[emotion] = '#46c8c8';
     } else {
       this.buttonColor[emotion] = '#4ECF92';
+    }
+  }
+
+  updateButtonColor(emotion: string) {
+    if (this.sliderValues[emotion] == 0) {
+      this.buttonColor[emotion] = 'transparent';
+    } else if (this.sliderValues[emotion] == 1) {
+      this.buttonColor[emotion] = '#F0E46E';
+    } else if (this.sliderValues[emotion] == 2) {
+      this.buttonColor[emotion] = '#F0DE2B';
+    } else if (this.sliderValues[emotion] == 3) {
+      this.buttonColor[emotion] = '#F3980F';
+    } else if (this.sliderValues[emotion] == 4) {
+      this.buttonColor[emotion] = '#FB8166';
+    } else {
+      this.buttonColor[emotion] = '#E55B3C';
+    }
+  }
+
+  updateButtonColorActivity(emotion: string) {
+    if (this.sliderValues[emotion] == 0) {
+      this.buttonColor[emotion] = 'transparent';
+    } else if (this.sliderValues[emotion] == 1) {
+      this.buttonColor[emotion] = '#AEE2E2';
+    } else if (this.sliderValues[emotion] == 2) {
+      this.buttonColor[emotion] = '#7BE0E0';
+    } else if (this.sliderValues[emotion] == 3) {
+      this.buttonColor[emotion] = '#46C8C8';
+    } else if (this.sliderValues[emotion] == 4) {
+      this.buttonColor[emotion] = '#26CFCF';
+    } else {
+      this.buttonColor[emotion] = '#0FE1E1';
     }
   }
 }
