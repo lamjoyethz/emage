@@ -130,11 +130,6 @@ export class StatisticsComponent implements OnInit {
 
   createChart() {
     // Create data
-    this.workPoint = this.workPoint.map((x) => (x < 5 ? 0 : x - 5));
-    this.sportPoint = this.sportPoint.map((x) => (x > 95 ? 100 : x + 5));
-    this.relationshipPoint = this.relationshipPoint.map((x) =>
-      x < 3 ? 0 : x - 3
-    );
     if (this.layout) {
       this.chartStatisticWeekly1 = new Chart('StaticticEmotionWeekly1', {
         type: 'line', //this denotes tha type of chart

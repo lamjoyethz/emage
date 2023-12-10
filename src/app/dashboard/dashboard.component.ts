@@ -93,13 +93,24 @@ export class DashboardComponent implements OnInit {
         console.log('relationshipPoint points', this.relationshipPoint);
         console.log('workPoint points', this.workPoint);
         console.log('cworkPoint points', cworkPoint);
+        let initialResult = cworkPoint * (positive - negative);
+        let shiftedResult = initialResult + 75; // Shifting the range to 0-150
+        let finalResult = (shiftedResult * 2) / 3; // Scaling down to 0-100
 
         console.log('total points', cworkPoint * (positive - negative) + 75);
-        this.workPoint.push(cworkPoint * (positive - negative) + 75);
-        this.relationshipPoint.push(
-          crelationshipPoint * (positive - negative) + 75
-        );
-        this.sportPoint.push(csportPoint * (positive - negative) + 75);
+        this.workPoint.push(finalResult);
+
+        initialResult = crelationshipPoint * (positive - negative);
+        shiftedResult = initialResult + 75; // Shifting the range to 0-150
+        finalResult = (shiftedResult * 2) / 3; // Scaling down to 0-100
+
+        this.relationshipPoint.push(finalResult);
+
+        initialResult = csportPoint * (positive - negative);
+        shiftedResult = initialResult + 75; // Shifting the range to 0-150
+        finalResult = (shiftedResult * 2) / 3; // Scaling down to 0-100
+
+        this.sportPoint.push(finalResult);
       })
     );
 
