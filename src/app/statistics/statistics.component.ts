@@ -303,16 +303,19 @@ export class StatisticsComponent implements OnInit {
               label: 'Work',
               data: this.workPoint,
               backgroundColor: '#44CF75',
+              pointRadius: 5, // Increase the point radius
             },
             {
               label: 'Relationship',
               data: this.relationshipPoint,
               backgroundColor: '#FC4993',
+              pointRadius: 5, // Increase the point radius
             },
             {
               label: 'Sport',
               data: this.sportPoint,
               backgroundColor: '#EAC910',
+              pointRadius: 5, // Increase the point radius
             },
           ],
         },
@@ -339,16 +342,19 @@ export class StatisticsComponent implements OnInit {
               label: 'Work',
               data: this.workPoint,
               backgroundColor: '#44CF75',
+              pointRadius: 5, // Increase the point radius
             },
             {
               label: 'Relationship',
               data: this.relationshipPoint,
               backgroundColor: '#FC4993',
+              pointRadius: 5, // Increase the point radius
             },
             {
               label: 'Sport',
               data: this.sportPoint,
               backgroundColor: '#EAC910',
+              pointRadius: 5, // Increase the point radius
             },
           ],
         },
